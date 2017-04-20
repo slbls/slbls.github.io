@@ -1,13 +1,11 @@
-html, body {
-	width: 100%;
+html, body, .container {
 	height: 100%;
 	margin: 0;
 }
 
 .container {
 	display: flex;
-	height: 100%;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 }

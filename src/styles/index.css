@@ -1,16 +1,11 @@
 #name {
+	text-align: center;
 	font-family: "Source Code Pro", monospace;
 	font-size: 45pt;
 }
 
-#icons {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 30rem;
-}
-
 .icon {
+	display: inline-block;
 	width: 5rem;
 	height: 5rem;
 	padding: 0 1.5rem 0 1.5rem;
