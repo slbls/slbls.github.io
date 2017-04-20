@@ -26,7 +26,7 @@ module.exports = {
 		}).uglify().target("dist/js/");
 	},
 	*styles(fly) {
-		yield fly.source(paths.styles).sass({ outputStyle: "compressed" }).target("dist/css/");
+		yield fly.source(paths.styles).sass({ outputStyle: "compressed" }).autoprefixer({ browsers: ["last 2 versions"] }).target("dist/css/");
 	},
 	*images(fly) {
 		yield fly.source("src/img/*.{png,jpg,jpeg,svg,ico}").imagemin().target("dist/img/");
