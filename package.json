@@ -1,0 +1,23 @@
+{
+  "name": "berenson.me",
+  "version": "1.0.0",
+  "description": "My personal/portfolio website.",
+  "main": "flyfile.js",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "fly": "^2.0.5",
+    "fly-browserify2": "^2.1.0",
+    "fly-clear": "^1.0.1",
+    "fly-imagemin": "^2.0.0",
+    "fly-pug": "^1.0.2",
+    "fly-sass": "^2.1.0",
+    "fly-uglify": "^2.1.1"
+  },
+  "scripts": {
+    "build": "fly build",
+    "clear": "fly clear"
+  },
+  "author": "Spencer Berenson",
+  "license": "MIT"
+}

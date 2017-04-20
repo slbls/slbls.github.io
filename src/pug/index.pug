@@ -1,0 +1,13 @@
+extends templates/base.pug
+
+block head
+	link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro")
+	link(rel="stylesheet" href="css/index.css")
+
+block body
+	main.container.full-height
+		h1#name= name
+		section#icons
+			each icon in icons
+				a.icon(href=icon.link target="_blank")
+					img(src=icon.img alt=icon.alt)

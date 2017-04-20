@@ -1,0 +1,21 @@
+{
+	"title": "Spencer Berenson",
+	"name": "Spencer Berenson",
+	"icons": [
+		{
+			"img": "img/email.png",
+			"link": "mailto:spencer@berenson.me",
+			"alt": "Email"
+		},
+		{
+			"img": "img/github.png",
+			"link": "https://www.github.com/spoonbytes",
+			"alt": "GitHub"
+		},
+		{
+			"img": "img/twitter.png",
+			"link": "https://www.twitter.com/spoonbytes",
+			"alt": "Twitter"
+		}
+	]
+}
