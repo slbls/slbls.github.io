@@ -1,1 +1,12 @@
-@import "bulma/bulma.sass";
+html, body, .container {
+	height: 100%;
+	margin: 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: monospace;
+}
