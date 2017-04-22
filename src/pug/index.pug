@@ -4,11 +4,10 @@ block head
 	link(rel="stylesheet" href="css/index.css")
 
 block body
-	main.hero.is-light.is-fullheight
-		section.hero-body.container
-			div
-				h1.is-1.title #[strong= name]
-				h2.is-3.subtitle= position
-				
-				each link in links
-					a.link.button(href=link.href)= link.text
+	main.container
+		div
+			h1#title= name
+			h2#subtitle= position
+
+			each link in links
+				a.link(href=link.href)= link.text
