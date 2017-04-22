@@ -58,7 +58,10 @@ gulp.task("scripts", () => {
 
 gulp.task("styles", () => {
 	return gulp.src(paths.src.styles)
-		.pipe(sass({ outputStyle: "compressed" }))
+		.pipe(sass({
+			outputStyle: "compressed",
+			includePaths: ["./node_modules"]
+		}))
 		.pipe(autoprefixer({
 			browsers: ["last 3 versions"]
 		}))
