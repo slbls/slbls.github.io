@@ -9,5 +9,6 @@ block body
 			h1#title= name
 			h2#subtitle= position
 
-			each link in links
-				a.link(href=link.href)= link.text
+			p#links
+				each link in links
+					a.link(href=link.href)= link.text
