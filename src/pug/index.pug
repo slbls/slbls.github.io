@@ -1,14 +1,22 @@
 extends templates/base.pug
 
 block head
-	link(rel="stylesheet" href="styles/index.css")
+	link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300")
 
 block body
 	main.container
-		div
-			h1#title= name
-			h2#subtitle= position
-
-			p#links
+		section.card
+			
+			.header
+				hr
+				img.avatar(src="img/me.jpg")
+				hr
+			
+			.content
+				h1.title= name
+				h2.subtitle= position
+			
+			.footer
 				each link in links
-					a.link(href=link.href)= link.text
+					a.icon.fa(class=link.icon href=link.href target="_blank")
+						

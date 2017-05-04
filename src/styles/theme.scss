@@ -1,3 +1,6 @@
+$fa-font-path: "../fonts";
+@import "font-awesome/scss/font-awesome";
+
 html, body, .container {
 	height: 100%;
 	margin: 0;
@@ -8,5 +11,82 @@ html, body, .container {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-family: monospace;
+	background-image: url(../img/background.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 32.5rem;
+	height: 35rem;
+	background-color: white;
+	border-radius: .25rem;
+}
+
+.card > .header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.header > hr {
+	flex-grow: 1;
+	margin-left: 0;
+	margin-right: 0;
+	color: #c8cccf;
+}
+
+.header > .avatar {
+	width: 7.5rem;
+	height: 7.5rem;
+	padding: 0 1.5rem 0 1.5rem;
+	border-radius: 100%;
+}
+
+.card > .content {
+	padding: .5rem 3rem 1.5rem 3rem;
+	font-family: "Source Sans Pro", sans-serif;
+	text-align: center;
+	color: #313f47;
+}
+
+.content > .title {
+	text-transform: uppercase;
+	font-size: 27.5pt;
+	font-weight: normal;
+	letter-spacing: .4rem;
+}
+
+.content > .subtitle {
+	text-transform: uppercase;
+	font-size: 14pt;
+	font-weight: normal;
+	letter-spacing: .25rem;
+}
+
+.footer > .icon {
+	transition: .25s ease all;
+	width: 4.25rem;
+	height: 4.25rem;
+	margin: 0 .75rem 0 .75rem;
+	border: 1px solid #c8cccf;
+	border-radius: 100%;
+	line-height: 4.25rem;
+	text-decoration: none;
+	text-align: center;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #c8cccf;
+	color: transparent;
+	font-size: 2rem;
+}
+
+.footer > .icon:hover {
+	transition: .25s ease all;
+	border: 1px solid #38514d;
+	-webkit-text-stroke-color: #38514d;
 }
