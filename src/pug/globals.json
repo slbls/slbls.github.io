@@ -4,14 +4,17 @@
 	"position": "Web Developer",
 	"links": [
 		{
+			"icon": "fa-envelope",
 			"href": "mailto:spencer@berenson.me",
 			"text": "Contact"
 		},
 		{
+			"icon": "fa-github",
 			"href": "https://www.github.com/spoonbytes",
 			"text": "GitHub"
 		},
 		{
+			"icon": "fa-twitter",
 			"href": "https://www.twitter.com/SpoonBytes",
 			"text": "Twitter"
 		}
