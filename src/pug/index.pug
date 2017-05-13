@@ -1,22 +1,24 @@
 extends templates/base.pug
 
 block head
-	link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300")
-
+	link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo|Didact+Gothic")
 block body
-	main.container
-		section.card
-			
-			.header
-				hr
-				img.avatar(src="img/me.jpg")
-				hr
-			
-			.content
-				h1.title= name
-				h2.subtitle= position
-			
-			.footer
+	main.viewport
+		section.half
+			h1.title= name
+			h2.subtitle= position
+		
+		aside.divider
+		
+		section.half
+			ul.projects
+				each project in projects
+					li.project
+						a(href=project.link target="_blank")
+							= project.name
+							if project.info
+								small= " - " + project.info
+
+			ul.links
 				each link in links
-					a.icon.fa(class=link.icon href=link.href target="_blank")
-						
+					li.link #[a(href=link.link target="_blank")= link.name]
