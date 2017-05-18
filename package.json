@@ -39,7 +39,9 @@
     "watch": "watch \"npm run build\" src",
     "predeploy": "npm run build",
     "deploy": "surge -p dist -d berenson.me",
-    "postdeploy": "npm run clean"
+    "postdeploy": "npm run clean",
+    "start": "pingy dev",
+    "export": "pingy export"
   },
   "author": "Spencer Berenson",
   "license": "MIT"
