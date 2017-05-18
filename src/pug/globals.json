@@ -9,6 +9,11 @@
 			"info": "(Pug, Bootstrap, Node.js, harponica, jQuery)"
 		},
 		{
+			"name": "UHSSE Editor",
+			"link": "https://github.com/UniversityHigh/editor",
+			"info": "(Bootstrap, VueJS, harponica, jQuery, Node.js, ES6)"
+		},
+		{
 			"name": "harponica",
 			"link": "https://github.com/UniversityHigh/harponica",
 			"info": "(Node.js, ExpressJS, Pug, ES6)"
