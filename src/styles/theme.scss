@@ -85,9 +85,28 @@ html, body {
 	font-family: "Didact Gothic";
 	text-transform: uppercase;
 	
+	a:before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		visibility: hidden;
+		transform: scaleX(0);
+		background-color: dimgray;
+		transition: all .3s ease-in-out 0s;
+	}
+
 	a {
+		position: relative;
 		color: inherit;
 		text-decoration: none;
+	}
+
+	a:hover:before {
+		visibility: visible;
+		transform: scaleX(1);
 	}
 
 	& ~ .link {
