@@ -65,7 +65,7 @@ html, body {
 		height: 1px;
 		visibility: hidden;
 		transform: scaleX(0);
-		background-color: black;
+		background-color: $main-blue;
 		transition: all .3s ease-in-out 0s;
 	}
 
