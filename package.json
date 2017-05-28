@@ -41,7 +41,7 @@
     "watch:styles": "watch \"npm run build:styles\" src/styles",
     "watch:fonts": "watch \"npm run build:fonts\" src/fonts",
     "watch:images": "watch \"npm run build:images\" src/images",
-    "watch": "npm-run-all watch:pug watch:scripts watch:styles watch:fonts watch:images -c -p",
+    "watch": "run-p -c watch:*",
     "predeploy": "npm run build",
     "deploy": "surge -p dist -d berenson.me",
     "postdeploy": "npm run clean"
