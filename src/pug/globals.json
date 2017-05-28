@@ -5,7 +5,7 @@
 	"projects": [
 		{
 			"name": "UHSSE",
-			"link": "https://github.com/UniversityHigh/universityhigh.github.io",
+			"link": "https://github.com/UniversityHigh/universityhigh.github.io/tree/src",
 			"info": "(Pug, Bootstrap, Node.js, harponica, jQuery)"
 		},
 		{
