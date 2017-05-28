@@ -2,7 +2,6 @@
   "name": "berenson.me",
   "version": "1.0.0",
   "description": "My personal/portfolio website.",
-  "main": "gulpfile.js",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
@@ -42,7 +41,7 @@
     "watch:styles": "watch \"npm run build:styles\" src/styles",
     "watch:fonts": "watch \"npm run build:fonts\" src/fonts",
     "watch:images": "watch \"npm run build:images\" src/images",
-    "watch": "npm-run-all -c -p watch:pug watch:scripts watch:styles watch:fonts watch:images --silent",
+    "watch": "npm-run-all watch:pug watch:scripts watch:styles watch:fonts watch:images -c -p",
     "predeploy": "npm run build",
     "deploy": "surge -p dist -d berenson.me",
     "postdeploy": "npm run clean"
