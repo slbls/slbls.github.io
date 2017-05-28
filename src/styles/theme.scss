@@ -63,12 +63,12 @@ html, body {
 
 	a:hover small {
 		transition: all ease-in .25s;
-		color: dimgray;
+		color: black;
 	}
 
 	small {
 		transition: all ease-out .25s;
-		color: lightgray;
+		color: dimgray;
 		font-size: 95%;
 	}
 }
@@ -131,6 +131,7 @@ html, body {
 @media (max-width: 795px) {
 	.viewport {
 		flex-direction: column;
+		align-items: flex-start;
 
 		.half {
 			padding: 1rem;
@@ -152,7 +153,7 @@ html, body {
 		}
 
 		.half:first-of-type {
-			font-size: 96%;
+			font-size: 86%;
 		}
 	}
 }
