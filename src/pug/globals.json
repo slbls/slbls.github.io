@@ -19,6 +19,11 @@
 			"info": "(Node.js, ExpressJS, Pug, ES6)"
 		},
 		{
+			"name": "swear-search",
+			"link": "https://github.com/SpoonBytes/swear-search",
+			"info": "(Node.js, Restify, Node.js, GitHub API v3)"
+		},
+		{
 			"name": "Webdown",
 			"link": "https://github.com/SpoonBytes/Webdown",
 			"info": "(BassCSS, Node.js, Electron, ES6)"
