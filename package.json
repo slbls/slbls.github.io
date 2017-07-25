@@ -5,10 +5,9 @@
   "scripts": {
     "build:clean": "rimraf dist",
     "build:pug": "pug src/pug/ --obj src/pug/globals.json --out dist/ && rimraf dist/templates",
-    "build:scripts": "mkdirp dist/scripts && rollup -c",
     "build:styles": "mkdirp dist/styles && node-sass src/styles --output-style compressed --include-path node_modules --include-path src/styles/partials --output dist/styles",
     "build:fonts": "mkdirp dist/fonts &&cpx \"src/fonts/*\" \"dist/fonts\"",
-    "build:images": "mkdirp dist/images && imagemin src/images/* --output dist/images",
+    "build:images": "mkdirp dist/images && imagemin src/images/*.* --out-dir dist/images",
     "prebuild": "npm run build:clean",
     "build": "run-p -c build:*",
     "watch:pug": "watch \"npm run build:pug\" src/pug",
