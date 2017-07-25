@@ -19,7 +19,7 @@
     "watch": "run-p -c watch:*",
     "predeploy": "npm run build",
     "deploy": "surge -p dist -d berenson.me",
-    "postdeploy": "npm run clean"
+    "postdeploy": "npm run build:clean"
   },
   "author": "Spencer Berenson",
   "license": "MIT",

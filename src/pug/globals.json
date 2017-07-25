@@ -36,7 +36,7 @@
 		{
 			"name": "berenson.me",
 			"link": "https://github.com/SpoonBytes/berenson.me",
-			"info": "(Node.js, SCSS, Pug, Surge.sh)"
+			"info": "(Node.js, SCSS, Pug, Rollup, Babel, Surge.sh)"
 		}
 	],
 	"links": [
