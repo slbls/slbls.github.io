@@ -42,15 +42,15 @@
 	"links": [
 		{
 			"link": "mailto:spencer@berenson.me",
-			"name": "Contact"
+			"icon": "fa-envelope"
 		},
 		{
 			"link": "https://www.github.com/spoonbytes",
-			"name": "GitHub"
+			"icon": "fa-github-alt"
 		},
 		{
 			"link": "https://www.twitter.com/spoonbytes",
-			"name": "Twitter"
+			"icon": "fa-twitter"
 		}
 	]
 }

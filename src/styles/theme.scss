@@ -1,5 +1,7 @@
 @import "normalize-scss/sass/normalize/import-now";
+@import "font-awesome/scss/font-awesome";
 
+$fa-font-path: "../fonts";
 $main-blue: #5d8aa8;
 
 html, body {
@@ -107,32 +109,14 @@ body {
 
 .link {
 	display: inline;
-	color: dimgray;
-	font-family: "Didact Gothic";
-	text-transform: uppercase;
-	
-	a:before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 1px;
-		visibility: hidden;
-		transform: scaleX(0);
-		background-color: dimgray;
-		transition: all .3s ease-in-out 0s;
-	}
 
 	a {
-		position: relative;
-		color: inherit;
-		text-decoration: none;
-	}
+		@extend .fa;
 
-	a:hover:before {
-		visibility: visible;
-		transform: scaleX(1);
+		position: relative;
+		color: $main-blue;
+		font-size: 1.7em;
+		text-decoration: none;
 	}
 
 	& ~ .link {
