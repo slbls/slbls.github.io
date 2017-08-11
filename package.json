@@ -6,11 +6,17 @@
     "clean": "shx rm -rf dist",
     "build:html": "shx cp *.html",
     "build:images": "shx cp -r src/images dist/images",
-    "build:fonts": "shx cp -r src/styles/fonts dist/styles/fonts",
-    "build:styles": "node-sass --includePaths src/styles/theme.css --output-style compressed --include-path node_modules | postcss --use autoprefixer > dist/styles/theme.bundle.css",
+    "build:fonts": "shx cp -r src/fonts dist/fonts",
+    "build:styles": "node-sass src/styles/theme.css --output-style compressed --include-path node_modules | postcss --use autoprefixer > dist/styles/theme.bundle.css",
     "build:scripts": "rollup -c",
     "prebuild": "npm run clean",
-    "build": "run-p -c build:*"
+    "build": "run-p -c build:*",
+    "watch:html": "watch \"npm run build:html\" *.html",
+    "watch:images": "watch \"npm run build:images\" src/images",
+    "watch:fonts": "watch \"npm run build:fonts\" src/fonts",
+    "watch:styles": "watch \"npm run build:styles\" src/styles/",
+    "watch:scripts": "watch \"npm run build:scripts\" src/scripts",
+    "watch": "run-p watch:*"
   },
   "author": "Spencer Berenson",
   "license": "MIT",
@@ -25,6 +31,7 @@
     "rollup-plugin-commonjs": "^8.1.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "shx": "^0.2.2"
+    "shx": "^0.2.2",
+    "watch": "^1.0.2"
   }
 }
