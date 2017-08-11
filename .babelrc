@@ -8,5 +8,6 @@
 		]
 	],
 	"plugins": ["external-helpers"],
+	"sourceMaps": true,
 	"ignore": "node_modules/**"
 }
