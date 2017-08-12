@@ -4,6 +4,7 @@ import { el, mount } from "redom";
 const feather = require("feather-icons");
 feather.replace();
 
+// TODO: Convert GPS to singleton pattern and replace all children modifications with RE:DOM's unmount/mount/setChildren using components.
 class GPS {
 	static el = el("main.gps");
 	
