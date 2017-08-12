@@ -28,14 +28,13 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(jpg|jpeg|png|ico)/,
+				test: /\.(jpg|jpeg|png|ico)$/,
 				use: [
 					{
 						loader: "file-loader",
 						options: {
 							name: "[name].[ext]",
-							outputPath: "images/",
-							publicPath: "images/"
+							outputPath: "images/"
 						}
 					}
 				]
@@ -47,8 +46,7 @@ module.exports = {
 						loader: "file-loader",
 						options: {
 							name: "[name].[ext]",
-							outputPath: "fonts/",
-							publicPath: "fonts/"
+							outputPath: "fonts/"
 						}
 					}
 				]
@@ -82,7 +80,7 @@ module.exports = {
 						loader: "babel-loader",
 						options: {
 							presets: ["env"],
-							plugins: ["transform-runtime"],
+							plugins: ["transform-runtime", "transform-class-properties"],
 							sourceMaps: true
 						}
 					}
