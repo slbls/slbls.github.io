@@ -24,6 +24,7 @@ body {
 			margin: 0;
 		}
 
+		// TODO: Convert separators into REDOM implementation wherein a separator element is added instead of simply a psuedo element styling.
 		&.separated:nth-of-type(odd):not(:last-of-type)::after {
 			display: flex;
 			justify-content: center;
