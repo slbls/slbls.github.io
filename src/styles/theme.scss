@@ -1,58 +1,70 @@
 @import "~normalize.css/normalize";
 
 html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+	font-family: sans-serif;
+}
+
+html, body {
 	height: 100%;
 }
 
-body {
-	overflow: hidden;
-	height: calc(100% - 3rem);
-}
+// TODO: Consolidate styles where applicable.
 
-.gps {
+%page {
 	display: flex;
-	height: 100%;
+	flex-direction: column;
+	min-height: 100%;
+	padding: .75rem;
 }
 
-.compass {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+.header {
+	@extend %page;
+	text-align: center;
 
-	.direction {
-		h1 {
-			margin: 0;
-		}
-
-		// TODO: Convert separators into REDOM implementation wherein a separator element is added instead of simply a psuedo element styling.
-		&.separated:nth-of-type(odd):not(:last-of-type)::after {
-			display: flex;
-			justify-content: center;
-			content: "—";
-			font-size: 2em;
-		}
+	.header-emoji {
+		margin-top: auto;
+		font-size: 5rem;
 	}
-}
 
-.footer {
-	position: fixed;
-	bottom: 0;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	height: 3rem;
-	border-top: 1px black solid;
-
-	.footer-title {
-		width: inherit;
+	.header-title {
 		margin: 0;
-		padding: 0 .75rem;
+		font-size: 3rem;
+	}
+
+	.header-subtitle {
+		margin: 0;
+		font-size: 2rem;
 		font-weight: normal;
 	}
 
-	.footer-icon {
-		padding: 0 .75rem;
-		text-decoration: none;
-		color: black;
+	.header-action {
+		margin: auto 0 .75rem 0;
+
+		a {
+			font-weight: bolder;
+		}
+	}
+}
+
+.section {
+	@extend %page;
+
+	.section-heading {
+		margin-bottom: 2.5rem;
+		text-align: center;
+
+		.section-emoji {
+			font-size: 3rem;
+		}
+	
+		.section-title {
+			margin: 0;
+			text-align: center;
+		}
 	}
 }
