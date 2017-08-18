@@ -91,7 +91,7 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin("dist"),
-		new ExtractTextPlugin("styles/theme.bundle.css"),
+		new ExtractTextPlugin("styles/[name].bundle.css"),
 		new HtmlWebpackPlugin({
 			template: "src/index.html"
 		}),
