@@ -13,58 +13,54 @@ html, body {
 	height: 100%;
 }
 
-// TODO: Consolidate styles where applicable.
-
-%page {
+.page {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	min-height: 100%;
 	padding: .75rem;
 }
 
-.header {
-	@extend %page;
-	text-align: center;
-
-	.header-emoji {
+.page-head {
+	&.title {
 		margin-top: auto;
-		font-size: 5rem;
+		font-size: 1.5rem;
 	}
 
-	.header-title {
+	&.heading {
+		font-size: 1.25rem;
+	}
+
+	h1, h2 {
 		margin: 0;
-		font-size: 3rem;
-	}
-
-	// .header-subtitle {
-	// 	margin: 0;
-	// 	font-size: 2rem;
-	// 	font-weight: normal;
-	// }
-
-	.header-action {
-		margin: auto 0 .75rem 0;
-
-		a {
-			font-weight: bolder;
-		}
 	}
 }
 
-.section {
-	@extend %page;
+.page-body {
+	margin-top: auto;
+	margin-bottom: auto;
+}
 
-	.section-heading {
-		margin-bottom: 2.5rem;
-		text-align: center;
+.page-foot {
+	.page-head + & {
+		margin-top: auto;
+	}
 
-		.section-emoji {
-			font-size: 3rem;
-		}
-	
-		.section-title {
-			margin: 0;
-			text-align: center;
-		}
+	a {
+		font-weight: bold;
+	}
+}
+
+.tag {
+	position: relative;
+	top: -.75em;
+	padding: .5em;
+	border-radius: 3px;
+	background-color: gray;
+	font-size: .35em;
+
+	&:not(:last-of-type) {
+		margin-right: .25em;
 	}
 }
