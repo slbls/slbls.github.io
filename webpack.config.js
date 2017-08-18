@@ -6,11 +6,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 	entry: {
-		"scripts/app": "./src/scripts/app"
+		app: "./src/scripts/app"
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: "[name].bundle.js"
+		filename: "scripts/[name].bundle.js"
 	},
 	devtool: "source-map",
 	module: {
@@ -69,7 +69,8 @@ module.exports = {
 							}
 						}
 					],
-					fallback: "style-loader"
+					fallback: "style-loader",
+					publicPath: "../"
 				})
 			},
 			{
