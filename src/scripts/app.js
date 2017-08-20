@@ -1,11 +1,20 @@
 import "../styles/theme.scss";
 
-function overflowStatus(element) {
-	const status = {};
-	if(element.offsetHeight < element.scrollHeight) status.height = true;
-	if(element.offsetWidth < element.scrollWidth) status.width = true;
+import feather from "feather-icons";
 
-	return Object.keys(status).length === 0 && status.constructor === Object ? false : status;
-}
+import { h, app } from "hyperapp";
+const Route = ({ icon, tooltip, route }) =>
+	<span class="route" data-route={route} data-tooltip={tooltip}
+		oncreate={element => {
+			element.innerHTML = feather.toSvg(icon, { class: "route-icon" });
+		}}
+		onclick={actions.route}
+	></span>
 
-// TODO: Determine system for ASCII layout generation.
+app({
+	view: () =>
+		<nav class="routes">
+			<Route icon="award" tooltip="Projects" route=""></Route>
+			<Route icon="info" tooltip="About" route=""></Route>
+		</nav>
+});

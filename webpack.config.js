@@ -81,7 +81,14 @@ module.exports = {
 						loader: "babel-loader",
 						options: {
 							presets: ["env"],
-							plugins: ["transform-runtime", "transform-class-properties"],
+							plugins: ["transform-runtime", "transform-class-properties",
+								[
+									"transform-react-jsx",
+									{
+										"pragma": "h"
+									}
+								]
+							],
 							sourceMaps: true
 						}
 					}
@@ -92,9 +99,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin("dist"),
 		new ExtractTextPlugin("styles/[name].bundle.css"),
-		new HtmlWebpackPlugin({
-			template: "src/index.html"
-		}),
+		new HtmlWebpackPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			sourceMap: true
 		})
