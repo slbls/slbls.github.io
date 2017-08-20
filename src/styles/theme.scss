@@ -12,3 +12,80 @@ html {
 html, body {
 	height: 100%;
 }
+
+%page {
+	height: inherit;
+}
+
+.routes {
+	@extend %page;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes pop {
+	0% {
+		transform: scale(0, 0);
+	}
+
+	75% {
+		transform: scale(1.1, 1.1);
+	}
+
+	100% {
+		visibility: visible;
+		transform: scale(1, 1);
+	}
+}
+
+$route-size: 3.5rem;
+
+.route {
+	transition: all .5s;
+	cursor: pointer;
+	visibility: hidden;
+	animation: pop .5s forwards;
+
+	&:not(:last-of-type) {
+		margin-right: 3rem;
+	}
+
+	&:nth-of-type(2) {
+		animation-delay: .25s;
+	}
+
+	&:hover > .route-icon {
+		transition: all .5s;
+		transform: scale(1.1, 1.1);
+	}
+
+	&:before {
+		transition: all .5s;
+		content: attr(data-tooltip);
+		position: absolute;
+		top: $route-size;
+		transform: translateY(.5rem);
+		visibility: hidden;
+		opacity: 0;
+		width: $route-size;
+		padding: .5rem 0;
+		text-align: center;
+	}
+
+	&:hover:before {
+		transition: all .5s;
+		top: $route-size;
+		transform: translateY(0rem);
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.route-icon {
+	transition: all .5s;
+	
+	transform: scale(1, 1);
+	width: $route-size;
+	height: $route-size;
+}
