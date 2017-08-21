@@ -1,4 +1,11 @@
 @import "~normalize.css/normalize";
+@import url(https://fonts.googleapis.com/css?family=Heebo:400,700);
+@import url(https://fonts.googleapis.com/css?family=Questrial);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+$heebo: Heebo, sans-serif;
+$questrial: Questrial, sans-serif;
+$roboto: Roboto, sans-serif;
 
 html {
 	box-sizing: border-box;
@@ -13,79 +20,132 @@ html, body {
 	height: 100%;
 }
 
-%page {
-	height: inherit;
-}
+$page-margin: .75rem;
+$page-color: white;
+$border-width: 4px;
+$border-color: black;
 
-.routes {
-	@extend %page;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+.border {
+	position: fixed;
+	z-index: 1000;
+	background-color: $page-color;
 
-@keyframes pop {
-	0% {
-		transform: scale(0, 0);
+	// Top and bottom borders.
+	&:nth-of-type(odd) {
+		width: 100vw;
+		height: calc(#{$page-margin} + #{$border-width});
+
+		&::after {
+			content: "";
+			position: fixed;
+			left: $page-margin;
+			width: calc(100% - #{$page-margin} * 2);
+			height: $border-width;
+			background-color: $border-color;
+		}
 	}
 
-	75% {
-		transform: scale(1.1, 1.1);
+	// Right and left borders.
+	&:nth-of-type(even) {
+		width: calc(#{$page-margin} + #{$border-width});
+		height: 100vh;
+
+		&::after {
+			content: "";
+			position: fixed;
+			top: $page-margin;
+			width: $border-width;
+			height: calc(100% - #{$page-margin} * 2);
+			background-color: $border-color;
+		}
+	}
+
+	// Top border.
+	&:nth-of-type(1) {
+		top: 0;
+
+		&::after {
+			top: $page-margin;
+		}
+	}
+
+	// Right border.
+	&:nth-of-type(2) {
+		right: 0;
+
+		&::after {
+			right: $page-margin;
+		}
+	}
+
+	// Bottom border.
+	&:nth-of-type(3) {
+		bottom: 0;
+
+		&::after {
+			bottom: $page-margin;
+		}
+	}
+
+	// Left border.
+	&:nth-of-type(4) {
+		left: 0;
+
+		&::after {
+			left: $page-margin;
+		}
+	}
+}
+
+%page {
+	height: 100%;
+	padding: calc(1.5rem + #{$page-margin}) calc(1rem + #{$page-margin}); 
+}
+
+@keyframes slide {
+	0% {
+		transform: translateY(-1rem);
 	}
 
 	100% {
 		visibility: visible;
-		transform: scale(1, 1);
-	}
-}
-
-$route-size: 3.5rem;
-
-.route {
-	transition: all .5s;
-	cursor: pointer;
-	visibility: hidden;
-	animation: pop .5s forwards;
-
-	&:not(:last-of-type) {
-		margin-right: 3rem;
-	}
-
-	&:nth-of-type(2) {
-		animation-delay: .25s;
-	}
-
-	&:hover > .route-icon {
-		transition: all .5s;
-		transform: scale(1.1, 1.1);
-	}
-
-	&:before {
-		transition: all .5s;
-		content: attr(data-tooltip);
-		position: absolute;
-		top: $route-size;
-		transform: translateY(.5rem);
-		visibility: hidden;
-		opacity: 0;
-		width: $route-size;
-		padding: .5rem 0;
-		text-align: center;
-	}
-
-	&:hover:before {
-		transition: all .5s;
-		top: $route-size;
-		transform: translateY(0rem);
-		visibility: visible;
 		opacity: 1;
+		transform: scaleY(1rem);
 	}
 }
 
-.route-icon {
-	transition: all .5s;
+%slide {
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(0);
+	animation: slide 1.5s forwards;
+}
+
+.landing {
+	@extend %page;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.landing-head {
+		position: sticky;
+		top: 1.5rem;
+		margin-bottom: 1.5rem;
 	
-	transform: scale(1, 1);
-	width: $route-size;
-	height: $route-size;
+		.landing-title {
+			@extend %slide;
+			margin: 0;
+			font-family: $heebo;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	
+		.landing-subtitle {
+			@extend %slide;
+			animation-delay: .1s;
+			font-family: $questrial;
+			font-size: 1.05rem;
+		}
+	}
 }
