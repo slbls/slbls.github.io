@@ -99,7 +99,9 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin("dist"),
 		new ExtractTextPlugin("styles/[name].bundle.css"),
-		new HtmlWebpackPlugin(),
+		new HtmlWebpackPlugin({
+			template: "src/index.html"
+		}),
 		new webpack.optimize.UglifyJsPlugin({
 			sourceMap: true
 		})
