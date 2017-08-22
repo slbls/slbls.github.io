@@ -127,25 +127,64 @@ $border-color: black;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
 
-	.landing-head {
-		position: sticky;
-		top: 1.5rem;
-		margin-bottom: 1.5rem;
-	
-		.landing-title {
-			@extend %slide;
-			margin: 0;
-			font-family: $heebo;
-			font-weight: 700;
-			text-transform: uppercase;
-		}
-	
-		.landing-subtitle {
-			@extend %slide;
-			animation-delay: .1s;
-			font-family: $questrial;
-			font-size: 1.05rem;
-		}
+.landing-title {
+	@extend %slide;
+	margin: 0;
+	font-family: $heebo;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.landing-subtitle {
+	@extend %slide;
+	animation-delay: .1s;
+	font-family: $questrial;
+}
+
+.showcase {
+	@extend %page;
+}
+
+.showcase-title{
+	margin: 0 0 $page-margin 0;
+	font-family: $heebo;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.showcase-grid {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.showcase-item {
+	text-align: right;
+
+	&:not(:first-of-type()) {
+		margin-top: $page-margin;
+	}
+
+	&:not(:last-of-type()) {
+		margin-bottom: $page-margin;
+	}
+
+	.name {
+		font-family: $questrial;
+	}
+
+	.description {
+		margin: 2.5em 0;
+		font-family: $roboto;
+		font-size: .95em;
+	}
+
+	.tag {
+		border: 2px solid gray;
+		padding: 2px 3px;
+		font-family: $roboto;
+		font-size: .8em;
 	}
 }
