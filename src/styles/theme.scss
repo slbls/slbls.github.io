@@ -1,11 +1,11 @@
 @import "~normalize.css/normalize";
-@import url(https://fonts.googleapis.com/css?family=Heebo:400,700);
+@import url(https://fonts.googleapis.com/css?family=Heebo:700);
 @import url(https://fonts.googleapis.com/css?family=Questrial);
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/css?family=Rubik);
 
-$heebo: Heebo, sans-serif;
-$questrial: Questrial, sans-serif;
-$roboto: Roboto, sans-serif;
+$primary-font: Heebo, sans-serif;
+$secondary-font: Questrial, sans-serif;
+$tertiary-font: Rubik, sans-serif;
 
 html {
 	box-sizing: border-box;
@@ -132,7 +132,7 @@ $border-color: black;
 .landing-title {
 	@extend %slide;
 	margin: 0;
-	font-family: $heebo;
+	font-family: $primary-font;
 	font-weight: 700;
 	text-transform: uppercase;
 }
@@ -140,7 +140,7 @@ $border-color: black;
 .landing-subtitle {
 	@extend %slide;
 	animation-delay: .1s;
-	font-family: $questrial;
+	font-family: $secondary-font;
 }
 
 .showcase {
@@ -149,7 +149,7 @@ $border-color: black;
 
 .showcase-title{
 	margin: 0 0 $page-margin 0;
-	font-family: $heebo;
+	font-family: $primary-font;
 	font-weight: 700;
 	text-transform: uppercase;
 }
@@ -172,19 +172,19 @@ $border-color: black;
 	}
 
 	.name {
-		font-family: $questrial;
+		font-family: $secondary-font;
 	}
 
 	.description {
 		margin: 2.5em 0;
-		font-family: $roboto;
-		font-size: .95em;
+		font-family: $tertiary-font;
+		font-size: .9rem;
 	}
 
 	.tag {
 		border: 2px solid gray;
 		padding: 2px 3px;
-		font-family: $roboto;
+		font-family: $tertiary-font;
 		font-size: .8em;
 	}
 }
