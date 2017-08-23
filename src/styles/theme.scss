@@ -121,6 +121,13 @@ $border-color: black;
 	animation: slide 1.5s forwards;
 }
 
+.tag {
+	border: .15em solid gray;
+	padding: .15em .2em;
+	font-family: $secondary-font;
+	font-weight: bold;
+}
+
 .landing {
 	@extend %page;
 
@@ -140,14 +147,14 @@ $border-color: black;
 .landing-subtitle {
 	@extend %slide;
 	animation-delay: .1s;
-	font-family: $secondary-font;
+	margin: .5em 0 0 0;
 }
 
 .showcase {
 	@extend %page;
 }
 
-.showcase-title{
+.showcase-title {
 	margin: 0 0 $page-margin 0;
 	font-family: $primary-font;
 	font-weight: 700;
@@ -182,9 +189,7 @@ $border-color: black;
 	}
 
 	.tag {
-		border: 2px solid gray;
-		padding: 2px 3px;
-		font-family: $tertiary-font;
+		@extend .tag;
 		font-size: .8em;
 	}
 }
