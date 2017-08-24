@@ -5,7 +5,7 @@
   "scripts": {
     "test": "webpack-dev-server",
     "start": "webpack",
-    "publish": "surge dist"
+    "publish": "npm run start && surge dist berenson.me"
   },
   "author": "Spencer Berenson",
   "license": "MIT",
