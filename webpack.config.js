@@ -58,7 +58,11 @@ module.exports = {
 						{
 							loader: "css-loader",
 							options: {
-								minimize: true,
+								minimize: {
+									discardComments: {
+										removeAll: true
+									}
+								},
 								sourceMap: true
 							}
 						},
