@@ -12,6 +12,7 @@
 	.landing-title {
 		@extend %slide;
 		@extend %title;
+		font-size: 2.5em;
 		color: invert($color);
 	}
 
@@ -31,6 +32,8 @@
 	justify-content: center;
 
 	.showcase {
+		margin: 1em 0;
+
 		.showcase-description {
 			margin: 2.25em 0;
 			font-size: .9em;

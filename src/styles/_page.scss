@@ -80,6 +80,7 @@
 .page {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	min-height: 100%;
 	padding: calc(1.5rem + #{$page-margin}) calc(1rem + #{$page-margin});
 
