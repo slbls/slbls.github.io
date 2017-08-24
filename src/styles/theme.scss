@@ -12,6 +12,7 @@
 	.landing-title {
 		@extend %slide;
 		@extend %title;
+		color: invert($color);
 	}
 
 	h2 {
