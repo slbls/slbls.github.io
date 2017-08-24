@@ -1,7 +1,7 @@
 .border {
 	position: fixed;
 	z-index: 1000;
-	background-color: $primary-color;
+	background-color: $color;
 
 	// Top and bottom borders.
 	&:nth-of-type(odd) {
@@ -14,7 +14,7 @@
 			left: $page-margin;
 			width: calc(100% - #{$page-margin} * 2);
 			height: $border-width;
-			background-color: $secondary-color;
+			background-color: invert($color);
 		}
 	}
 
@@ -29,7 +29,7 @@
 			top: $page-margin;
 			width: $border-width;
 			height: calc(100% - #{$page-margin} * 2);
-			background-color: $secondary-color;
+			background-color: invert($color);
 		}
 	}
 
@@ -106,38 +106,38 @@
 	}
 
 	&:nth-of-type(odd) {
-		background-color: $primary-color;
+		background-color: $color;
 
 		.page-header{
-			background-color: $secondary-color;
-			color: $primary-color;
+			background-color: invert($color);
+			color: $color;
 		}
 
 		.page-body {
-			color: $secondary-color;
+			color: invert($color);
 		}
 
 		.tag {
-			background-color: $secondary-color;
-			color: $primary-color;
+			background-color: invert($color);
+			color: $color;
 		}
 	}
 
 	&:nth-of-type(even) {
-		background-color: $secondary-color;
+		background-color: invert($color);
 
 		.page-header{
-			background-color: $primary-color;
-			color: $secondary-color;
+			background-color: $color;
+			color: invert($color);
 		}
 
 		.page-body {
-			color: $primary-color;
+			color: $color;
 		}
 
 		.tag {
-			background-color: $primary-color;
-			color: $secondary-color;
+			background-color: $color;
+			color: invert($color);
 		}
 	}
 }
