@@ -1,0 +1,28 @@
+@import "~normalize.css/normalize";
+@import url(https://fonts.googleapis.com/css?family=Heebo:700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600);
+
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+	font-family: sans-serif;
+}
+
+html, body {
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+$page-margin: .75rem;
+$primary-color: white;
+$secondary-color: black;
+$border-width: 4px;
+
+$primary-font: Heebo, sans-serif;
+$secondary-font: Montserrat, sans-serif;

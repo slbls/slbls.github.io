@@ -1,0 +1,143 @@
+.border {
+	position: fixed;
+	z-index: 1000;
+	background-color: $primary-color;
+
+	// Top and bottom borders.
+	&:nth-of-type(odd) {
+		width: 100vw;
+		height: calc(#{$page-margin} + #{$border-width});
+
+		&::after {
+			content: "";
+			position: fixed;
+			left: $page-margin;
+			width: calc(100% - #{$page-margin} * 2);
+			height: $border-width;
+			background-color: $secondary-color;
+		}
+	}
+
+	// Right and left borders.
+	&:nth-of-type(even) {
+		width: calc(#{$page-margin} + #{$border-width});
+		height: 100vh;
+
+		&::after {
+			content: "";
+			position: fixed;
+			top: $page-margin;
+			width: $border-width;
+			height: calc(100% - #{$page-margin} * 2);
+			background-color: $secondary-color;
+		}
+	}
+
+	// Top border.
+	&:nth-of-type(1) {
+		top: 0;
+
+		&::after {
+			top: $page-margin;
+		}
+	}
+
+	// Right border.
+	&:nth-of-type(2) {
+		right: 0;
+
+		&::after {
+			right: $page-margin;
+		}
+	}
+
+	// Bottom border.
+	&:nth-of-type(3) {
+		bottom: 0;
+
+		&::after {
+			bottom: $page-margin;
+		}
+	}
+
+	// Left border.
+	&:nth-of-type(4) {
+		left: 0;
+
+		&::after {
+			left: $page-margin;
+		}
+	}
+}
+
+
+%title {
+	font-family: $primary-font;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	padding: calc(1.5rem + #{$page-margin}) calc(1rem + #{$page-margin});
+
+	.page-header {
+		@extend %title;
+		align-self: flex-start;
+		padding: .05em .15em;
+		margin-bottom: 2rem;
+	}
+
+	.page-body {
+		font-family: $secondary-font;
+	
+		*, *::before, *::after {
+			font-family: inherit;
+		}
+	}
+
+	.tag {
+		padding: .175em .2em;
+		font-family: $secondary-font;
+		font-size: .8em;
+		font-weight: 500;
+	}
+
+	&:nth-of-type(odd) {
+		background-color: $primary-color;
+
+		.page-header{
+			background-color: $secondary-color;
+			color: $primary-color;
+		}
+
+		.page-body {
+			color: $secondary-color;
+		}
+
+		.tag {
+			background-color: $secondary-color;
+			color: $primary-color;
+		}
+	}
+
+	&:nth-of-type(even) {
+		background-color: $secondary-color;
+
+		.page-header{
+			background-color: $primary-color;
+			color: $secondary-color;
+		}
+
+		.page-body {
+			color: $primary-color;
+		}
+
+		.tag {
+			background-color: $primary-color;
+			color: $secondary-color;
+		}
+	}
+}
