@@ -100,6 +100,8 @@
 	}
 
 	.tag {
+		display: inline-block;
+		margin: .1em 0;
 		padding: .175em .2em;
 		font-family: $secondary-font;
 		font-size: .8em;
