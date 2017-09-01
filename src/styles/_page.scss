@@ -82,7 +82,7 @@
 	flex-direction: column;
 	justify-content: center;
 	min-height: 100%;
-	padding: calc(1.5rem + #{$page-margin}) calc(1rem + #{$page-margin});
+	padding: calc(2rem + #{$page-margin}) calc(1rem + #{$page-margin}) calc(2rem + #{$page-margin}) calc(1.75rem + #{$page-margin});
 
 	.page-header {
 		@extend %title;
