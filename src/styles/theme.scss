@@ -4,7 +4,7 @@
 	display: none;
 	flex-direction: column;
 	justify-content: center;
-	height: calc(100vh - #{$navbar-height});
+	min-height: calc(100vh - #{$navbar-height});
 	margin-bottom: $navbar-height;
 	padding: 2em 1.75em 0;
 	
