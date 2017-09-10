@@ -1,45 +1,20 @@
 @import "~normalize.css/normalize";
-@import "~breakpoint-sass/stylesheets/breakpoint";
-@import url(https://fonts.googleapis.com/css?family=Heebo:700);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
 
-$mobile: 576px;
-$tablet: 768px;
-$desktop: 992px;
-$widescreen: 1200px;
+$color: #0a0a0a;
+$body-font: "Courier New", monospace;
+$navbar-font: "Montserrat", sans-serif;
+$navbar-height: 5em;
 
 html {
 	box-sizing: border-box;
+}
 
-	@include breakpoint($tablet) {
-		font-size: 150%;
-	}
-
-	@include breakpoint($desktop) {
-		font-size: 200%;
-	}
-
-	@include breakpoint($widescreen) {
-		font-size: 125%;
-	}
+body {
+	background-color: $color;
+	font-size: calc(.625em + 1vmin);
 }
 
 *, *::before, *::after {
 	box-sizing: inherit;
-	font-family: sans-serif;
 }
-
-html, body {
-	height: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-}
-
-$page-margin: .75em;
-$color: whitesmoke;
-$border-width: 4px;
-
-$primary-font: Heebo, sans-serif;
-$secondary-font: Montserrat, sans-serif;

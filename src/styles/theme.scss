@@ -1,54 +1,87 @@
-
 @import "./reset";
-@import "./page";
-@import "./animations";
 
-.landing {
-	display: flex;
+// TODO: Clean up.
+
+.page {
+	display: none;
 	flex-direction: column;
 	justify-content: center;
+	
+	height: calc(100vh - #{$navbar-height});
+	margin-bottom: $navbar-height;
+	padding: 2em 1.75em 0;
+	
+	color: invert($color);
+	font-family: $body-font;
+}
 
-	.landing-title {
-		@extend %slide;
-		@extend %title;
-		font-size: 2.5em;
-		color: invert($color);
-	}
+.page--active {
+	display: flex;
+}
 
-	h2 {
-		@extend %slide;
-		animation-delay: .1s;
+.section {
+	margin: 0;
 
-		.tag {
-			padding: .175em .4em;
-			font-size: .65em;
-		}
+	&:not(:last-of-type) {
+		margin-bottom: 2em;
 	}
 }
 
-.showcase-grid {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.section__header {
+	margin: 0 0 .25em;
+	font-size: inherit;
+}
 
-	.showcase {
-		margin: 1.25em 0;
+.section__content {
+	margin: 0 0 .5em;
+	line-height: 1.5;
+}
 
-		.showcase-description {
-			margin: 1.25em 0;
-			font-size: .9em;
-		}
+.section__link {
+	color: inherit;
+
+	&:not(:last-of-type) {
+		margin-right: .25em;
 	}
 }
 
-.bio {
-	line-height: 1.25;
+.section__notes {
+	line-height: 1.5;
+}
 
-	.bio-description {
-		margin-bottom: 2.5em;
-	}
+.navbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	width: 100%;
+	height: $navbar-height;
+}
 
-	.bio-set:not(:last-of-type()) {
-		margin-bottom: 1.25em;
-	}
+.navbar__item {
+	display: flex;
+	justify-content: center;
+	margin: 0 .5em;
+	padding: .15em .3em;
+	
+	cursor: pointer;
+
+	text-transform: uppercase;
+	color: invert($color);
+	font-family: $navbar-font;
+	font-size: 1.25em;
+}
+
+.navbar__item--active {
+	background-color: invert($color);
+	color: $color;
+}
+
+.navbar__link {
+	text-decoration: none;
+	color: inherit;
 }
