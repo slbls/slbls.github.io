@@ -85,7 +85,10 @@ module.exports = {
 						loader: "babel-loader",
 						options: {
 							presets: ["env"],
-							plugins: ["transform-runtime", "transform-class-properties"],
+							plugins: [
+								"transform-runtime", 
+								"transform-class-properties"
+							],
 							sourceMaps: true
 						}
 					}
