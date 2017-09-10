@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.25.0",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "viewport-units-buggyfill": "^0.6.2"
   }
 }
