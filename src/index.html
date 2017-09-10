@@ -7,85 +7,60 @@
 		<title>Spencer Berenson</title>
 	</head>
 	<body>
-		<aside class="border"></aside>
-		<aside class="border"></aside>
-		<aside class="border"></aside>
-		<aside class="border"></aside>
+		<article id="about" class="page page--active">
+			<section class="section">
+				<h2 class="section__header">Name</h2>
+				<p class="section__content">Spencer Berenson</p>
+			</section>
 
-		<section class="page landing">
-			<h1 class="landing-title">Spencer Berenson</h1>
-			<h2>
-				<span class="tag">Developer</span>
-				<span class="tag">Designer</span>
-				<span class="tag">Geek</span>
-			</h2>
-		</section>
+			<section class="section">
+				<h2 class="section__header">Bio</h2>
+				<p class="section__content">I am a front-end developer and designer. I strive to create intuitive and simple web experiences.</p>
+			</section>
 
-		<section class="page">
-			<h1 class="page-header">Work</h1>
+			<section class="section">
+				<h2 class="section__header">Skills</h2>
+				<p class="section__content">HTML & Pug, CSS & SCSS, JavaScript & ES6, Python</p>
+			</section>
 
-			<div class="page-body showcase-grid">
-				<div class="showcase">
-					<h3>UHSSE</h3>
-					<p class="showcase-description">Redesign of my high school's website.</p>
-					<p>
-						<span class="tag">Pug</span>
-						<span class="tag">Bootstrap</span>
-						<span class="tag">Node.js</span>
-					</p>
-				</div>
+			<section class="section">
+				<h2 class="section__header">Technologies</h2>
+				<p class="section__content">Git, Node.js, Webpack</p>
+			</section>
 
-				<div class="showcase">
-					<h3>harponica</h3>
-					<p class="showcase-description">Barebones, Pug compatible web-server.</p>
-					<p>
-						<span class="tag">Express</span>
-						<span class="tag">Pug</span>
-						<span class="tag">ES6</span>
-						<span class="tag">Node.js</span>
-					</p>
-				</div>
+			<section class="section">
+				<h2 class="section__header">Links</h2>
+				<p class="section__content">
+					<a href="mailto:spencer@berenson.me" class="section__link">Email</a>
+					<a href="https://github.com/spoonbytes" class="section__link">GitHub</a>
+					<a href="https://twitter.com/spoonbytes" class="section__link">Twitter</a>
+				</p>
+			</section>
+		</article>
 
-				<div class="showcase">
-					<h3>swear-search</h3>
-					<p class="showcase-description">GitHub crawler to correlate programming languages and obscenities.</p>
-					<p>
-						<span class="tag">Restify</span>
-						<span class="tag">GitHub API v3</span>
-						<span class="tag">Node.js</span>
-					</p>
-				</div>
-			</div>
-		</section>
+		<article id="work" class="page">
+			<section class="section">
+				<h2 class="section__header">UHSSE</h2>
+				<p class="section__content">Redesign of my high school’s website.</p>
+				<i class="section__notes">Pug, Bootstrap, Node.js</i>
+			</section>
 
-		<section class="page">
-			<h1 class="page-header">About</h1>
+			<section class="section">
+				<h2 class="section__header">harponica</h2>
+				<p class="section__content">Barebones, Pug compatible web server.</p>
+				<i class="section__notes">Express, Pug, ES6, Node.js</i>
+			</section>
 
-			<div class="page-body bio">
-				<p class="bio-description">My name is Spencer. I am a front-end developer and designer. I strive to create intuitive, simple web experiences.</p>
-				
-				<div class="bio-set">
-					<h3>Core Skills</h3>
-					<span class="tag">HTML & Pug</span>
-					<span class="tag">CSS & SCSS</span>
-					<span class="tag">Javascript & ES6</span>
-					<span class="tag">Python</span>
-				</div>
+			<section class="section">
+				<h2 class="section__header">swear-search</h2>
+				<p class="section__content">GitHub crawler to correlate programming languages and obscenities.</p>
+				<i class="section__notes">Express, Pug, ES6, Node.js</i>
+			</section>
+		</article>
 
-				<div class="bio-set">
-					<h3>Technologies</h3>
-					<span class="tag">Git</span>
-					<span class="tag">Node.js</span>
-					<span class="tag">Webpack</span>
-				</div>
-
-				<div class="bio-set">
-					<h3>Links</h3>
-					<a class="tag" href="mailto:spencerberenson@gmail.com">Email</a>
-					<a class="tag" href="https://github.com/spoonbytes">GitHub</a>
-					<a class="tag" href="https://twitter.com/spoonbytes">Twitter</a>
-				</div>
-			</div>
-		</section>
+		<nav class="navbar">
+			<h1 class="navbar__item navbar__item--active"><a class="navbar__link" href="javascript:void(0);" data-route="about">About</a></h1>
+			<h1 class="navbar__item"><a class="navbar__link" href="javascript:void(0);" data-route="work">Work</a></h1>
+		</nav>
 	</body>
 </html>
