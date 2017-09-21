@@ -1,25 +1,34 @@
 import "../styles/theme.scss";
 
-// I was looking to use the least amount of JavaScript as possible, but unfortunately
-// viewport units are very buggy in Safari and do not properly represent what they should.
-// Simply setting the HTML height to 100%, the body min-height to 100%, and inheriting from that
-// did not work either as apparently it too has issues and bugs of its own. As a result I
-// am left to use JavaScript to fix the annoying inconsistencies that make the Web the Web.
-require("viewport-units-buggyfill").init();
+const rangy = require("rangy");
+const striptags = require("striptags");
 
-const navbarItems = document.getElementsByClassName("navbar__item");
-for(let i = 0; i < navbarItems.length; i++) {
-	navbarItems[i].addEventListener("click", event => {
-		const clicked = event.currentTarget;
-		for(let item of navbarItems) {
-			if(item.childNodes[0].dataset.route === clicked.childNodes[0].dataset.route) clicked.classList.add("navbar__item--active");
-			else item.classList.remove("navbar__item--active");
-		}
+const promptPrefix = document.getElementById("promptPrefix");
+const prompt = document.getElementById("prompt");
+const caret = document.getElementById("promptCaret");
 
-		const pages = document.getElementsByClassName("page");
-		for(let page of pages) {
-			if(page.id === clicked.childNodes[0].dataset.route) page.classList.add("page--active");
-			else page.classList.remove("page--active");
-		}
-	});
-};
+const Text = {
+	getWidth(text, font) {
+		const canvas = Text.canvas || (Text.canvas = document.createElement("canvas"));
+		const context = canvas.getContext("2d");
+		context.font = font;
+		return Math.ceil(context.measureText(text).width);
+	},
+
+	getFont(element) {
+		const style = window.getComputedStyle(element);
+		return `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+	}
+}
+
+promptPrefix.addEventListener("click", event => prompt.focus());
+
+prompt.addEventListener("input", event => {
+	const bookmark = rangy.getSelection().getBookmark(prompt);
+	prompt.innerHTML = striptags(prompt.innerHTML);
+	rangy.getSelection().moveToBookmark(bookmark);
+
+	const coordinates = window.getSelection().getRangeAt(0).getBoundingClientRect();
+	console.log(Text.getWidth(prompt.innerHTML.slice(-1), Text.getFont(prompt)));
+	caret.style.left = (coordinates.left - Text.getWidth(promptCaret.textContent, Text.getFont(prompt))) + "px";
+});

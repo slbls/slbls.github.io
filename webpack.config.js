@@ -1,5 +1,5 @@
 const path = require("path");
-const webpack = require("webpack");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -86,7 +86,7 @@ module.exports = {
 						options: {
 							presets: ["env"],
 							plugins: [
-								"transform-runtime", 
+								"transform-runtime",
 								"transform-class-properties"
 							],
 							sourceMaps: true
@@ -102,8 +102,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "src/index.html"
 		}),
-		new webpack.optimize.UglifyJsPlugin({
-			sourceMap: true
+		new MinifyPlugin({}, 
+		{
+			comments: false
 		})
 	]
 };

@@ -1,83 +1,52 @@
 @import "./reset";
 
-.page {
-	display: none;
-	flex-direction: column;
-	justify-content: center;
-	min-height: calc(100vh - #{$navbar-height});
-	margin-bottom: $navbar-height;
-	padding: 2em 1.75em 0;
-	
-	color: invert($color);
-	font-family: $body-font;
-}
-
-.page--active {
-	display: flex;
-}
-
-.section {
-	margin: 0;
-
-	&:not(:last-of-type) {
-		margin-bottom: 2em;
-	}
-}
-
-.section__header {
-	margin: 0 0 .25em;
-	font-size: inherit;
-}
-
-.section__content {
-	margin: 0 0 .5em;
-	line-height: 1.5;
-}
-
-.section__link {
-	color: inherit;
-
-	&:not(:last-of-type) {
-		margin-right: .25em;
-	}
-}
-
-.section__notes {
-	line-height: 1.5;
-}
-
-.navbar {
+.prompt {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	
+
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 100%;
-	height: $navbar-height;
+	padding: 0 .5em;
+
+	font-weight: bold;
 }
 
-.navbar__item {
-	display: flex;
-	justify-content: center;
-	margin: 0 .5em;
-	padding: .15em .3em;
-	
+.prompt__prefix {
+	padding-right: .5em;
 	cursor: pointer;
-
-	text-transform: uppercase;
-	color: invert($color);
-	font-family: $navbar-font;
-	font-size: 1.25em;
+	user-select: none
 }
 
-.navbar__item--active {
-	background-color: invert($color);
-	color: $color;
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
 
-.navbar__link {
-	text-decoration: none;
-	color: inherit;
+.prompt__input {
+	flex: 1;
+	display: block;
+	outline: none;
+	
+	white-space: nowrap;
+	color: transparent;
+	text-shadow: 0 0 0 lime;
+}
+
+.prompt__caret {
+	position: absolute;
+
+	display: inline-block;
+	animation: blink 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
 }
