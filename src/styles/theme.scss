@@ -33,7 +33,8 @@ body {
 }
 
 header, main, footer {
-	width: 30em;
+	max-width: 30em;
+	min-width: 20em;
 	padding: 0 1.25em;
 }
 
