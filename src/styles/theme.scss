@@ -1,52 +1,114 @@
 @import "./reset";
+@import url(https://fonts.googleapis.com/css?family=Cabin);
 
-.prompt {
+$background-color: whitesmoke;
+$text-color: invert($background-color);
+$accent-color: #0000b3;
+
+::-webkit-scrollbar {
+	background-color: transparent;
+	width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $accent-color;
+}
+
+::selection {
+	background-color: $accent-color;
+	color: $background-color;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+	background-color: $background-color;
+	text-align: center;
+	color: $text-color;
+	font-family: Cabin, sans-serif;
+	font-size: calc(.625em + 1vmin);
+}
+
+header, main, footer {
+	width: 30em;
+	padding: 0 1.25em;
+}
+
+.emoji {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	margin: 0;
+	padding-top: 6em;
+	padding-bottom: 4em;
+
+	img {
+		pointer-events: none;
+		user-select: none;
+		outline: none;
+		width: 3em;
+	}
+}
+
+.banner {
+	cursor: vertical-text;
+
 	position: fixed;
 	bottom: 0;
 	left: 0;
 
+	display: none;
+
+	transform: translateY(100%) rotate(-90deg);
+	transform-origin: top left;
+	width: 100vh;
+	margin: 0;
+	padding: 1.25em;
+
+	font-size: 1em;
+	font-weight: normal;
+}
+
+@media (min-width: 1008px) {
+	.banner {
+		display: block;
+	}
+}
+
+section p {
+	line-height: 1.5;
+	font-size: 1em;
+}
+
+section a {
+	border-bottom: 2px solid $text-color;
+	color: inherit;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		border-bottom: 2px solid $accent-color;
+		color: $accent-color;
+	}
+}
+
+.social {
 	display: flex;
-	width: 100%;
-	padding: 0 .5em;
-
-	font-weight: bold;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;	
 }
 
-.prompt__prefix {
-	padding-right: .5em;
-	cursor: pointer;
-	user-select: none
-}
-
-@keyframes blink {
-	0% {
-		opacity: 0;
-	}
-
-	50% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-	}
-}
-
-.prompt__input {
+.social__site {
 	flex: 1;
-	display: block;
-	outline: none;
-	
-	white-space: nowrap;
-	color: transparent;
-	text-shadow: 0 0 0 lime;
-}
 
-.prompt__caret {
-	position: absolute;
-
-	display: inline-block;
-	animation: blink 1s;
-	animation-fill-mode: forwards;
-	animation-iteration-count: infinite;
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
 }

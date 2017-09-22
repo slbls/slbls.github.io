@@ -4,14 +4,6 @@ html {
 	box-sizing: border-box;
 }
 
-body {
-	background-color: black;
-
-	color: lime;
-	font-family: "Courier New", monospace;
-	font-size: calc(.625em + 1vmin);
-}
-
 *, *::before, *::after {
 	box-sizing: inherit;
 }
