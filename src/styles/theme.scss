@@ -34,8 +34,11 @@ body {
 
 header, main, footer {
 	max-width: 30em;
-	min-width: 20em;
 	padding: 0 1.25em;
+}
+
+footer {
+	min-width: 20em;
 }
 
 .emoji {
