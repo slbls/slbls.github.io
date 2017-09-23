@@ -48,11 +48,7 @@
 }
 
 .important-link {
-	border-bottom: 2px solid $text-color;
-
-	&:hover, &:focus {
-		border-bottom: 2px solid $accent-color;
-	}
+	border-bottom: 2px solid $accent-color;
 }
 
 .social {
