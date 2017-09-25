@@ -1,7 +1,7 @@
 import "../styles/theme.scss";
 
 const fire = require("../images/fire.png");
-const thinking = require("../images/thinking.png");
+
 
 // Set the name of the hidden property and the change event for visibility
 let hidden, visibilityChange; 
@@ -29,10 +29,30 @@ function changeFavicon(href) {
 	documentHead.appendChild(favicon);
 }
 
+const pleas = [
+	{
+		favicon: require("../images/thinking.png"),
+		plea: "Where'd you go?"
+	},
+	{
+		favicon: require("../images/crying.png"),
+		plea: "Don't leave me!"
+	},
+	{
+		favicon: require("../images/cookie.png"),
+		plea: "I have cookies!"
+	},
+	{
+		favicon: require("../images/clock.png"),
+		plea: "Time to come back!"
+	}
+]
+
 document.addEventListener(visibilityChange, event => {
 	if(document[hidden]) {
-		changeFavicon(thinking);
-		document.title = "Where'd you go?"
+		const plea = pleas[Math.floor(Math.random() * pleas.length)];
+		changeFavicon(plea.favicon);
+		document.title = plea.plea;
 	} else {
 		changeFavicon(fire);
 		document.title = "Spencer Berenson";
