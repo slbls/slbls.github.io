@@ -1,8 +1,8 @@
 @import "~normalize.css/normalize";
 
 $background-color: whitesmoke;
-$text-color: invert($background-color);
-$accent-color: #0000b3;
+$text-color: #222;
+$accent-color: #53FABA;
 
 html {
 	box-sizing: border-box;
@@ -31,8 +31,8 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	
 	background-color: $background-color;
+	
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
