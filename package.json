@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "My personal/portfolio website.",
   "scripts": {
-    "test": "webpack-dev-server",
-    "start": "webpack",
+    "test": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack --config webpack.prod.js",
     "deploy": "npm run start && firebase deploy"
   },
   "author": "Spencer Berenson",

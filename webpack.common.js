@@ -1,8 +1,7 @@
-const path = require("path");
-const MinifyPlugin = require("babel-minify-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require("path"),
+CleanWebpackPlugin = require("clean-webpack-plugin"),
+HtmlWebpackPlugin = require("html-webpack-plugin"),
+ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 	entry: {
@@ -12,18 +11,13 @@ module.exports = {
 		path: path.resolve(__dirname, "dist"),
 		filename: "scripts/[name].bundle.js"
 	},
-	devtool: "source-map",
 	module: {
 		rules: [
 			{
 				test: /\.html$/,
 				use: [
 					{
-						loader: "html-loader",
-						options: {
-							minimize: true,
-							conservativeCollapse: false
-						}
+						loader: "html-loader"
 					}
 				]
 			},
@@ -40,7 +34,7 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(otf|ttf)$/,
+				test: /\.(woff2?)$/,
 				use: [
 					{
 						loader: "file-loader",
@@ -56,27 +50,13 @@ module.exports = {
 				use: ExtractTextPlugin.extract({
 					use: [
 						{
-							loader: "css-loader",
-							options: {
-								minimize: {
-									discardComments: {
-										removeAll: true
-									}
-								},
-								sourceMap: true
-							}
+							loader: "css-loader"
 						},
 						{
-							loader: "postcss-loader",
-							options: {
-								sourceMap: true
-							}
+							loader: "postcss-loader"
 						},
 						{
-							loader: "sass-loader",
-							options: {
-								sourceMap: true
-							}
+							loader: "sass-loader"
 						}
 					],
 					fallback: "style-loader",
@@ -94,8 +74,7 @@ module.exports = {
 							plugins: [
 								"transform-runtime",
 								"transform-class-properties"
-							],
-							sourceMaps: true
+							]
 						}
 					}
 				]
@@ -107,10 +86,6 @@ module.exports = {
 		new ExtractTextPlugin("styles/[name].bundle.css"),
 		new HtmlWebpackPlugin({
 			template: "src/index.html"
-		}),
-		new MinifyPlugin({}, 
-		{
-			comments: false
 		})
 	]
 };
