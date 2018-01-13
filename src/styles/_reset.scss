@@ -1,6 +1,6 @@
 @import "~normalize.css/normalize";
 @import url(//cdn.jsdelivr.net/npm/hack-font/build/web/hack.css);
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Heebo:300,400);
 
 $gray: #222;
 $white: whitesmoke;
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-	background-color: $gray;
+	background-color: $white;
 	
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	text-rendering: optimizeLegibility !important;
