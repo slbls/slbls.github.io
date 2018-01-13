@@ -34,7 +34,7 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(woff2?)$/,
+				test: /\.(eot|woff|woff2)$/,
 				use: [
 					{
 						loader: "file-loader",
@@ -50,7 +50,8 @@ module.exports = {
 				use: ExtractTextPlugin.extract({
 					use: [
 						{
-							loader: "css-loader"
+							loader: "css-loader",
+							options: { minimize: "true" }
 						},
 						{
 							loader: "postcss-loader"
