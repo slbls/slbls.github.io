@@ -127,6 +127,7 @@
 	background-repeat: no-repeat !important;
 }
 
+// TODO: If a gradient is the direction the design takes, convert color values to variables and use SCSS mixins for lightening, etc.
 .project--uhsse {
 	background: linear-gradient(rgba(221, 97, 74, .75), rgba(247, 123, 100, .75)), url("../images/uhsse.jpg");
 }
