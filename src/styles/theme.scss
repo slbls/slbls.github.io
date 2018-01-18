@@ -108,40 +108,112 @@
 	height: auto;
 }
 
-// TODO: Make text and project card colors more aesthetically pleasing.
-		// Consider adding one white box around the text section.
-		// Another option is a white card with a colored box around text.
-		// Highlighting text with a background color and see-through text color could also work.
-
 .project {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 55%;
-	min-height: 30em;
-	margin-left: auto;
-	padding: 7.5%;
-	// box-shadow: 0 0 1.5em $gray;
-	background-position: center center !important;
-	background-size: cover !important;
-	background-repeat: no-repeat !important;
+	position: relative;
+	min-height: 12.5em;
+
+	&:not(:last-of-type) {
+		margin-bottom: 2.5em;
+	}
+
+	&::before {
+		transition: .25s all;
+
+		content: "";
+		filter: gray; // Support for IE
+		filter: grayscale(1); // Support for modern browsers
+	
+		position: absolute;
+		z-index: -1;
+		
+		opacity: .75;
+		width: 100%;
+		height: 100%;
+
+		background-position: center center !important;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;
+	}
+
+	&:hover::before {
+		transition: .25s all;
+		filter: none;
+	}
 }
 
-// TODO: If a gradient is the direction the design takes, convert color values to variables and use SCSS mixins for lightening, etc.
-.project--uhsse {
-	background: linear-gradient(rgba(221, 97, 74, .75), rgba(247, 123, 100, .75)), url("../images/uhsse.jpg");
-}
-
-.project__name {
+.project__name, .project__description {
+	position: absolute;
+	top: 50%;
+	
 	margin: 0;
-	margin-bottom: 2em;
-
-	text-align: center;
-	font-size: 1.2em;
 	font-weight: 500;
 }
 
-.project__description {
-	line-height: 1.5;
+.project__name {
+	transition: .25s all;
+	
+	left: 25%;
+	transform: translate(-50%, -50%);
+
 	text-align: center;
+	font-size: 1.25em;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: 50%;
+		
+		transform: translate(-50%, -50%);
+
+		width: 150%;
+		height: 225%;
+		background-color: $white;
+	}
+
+	@extend %underline;
 }
+
+.project__description {
+	left: 52.5%;
+	transform: translateY(-50%);
+	line-height: 1.5;
+}
+
+@mixin project-modifier($name, $image, $accent) {
+	.project--#{$name} {
+		&::before {
+			transition: .25s all;
+			background: url($image);
+		}
+
+		&:hover::before {
+			transition: .25s all;
+			opacity: 1;
+			background: url($image);
+		}
+	}
+
+	.project__name--#{$name} {
+		&:hover {
+			transition: .25s all;
+			color: $accent;
+		}
+
+		&::after {
+			background-color: $accent;
+		}
+	}
+
+	.project__description--#{$name} mark {
+		background-color: $accent;
+		color: $white;
+
+		@include selection($white, $accent);
+	}
+}
+
+@include project-modifier("uhsse", "../images/uhsse.jpg", $red);
+@include project-modifier("quotecord", "../images/discord.png", $purple);
+@include project-modifier("swear-search", "../images/swears.png", $blue);
