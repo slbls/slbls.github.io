@@ -1,37 +1,146 @@
 @import "./reset";
 
-.glitch {
-	text-align: center;
-	text-shadow: 2px 0px 0px $green, -2px 0px 0px $purple;
-	font-family: Hack, monospace;
-	color: $white;
+%underline {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -.25em;
+		left: 0;
+
+		width: 100%;
+		height: .05em;
+		background-color: currentColor;
+	}
 }
 
-.banner {
+@mixin selection($background, $color) {
+	&::selection {
+		background-color: $background;
+		color: $color;
+	}
+}
+
+.introduction {
+	padding-bottom: 7.5em;
+}
+
+.introduction__banner {
+	display: flex;
+	padding-bottom: 7.5em;
+	font-size: .8em;
+}
+
+.introduction__title {
+	margin: 0;
+	font-size: 1em;
+	font-weight: normal;
+
+	@extend %underline;
+	@include selection($gray, $white);
+}
+
+.introduction__contact {
+	margin-left: auto;
+	text-decoration: none;
+	color: inherit;
+
+	@extend %underline;
+	@include selection($gray, $white);
+
+	&::after {
+		opacity: 0;
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
+}
+
+.introduction__lure {
+	display: flex;
+	align-items: center;
+	padding: 0 
+}
+
+.introduction__greeting {
+	margin: 0;
+
+	line-height: 1.75;
+	font-size: 1.25em;
+	font-weight: 500;
+
+	@include selection($gray, $white);
+}
+
+.introduction__referral {
+	position: relative;
+	
+	margin-left: 12.5em;
+	flex-basis: 25%;
+
+	// The filter property is capable of tinting an image much more concisely and intuitively,
+	// however IE does not support the spec.
+	&::after {
+		content: "";
+		transition: .25s all;
+
+		position: absolute;
+		left: 0;
+		
+		width: 100%;
+		height: 100%;
+
+		background-color: rgba(245, 245, 245, 0.65);
+	}
+
+	&:hover::after {
+		transition: .25s all;
+		background-color: transparent;
+	}
+}
+
+.introduction__image {
+	user-select: none;
+
+	max-width: 100%;
+	height: auto;
+}
+
+// TODO: Make text and project card colors more aesthetically pleasing.
+		// Consider adding one white box around the text section.
+		// Another option is a white card with a colored box around text.
+		// Highlighting text with a background color and see-through text color could also work.
+
+.project {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 30vh;
-	padding: 3em 0 3em 0;
-	background-color: $gray;
-
-	color: $white;
+	width: 55%;
+	min-height: 30em;
+	margin-left: auto;
+	padding: 7.5%;
+	// box-shadow: 0 0 1.5em $gray;
+	background-position: center center !important;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
 }
 
-.banner__name {
-	margin: 0;
-	text-transform: lowercase;
-	font-size: 2.15em;
+.project--uhsse {
+	background: linear-gradient(rgba(221, 97, 74, .75), rgba(247, 123, 100, .75)), url("../images/uhsse.jpg");
 }
 
-.banner__phrase {	
+.project__name {
 	margin: 0;
-	margin-top: 1em;
+	margin-bottom: 2em;
 
-	text-transform: uppercase;
 	text-align: center;
-	font-family: Heebo, sans-serif;
-	font-size: 1em;
-	font-weight: 300;
-	letter-spacing: .045em;
+	font-size: 1.2em;
+	font-weight: 500;
+}
+
+.project__description {
+	line-height: 1.5;
+	text-align: center;
 }
