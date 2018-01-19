@@ -23,7 +23,7 @@
 }
 
 .introduction {
-	padding-bottom: 7.5em;
+	margin-bottom: 7.5em;
 }
 
 .introduction__banner {
@@ -218,3 +218,11 @@
 @include project-modifier("uhsse", "../images/uhsse.jpg", $red);
 @include project-modifier("quotecord", "../images/discord.png", $purple);
 @include project-modifier("swear-search", "../images/swears.png", $blue);
+
+.copyright {
+	margin-top: 10em;
+
+	text-align: right;
+	font-size: .75em;
+	color: lighten($gray, 50);
+}
