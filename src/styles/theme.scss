@@ -109,7 +109,7 @@
 	position: relative;
 	display: inline-block;
 	flex-basis: 25%;
-	margin-right: 15%;
+	margin-right: 2.75%;
 	margin-left: auto;
 
 	// The filter property is capable of tinting an image much more concisely and intuitively,
@@ -294,9 +294,9 @@
 	}
 }
 
-@media (min-width: $tablet) {
+@media (min-width: $widescreen) {
 	.introduction__referral {
-		margin-right: 2.75%;
+		margin-right: 15%;
 	}
 }
 
