@@ -237,6 +237,10 @@
 		&::after {
 			background-color: $accent;
 		}
+
+		a {
+			@include selection($gray, $accent);
+		}
 	}
 
 	.project__description--#{$name} mark {
