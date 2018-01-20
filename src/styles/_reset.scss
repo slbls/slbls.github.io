@@ -22,7 +22,13 @@
 			url("../fonts/Inter-UI-Regular.woff2") format("woff2");
 }
 
+@mixin width-vmax($scalar) {
+	width: calc(#{$scalar} * (1vw + 1vh - 1vmin)); // Support for vmax units in IE
+	width: $scalar * 1vmax;
+}
+
 $mobile: 768px;
+$tablet: 769px;
 $desktop: 1024px;
 $widescreen: 1216px;
 $fullhd: 1408px;
@@ -44,7 +50,12 @@ html {
 }
 
 body {
-	padding: 25vh 25vw;
+	position: relative;
+	left: 50%;
+
+	@include width-vmax(65);
+	transform: translate(-50%, 15%);
+
 	background-color: $white;
 	
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);

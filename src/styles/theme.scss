@@ -294,14 +294,14 @@
 	}
 }
 
-@media (max-width: $desktop) {
+@media (min-width: $tablet) {
 	.introduction__referral {
-		display: none;
+		margin-right: 2.75%;
 	}
 }
 
-@media (max-width: $fullhd) {
-	.introduction__referral {
-		margin-right: 5%;
+@media (min-width: $fullhd) {
+	body {
+		width: 50em;
 	}
 }
