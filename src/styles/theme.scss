@@ -22,6 +22,36 @@
 	}
 }
 
+// Fallback for browsers older than IE 10.
+.ie {
+	position: relative;
+	
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: $white;
+
+	color: $gray;
+
+	&::before {
+		content: "This website does not support Internet Explorer versions earlier than 10. Please upgrade your browser.";
+		position: absolute;
+		top: 50%;
+
+		width: inherit;
+		height: inherit;
+		padding: 0 5em;
+
+		text-align: center;
+		font-family: "Inter UI", sans-serif;
+		font-weight: 500;
+	}
+
+	> * {
+		display: none;
+	}
+}
+
 .introduction {
 	margin-bottom: 7.5em;
 }
@@ -42,6 +72,7 @@
 }
 
 .introduction__contact {
+	display: inline-block;
 	margin-left: auto;
 	text-decoration: none;
 	color: inherit;
@@ -77,6 +108,7 @@
 .introduction__referral {
 	position: relative;
 	
+	display: inline-block;
 	margin-left: 12.5em;
 	flex-basis: 25%;
 
@@ -127,7 +159,7 @@
 		position: absolute;
 		z-index: -1;
 		
-		opacity: .75;
+		opacity: .65;
 		width: 100%;
 		height: 100%;
 
