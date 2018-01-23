@@ -22,12 +22,12 @@ header {
 	h1 {
 		user-select: none;
 
-		box-shadow: inset 0px 0px 0px 4px black;
+		box-shadow: inset 0px 0px 0px 2px #222;
 		margin: 0;
 		padding: 1.35em 1em;
 
-		&:hover, &:active, &:focus {
-			box-shadow: inset 0px 0px 0px 8px black;
+		&:hover, &:focus {
+			box-shadow: inset 0px 0px 0px 8px #222;
 		}
 	}
 
@@ -68,7 +68,7 @@ a {
 	text-decoration: none;
 	color: blue;
 
-	&:hover, &:active, &:focus {
+	&:hover, &:focus {
 		background-color: yellow;
 		color: currentColor;
 	}
