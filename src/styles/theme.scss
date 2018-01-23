@@ -1,24 +1,76 @@
 @import "./reset";
 
-%underline {
+header {
 	position: relative;
+	left: 50%;
 
-	&::after {
-		content: "";
-		position: absolute;
-		bottom: -.25em;
-		left: 0;
+	transform: translateX(-50%);
 
-		width: 100%;
-		height: .05em;
-		background-color: currentColor;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 45vh;
+
+	text-transform: uppercase;
+	font-size: .8em;
+
+	h1, h2 {
+		margin: 0;
+		font-weight: normal;
+	}
+
+	h1 {
+		user-select: none;
+
+		box-shadow: inset 0px 0px 0px 4px black;
+		margin: 0;
+		padding: 1.35em 1em;
+
+		&:hover {
+			box-shadow: inset 0px 0px 0px 8px black;
+		}
+	}
+
+	h2 {
+		margin-top: .75em;
+		font-size: 1.25em;
+		letter-spacing: .025em;
 	}
 }
 
-@mixin selection($background, $color) {
-	&::selection {
-		background-color: $background;
-		color: $color;
+main {
+	position: relative;
+	left: 50%;
+	
+	transform: translateX(-50%);
+	
+	width: calc(45 * (1vw + 1vh - 1vmin)); // Support for vmax units in IE
+	width: 45vmax;
+
+	line-height: 2;
+
+	h1 {
+		font-size: 1em;
+	}
+
+	section:not(:last-of-type) {
+		margin-bottom: 10em;
+	}
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	outline: none;
+	text-decoration: none;
+	color: blue;
+
+	&:hover, &:focus {
+		background-color: yellow;
+		color: currentColor;
 	}
 }
 
@@ -29,12 +81,9 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background-color: $white;
-
-	color: $gray;
 
 	&::before {
-		content: "This website does not support Internet Explorer versions earlier than 10. Please upgrade your browser.";
+		content: "This website (and Microsoft) does not support Internet Explorer versions earlier than 10. Please upgrade your browser.";
 		position: absolute;
 		top: 50%;
 
@@ -43,266 +92,11 @@
 		padding: 0 5em;
 
 		text-align: center;
-		font-family: "Inter UI", sans-serif;
-		font-weight: 500;
+		font-family: "Hack", sans-serif;
+		font-weight: 400;
 	}
 
 	> * {
 		display: none;
-	}
-}
-
-.introduction {
-	margin-bottom: 7.5em;
-}
-
-.introduction__banner {
-	display: flex;
-	margin-bottom: 7.5em;
-	font-size: .8em;
-}
-
-.introduction__title {
-	margin: 0;
-	font-size: 1em;
-	font-weight: normal;
-
-	@extend %underline;
-	@include selection($gray, $white);
-}
-
-.introduction__contact {
-	display: inline-block;
-	margin-left: auto;
-	text-decoration: none;
-	color: inherit;
-
-	@extend %underline;
-	@include selection($gray, $white);
-
-	&::after {
-		opacity: 0;
-	}
-
-	&:hover::after {
-		opacity: 1;
-	}
-}
-
-.introduction__lure {
-	display: flex;
-	align-items: center;
-	padding: 0;
-}
-
-.introduction__greeting {
-	margin: 0;
-
-	line-height: 1.75;
-	font-size: 1.25em;
-	font-weight: 500;
-
-	@include selection($gray, $white);
-}
-
-.introduction__referral {
-	position: relative;
-	display: inline-block;
-	flex-basis: 25%;
-	margin-right: 2.75%;
-	margin-left: auto;
-
-	// The filter property is capable of tinting an image much more concisely and intuitively,
-	// however IE does not support the spec.
-	&::after {
-		content: "";
-		transition: .25s all;
-
-		position: absolute;
-		top: 0;
-		left: 0;
-		
-		width: 100%;
-		height: 100%;
-
-		background-color: rgba(245, 245, 245, 0.65);
-	}
-
-	&:hover::after {
-		transition: .25s all;
-		background-color: transparent;
-	}
-}
-
-.introduction__image {
-	user-select: none;
-
-	max-width: 100%;
-	height: auto;
-}
-
-.project {
-	position: relative;
-	min-height: 12.5em;
-
-	&:not(:last-of-type) {
-		margin-bottom: 2.5em;
-	}
-
-	&::before {
-		transition: .25s all;
-
-		content: "";
-		filter: gray; // Support for IE 9 and older
-		filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); // Support for Firefox 3.5+
-		filter: grayscale(1); // Support for modern browsers
-	
-		position: absolute;
-		z-index: -1;
-		
-		opacity: .65;
-		width: 100%;
-		height: 100%;
-
-		background-position: center center !important;
-		background-size: cover !important;
-		background-repeat: no-repeat !important;
-	}
-
-	&:hover::before {
-		transition: .25s all;
-		filter: none;
-	}
-}
-
-.project__name, .project__description {
-	position: absolute;
-	top: 50%;
-	
-	margin: 0;
-	font-weight: 500;
-}
-
-.project__name {
-	transition: .25s all;
-	
-	left: 25%;
-	transform: translate(-50%, -50%);
-
-	text-align: center;
-	font-size: 1.25em;
-
-	&::before {
-		content: "";
-		position: absolute;
-		z-index: -1;
-		top: 50%;
-		left: 50%;
-		
-		transform: translate(-50%, -50%);
-
-		width: 150%;
-		height: 225%;
-		background-color: $white;
-	}
-
-	@extend %underline;
-}
-
-.project__description {
-	left: 52.5%;
-	transform: translateY(-50%);
-	line-height: 1.5;
-}
-
-@mixin project-modifier($name, $image, $accent) {
-	.project--#{$name} {
-		&::before {
-			transition: .25s all;
-			background: url($image);
-		}
-
-		&:hover::before {
-			transition: .25s all;
-			opacity: 1;
-			background: url($image);
-		}
-	}
-
-	.project__name--#{$name} {
-		&:hover {
-			transition: .25s all;
-			color: $accent;
-		}
-
-		&::after {
-			background-color: $accent;
-		}
-
-		a {
-			@include selection($gray, $accent);
-		}
-	}
-
-	.project__description--#{$name} mark {
-		background-color: $accent;
-		color: $white;
-
-		@include selection($white, $accent);
-	}
-}
-
-@include project-modifier("uhsse", "../images/uhsse.jpg", $red);
-@include project-modifier("quotecord", "../images/discord.png", $purple);
-@include project-modifier("swear-search", "../images/swears.png", $blue);
-
-.copyright {
-	margin-top: 10em;
-
-	text-align: right;
-	font-size: .75em;
-	color: lighten($gray, 50);
-}
-
-@media (max-width: $mobile) {
-	html {
-		position: relative;
-	
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		background-color: $white;
-
-		color: $gray;
-
-		&::before {
-			content: "A new mobile design is coming soon.";
-			position: absolute;
-			top: 50%;
-
-			width: inherit;
-			height: inherit;
-			padding: 0 5em;
-
-			text-align: center;
-			font-family: "Inter UI", sans-serif;
-			font-weight: 500;
-		}
-
-		> * {
-			display: none;
-		}
-	}
-}
-
-@media (min-width: $widescreen) {
-	.introduction__referral {
-		margin-right: 15%;
-	}
-}
-
-@media (min-width: $fullhd) {
-	body {
-		width: 50em;
 	}
 }
