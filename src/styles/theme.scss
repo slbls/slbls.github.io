@@ -1,5 +1,9 @@
 @import "./reset";
 
+// TODO: Move section headers to left of content on tablet+ sized devices.
+	// Add hover tool-tip to <i> tag with job description.
+	// Investigate triggering header border resizing on mobile click.
+
 header {
 	position: relative;
 	left: 50%;
