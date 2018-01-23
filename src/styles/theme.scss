@@ -26,7 +26,7 @@ header {
 		margin: 0;
 		padding: 1.35em 1em;
 
-		&:hover {
+		&:hover, &:focus {
 			box-shadow: inset 0px 0px 0px 8px black;
 		}
 	}
