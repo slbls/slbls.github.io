@@ -29,3 +29,14 @@ body {
 	font-size: calc(.45em + 1vmin);
 	color: #222;
 }
+
+a {
+	outline: none;
+	text-decoration: none;
+	color: blue;
+
+	&:hover, &:focus {
+		background-color: yellow;
+		color: currentColor;
+	}
+}

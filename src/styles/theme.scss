@@ -4,7 +4,12 @@
 	// Add hover tool-tip to <i> tag with job description.
 	// Investigate triggering header border resizing on mobile click.
 
-header {
+@mixin width-vmax($scalar) {
+	width: calc(#{$scalar} * (1vw + 1vh - 1vmin)); // Support for vmax units in IE
+	width: $scalar * 1vmax;
+}
+
+.banner {
 	position: relative;
 	left: 50%;
 
@@ -17,65 +22,57 @@ header {
 
 	text-transform: uppercase;
 	font-size: .8em;
+}
 
-	h1, h2 {
-		margin: 0;
-		font-weight: normal;
-	}
+.banner__name, .banner__branding {
+	margin: 0;
+	font-weight: normal;
+}
 
-	h1 {
-		user-select: none;
+.banner__name {
+	user-select: none;
 
-		box-shadow: inset 0px 0px 0px 2px #222;
-		margin: 0;
-		padding: 1.35em 1em;
+	box-shadow: inset 0px 0px 0px 2px #222;
+	margin: 0;
+	padding: 1.35em 1em;
 
-		&:hover, &:focus {
-			box-shadow: inset 0px 0px 0px 10px #222;
-		}
-	}
-
-	h2 {
-		margin-top: .75em;
-		font-size: 1.25em;
-		letter-spacing: .025em;
+	&:hover, &:focus {
+		box-shadow: inset 0px 0px 0px 10px #222;
 	}
 }
 
-main {
+.banner__branding {
+	margin-top: .75em;
+	font-size: 1.25em;
+	letter-spacing: .025em;
+}
+
+.topics {
 	position: relative;
 	left: 50%;
 	
 	transform: translateX(-50%);
 	
-	width: calc(45 * (1vw + 1vh - 1vmin)); // Support for vmax units in IE
-	width: 45vmax;
+	@include width-vmax(45);
 
 	line-height: 2;
+}
 
-	h1 {
-		font-size: 1em;
+.topic {
+	padding: 5em 0;
+
+	&:first-of-type {
+		padding-top: 0;
 	}
 
-	section:not(:last-of-type) {
-		margin-bottom: 10em;
+	ul {
+		padding: 0;
+		list-style: none;
 	}
 }
 
-ul {
-	padding: 0;
-	list-style: none;
-}
-
-a {
-	outline: none;
-	text-decoration: none;
-	color: blue;
-
-	&:hover, &:focus {
-		background-color: yellow;
-		color: currentColor;
-	}
+.topic__name {
+	font-size: 1em;
 }
 
 // Fallback for browsers older than IE 10.
@@ -102,5 +99,33 @@ a {
 
 	> * {
 		display: none;
+	}
+}
+
+@media (min-width: $tablet) {
+	.topics {
+		@include width-vmax(55);
+	}
+
+	.topic {
+		display: flex;
+	}
+
+	.topic__name, .topic__content p:first-of-type, .topic__content ul:first-of-type {
+		margin-top: 0;
+	}
+
+	.topic__name {
+		flex: 1;
+	}
+
+	.topic__content {
+		flex: 4;
+	}
+}
+
+@media (min-width: $desktop) {
+	.topics {
+		font-size: .9em;
 	}
 }
