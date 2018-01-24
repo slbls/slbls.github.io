@@ -7,6 +7,8 @@ $desktop: 1024px;
 $widescreen: 1216px;
 $fullhd: 1408px;
 
+$black: #222;
+
 html {
 	box-sizing: border-box;
 }
@@ -27,7 +29,7 @@ body {
 	font-kerning: auto;
 	font-family: "Hack", monospace;
 	font-size: calc(.45em + 1vmin);
-	color: #222;
+	color: $black;
 }
 
 a {
@@ -35,7 +37,7 @@ a {
 	text-decoration: none;
 	color: blue;
 
-	&:hover, &:focus {
+	&:hover, &:active, &:focus {
 		background-color: yellow;
 		color: currentColor;
 	}
