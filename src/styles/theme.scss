@@ -63,7 +63,7 @@
 	letter-spacing: .025em;
 
 	&::after {
-		content: "▁";
+		content: "█";
 		position: absolute;
 		animation: caret 1s ease;
 		animation-iteration-count: infinite;
