@@ -32,19 +32,42 @@
 .banner__name {
 	user-select: none;
 
-	box-shadow: inset 0px 0px 0px 2px #222;
+	box-shadow: inset 0px 0px 0px 2px $black;
 	margin: 0;
 	padding: 1.35em 1em;
 
-	&:hover, &:focus {
-		box-shadow: inset 0px 0px 0px 10px #222;
+	&:hover, &:active, &:focus {
+		box-shadow: inset 0px 0px 0px 10px $black;
+	}
+}
+
+@keyframes caret {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }
 
 .banner__branding {
+	position: relative;
 	margin-top: .75em;
+
 	font-size: 1.25em;
 	letter-spacing: .025em;
+
+	&::after {
+		content: "▁";
+		position: absolute;
+		animation: caret 1s ease;
+		animation-iteration-count: infinite;
+	}
 }
 
 .topics {
