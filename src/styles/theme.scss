@@ -136,7 +136,7 @@
 		display: flex;
 	}
 
-	.topic__name, .topic__content p:first-of-type, .topic__content ul:first-of-type {
+	.topic__name, .topic__content > :first-child {
 		margin-top: 0;
 	}
 
