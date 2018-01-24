@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My personal/portfolio website.",
   "scripts": {
-    "test": "webpack-dev-server --host 192.168.254.36 --config webpack.dev.js",
+    "test": "webpack-dev-server --host 0.0.0.0 --config webpack.dev.js",
     "start": "webpack --config webpack.prod.js",
     "deploy": "npm start && firebase deploy"
   },
