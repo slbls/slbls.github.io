@@ -1,5 +1,18 @@
 @import "~normalize.css/normalize";
-@import url(//cdn.jsdelivr.net/npm/hack-font/build/web/hack.css);
+
+@font-face {
+	font-family: "Hack";
+	font-weight: 700;
+	src: url("../fonts/hack-bold.woff") format("woff"),
+			url("../fonts/hack-bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Hack";
+	font-weight: 400;
+	src: url("../fonts/hack-regular.woff") format("woff"),
+			url("../fonts/hack-regular.woff2") format("woff2");
+}
 
 $mobile: 768px;
 $tablet: 769px;
