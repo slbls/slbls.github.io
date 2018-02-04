@@ -1,17 +1,32 @@
 @import "~normalize.css/normalize";
 
 @font-face {
-	font-family: "Hack";
-	font-weight: 700;
-	src: url("../fonts/hack-bold.woff") format("woff"),
-			url("../fonts/hack-bold.woff2") format("woff2");
+	font-family: "Iosevka";
+	font-weight: 900;
+	src: url("../fonts/iosevka-heavy.woff") format("woff"),
+			url("../fonts/iosevka-heavy.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: "Hack";
+	font-family: "Iosevka";
 	font-weight: 400;
-	src: url("../fonts/hack-regular.woff") format("woff"),
-			url("../fonts/hack-regular.woff2") format("woff2");
+	src: url("../fonts/iosevka-regular.woff") format("woff"),
+			url("../fonts/iosevka-regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Iosevka";
+	font-weight: 300;
+	src: url("../fonts/iosevka-light.woff") format("woff"),
+			url("../fonts/iosevka-light.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Iosevka";
+	font-weight: 300;
+	font-style: italic;
+	src: url("../fonts/iosevka-lightitalic.woff") format("woff"),
+			url("../fonts/iosevka-lightitalic.woff2") format("woff2");
 }
 
 $mobile: 768px;
@@ -20,7 +35,9 @@ $desktop: 1024px;
 $widescreen: 1216px;
 $fullhd: 1408px;
 
-$black: #333;
+$black: #222;
+$gray: #d8d8d8;
+$white: whitesmoke;
 
 html {
 	box-sizing: border-box;
@@ -31,27 +48,28 @@ html {
 }
 
 ::selection {
-	background-color: yellow;
+	background-color: black;
+	color: $white;
 }
 
 body {
+	position: absolute;
+	top: 27.5%;
+	left: 50%;
+
+	transform: translateX(-50%);
+
+	width: 85%;
+	background-color: $white;
+
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 	-moz-osx-font-smoothing: grayscale;
+	
 	font-kerning: auto;
-	font-family: "Hack", monospace;
-	font-size: calc(.45em + 1vmin);
+	font-family: "Iosevka", monospace;
+	font-size: calc(.625em + 1vmin);
+	
 	color: $black;
-}
-
-a {
-	outline: none;
-	text-decoration: none;
-	color: blue;
-
-	&:hover, &:active, &:focus {
-		background-color: yellow;
-		color: currentColor;
-	}
 }
