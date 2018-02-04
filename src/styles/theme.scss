@@ -7,70 +7,76 @@
 	}
 }
 
-.banner__name, .banner__branding {
-	margin: 0;
-}
+.banner {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
 
-.banner__name {
-	margin-bottom: .35em;
-
-	font-size: 5.75vmax;
 	font-weight: 900;
 }
 
-.banner__branding {
-	margin-bottom: 2em;
-	font-size: 1em;
-	font-weight: 300;
+.banner__name {
+	margin: 0;
+
+	&::selection, ::selection {
+		text-shadow: 5px 5px 0px $gray;
+	}
+}
+
+/* IE10+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.banner__name {
+		&::selection, ::selection {
+			background-color: $gray;
+		}
+	}
+}
+
+.banner__name {
+	text-transform: uppercase;
+	font-size: 7em;
+}
+
+.banner__last-name {
+	padding-left: .75em;
 }
 
 .bio {
-	font-weight: 300;
+	max-width: 33.25em;
+	margin-top: 3.5em;
 }
 
 .bio__about {
-	margin-bottom: 3.5em;
-
+	margin: 0;
+	margin-bottom: 3em;
 	line-height: 1.75;
-	font-size: .75em;
+	font-size: .8em;
+	font-weight: 200;
+
+	&::selection, ::selection {
+		background-color: $gray;
+	}
 }
 
-.bio__link {
+.bio__action {
 	transition: .25s all ease;
 
-	padding: .65em 2em;
+	padding: .5em 1.5em;
 	background-color: $black;
 
 	text-transform: uppercase;
 	text-decoration: none;
-	font-size: .575em;
+	font-size: .675em;
 	font-weight: 400;
 	color: $white;
 
 	&:not(:last-of-type) {
-		margin-right: 3em;
+		margin-right: 2.5em;
 	}
-
-	@include selection($white, $black);
 
 	&:hover {
 		transition: .25s all ease;
 		background-color: lighten($black, 25%);
-	}
-}
-
-@media (min-width: $tablet) {
-	body {
-		width: 55%
-	}
-
-	.banner__name {
-		font-size: 6.75vmax;
-	}
-}
-
-@media (min-width: $widescreen) {
-	.bio__about {
-		max-width: 65%;
 	}
 }
