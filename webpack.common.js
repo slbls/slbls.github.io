@@ -1,7 +1,8 @@
 const path = require("path"),
 CleanWebpackPlugin = require("clean-webpack-plugin"),
 HtmlWebpackPlugin = require("html-webpack-plugin"),
-ExtractTextPlugin = require("extract-text-webpack-plugin");
+ExtractTextPlugin = require("extract-text-webpack-plugin"),
+CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	entry: {
@@ -87,6 +88,12 @@ module.exports = {
 		new ExtractTextPlugin("styles/[name].bundle.css"),
 		new HtmlWebpackPlugin({
 			template: "src/index.html"
-		})
+		}),
+		new CopyWebpackPlugin([
+			{
+				from: "src/favicon.ico",
+				to: "favicon.ico"
+			}
+		])
 	]
 };
