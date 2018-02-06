@@ -98,12 +98,21 @@
 		margin-right: 2.5em;
 	}
 
-	&:hover, &:active, &:focus {
+	&:hover:not(.bio__action--disabled), &:active:not(.bio__action--disabled), &:focus:not(.bio__action--disabled) {
 		position: relative;
 		top: -1px;
 
 		box-shadow: 4px 5px 0px $gray;
 	}
+}
+
+.bio__action--disabled {
+	cursor: not-allowed;
+	
+	box-shadow: none;
+	background-color: lighten($black, 45%);
+	
+	text-decoration: line-through;
 }
 
 @media (min-width: $tablet) {
