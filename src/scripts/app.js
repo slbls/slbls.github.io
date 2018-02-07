@@ -1,5 +1,6 @@
 import "../styles/theme.scss";
 
+require('window.requestanimationframe');
 require("smoothscroll-polyfill").polyfill(); 
 
 console.log("Hey there – welcome to the land of Spencer's code!");
