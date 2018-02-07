@@ -1,9 +1,57 @@
 @import "./reset";
 
-@mixin selection($background, $text) {
-	&::selection {
-		background-color: $background;
-		color: $text;
+@mixin title($font-size, $shadow-size) {
+	margin: 0;
+
+	text-transform: uppercase;
+	font-size: $font-size;
+	font-weight: 900;
+
+	&::selection, ::selection {
+		text-shadow: $shadow-size $shadow-size 0px $gray;
+	}
+	
+	// IE10+ detection because IE does not support text-shadow changes for the ::selection selector
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		&::selection, ::selection {
+			background-color: $gray;
+		}
+	}
+}
+
+@mixin body($margin-bottom) {
+	margin: 0;
+	margin-bottom: $margin-bottom;
+
+	line-height: 1.75;
+	font-size: .8em;
+	font-weight: 200;
+
+	&::selection, ::selection {
+		background-color: $gray;
+	}
+}
+
+@mixin button($size) {
+	padding: .5em 1.5em;
+	box-shadow: 3px 3px 0px $gray;
+	background-color: $black;
+
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: $size;
+	font-weight: 400;
+	color: $white;
+
+	&:not(:last-of-type) {
+		margin-right: 2.5em;
+	}
+
+	&:hover {
+		position: relative;
+		top: -1px;
+
+		box-shadow: 4px 5px 0px $gray;
 	}
 }
 
@@ -39,80 +87,54 @@
 }
 
 .banner__name {
-	margin: 0;
-
-	text-transform: uppercase;
-	font-size: 4.5em;
-
-	&::selection, ::selection {
-		text-shadow: 5px 5px 0px $gray;
-	}
-}
-
-// IE10+ detection because IE does not support text-shadow changes for the ::selection selector
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.banner__name {
-		&::selection, ::selection {
-			background-color: $gray;
-		}
-	}
+	@include title(4.5em, 5px);
 }
 
 .banner__last-name {
 	padding-left: .75em;
 }
 
-.bio {
+.content {
 	max-width: 21.5em;
 	margin-top: 3.5em;
 }
 
 .bio__about {
-	margin: 0;
-	margin-bottom: 3em;
-	line-height: 1.75;
-	font-size: .8em;
-	font-weight: 200;
+	@include body(3em);
+}
+
+.bio__action {
+	@include button(.675em);
+}
+
+.showcase {
+	margin-top: 7.5em;
+}
+
+.showcase__title {
+	@include title(2em, 3px);
+	margin-bottom: 1.5em;
+}
+
+.project:not(:first-of-type) {
+	margin-top: 3em;
+}
+
+.project__name {
+	font-size: 1em;
+	font-weight: 400;
 
 	&::selection, ::selection {
 		background-color: $gray;
 	}
 }
 
-.bio__link {
-	color: inherit;
+.project__description {
+	@include body(1em);
 }
 
-.bio__action {
-	padding: .5em 1.5em;
-	box-shadow: 3px 3px 0px $gray;
-	background-color: $black;
-
-	text-transform: uppercase;
-	text-decoration: none;
-	font-size: .675em;
-	font-weight: 400;
-	color: $white;
-
-	&:not(:last-of-type) {
-		margin-right: 2.5em;
-	}
-
-	&:hover:not(.bio__action--disabled), &:active:not(.bio__action--disabled), &:focus:not(.bio__action--disabled) {
-		position: relative;
-		top: -1px;
-
-		box-shadow: 4px 5px 0px $gray;
-	}
-}
-
-.bio__action--disabled {
-	cursor: not-allowed;
-
-	box-shadow: none;
-	background-color: lighten($black, 45%);
-	
-	text-decoration: line-through;
+.project__link {
+	@include button(.6em);
 }
 
 @media (min-width: $tablet) {
@@ -124,7 +146,7 @@
 		font-size: 7em;
 	}
 
-	.bio {
+	.content {
 		max-width: 33.25em;
 	}
 }
