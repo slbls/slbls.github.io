@@ -1,5 +1,7 @@
 import "../styles/theme.scss";
 
+require('viewport-units-buggyfill').init();
+
 require('window.requestanimationframe');
 require("smoothscroll-polyfill").polyfill(); 
 
