@@ -86,6 +86,8 @@
 }
 
 .banner {
+	// In IE, flexbox vertical centering breaks the display: table hack for simulating width: min-content.
+	// The position: relative and translateY method does not work either, due to viewport units.
 	padding-top: calc(50vh - 50%);
 	height: 100vh;
 }
