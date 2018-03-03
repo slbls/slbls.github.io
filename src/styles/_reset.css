@@ -1,0 +1,34 @@
+@import "normalize.css";
+@import "./_fonts.css";
+
+:root {
+	--mobile: 768px;
+	--tablet: 769px;
+	--desktop: 1024px;
+	--widescreen: 1216px;
+	--fullhd: 1408px;
+
+	--black: #222;
+	--white: whitesmoke;
+}
+
+/* Modifies the box model to include padding as part of elements' width and height. */
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	/* Improves font rendering on non-Webkit browsers (smooths jagged edges). */
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale;
+	font-kerning: auto;
+	font-size: calc(.625em + 1vmin);
+	
+	color: var(--black);
+}

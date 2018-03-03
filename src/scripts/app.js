@@ -1,4 +1,4 @@
-import "../styles/theme.scss";
+import "../styles/theme.css";
 
 console.log("Hey there – welcome to the land of Spencer's code!");
 console.log("Feel free to take a look around. I have done my best to keep it clean and concise for you.");
