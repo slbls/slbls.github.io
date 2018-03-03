@@ -15,7 +15,12 @@ module.exports = {
 		rules: [
 			{
 				test: /\.html$/,
-				use: "html-loader"
+				use: {
+					loader: "html-loader",
+					options: {
+						minimize: true
+					}
+				}
 			},
 			{
 				test: /\.(jpg|jpeg|png|ico|svg)$/,
@@ -51,8 +56,7 @@ module.exports = {
 						},
 						"postcss-loader"
 					],
-					fallback: "style-loader",
-					publicPath: "../"
+					fallback: "style-loader"
 				})
 			},
 			{
@@ -64,7 +68,7 @@ module.exports = {
 	},
 	plugins: [
 		new CleanPlugin("dist"),
-		new ExtractTextPlugin("styles/[name]-[contenthash].css"),
+		new ExtractTextPlugin("styles/theme-[contenthash].css"),
 		new HtmlPlugin({
 			template: "src/index.html"
 		})
