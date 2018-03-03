@@ -3,18 +3,33 @@
   "version": "1.0.0",
   "description": "Spencer Berenson's personal portfolio site for himself and his projects.",
   "scripts": {
-    "test": "parcel src/index.html",
+    "test": "webpack-dev-server --host 0.0.0.0 --mode development",
+    "start": "webpack --mode production",
     "deploy": "npm start && firebase deploy"
   },
   "author": "Spencer Berenson",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "caniuse-lite": "^1.0.30000811",
-    "parcel-bundler": "^1.6.2",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.18",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "firebase": "^4.10.1",
+    "firebase-tools": "^3.17.4",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.0.4",
+    "postcss": "^6.0.19",
     "postcss-cssnext": "^3.1.0",
-    "postcss-import": "^11.1.0"
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.1",
+    "style-loader": "^0.20.2",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
