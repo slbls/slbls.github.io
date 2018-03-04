@@ -1,1 +1,67 @@
 @import "./_reset.css";
+
+.about {
+	height: 100vh;
+	padding: 7.5% 15%;
+}
+
+.about__caricature, .about__content {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.about__caricature {
+	height: 65vh;
+
+	> img {
+		height: 100%;
+	}
+}
+
+.about__content {
+	margin-left: 7.5%;
+	max-width: 14.5em;
+
+	&::after {
+		content: " |\A\\/";
+		
+		position: absolute;
+
+		margin-top: 1.75em;
+
+		white-space: pre;
+		
+		font-family: var(--ibm-plex);
+		font-weight: 900;
+		color: var(--white);
+	}
+}
+
+.about__title, .about__name {
+	margin: 0;
+
+	text-transform: uppercase;
+	font-family: var(--ibm-plex);
+	font-weight: 900;
+}
+
+.about__title {
+	position: relative;
+	z-index: -1;
+	top: .45em;
+	
+	color: var(--white);
+}
+
+.about__name {
+	font-size: 1em;
+}
+
+.about__description {
+	margin-top: .75em;
+
+	line-height: 1.5;
+	font-family: var(--roboto-slab);
+	font-size: .8em;
+	font-weight: 300;
+}
