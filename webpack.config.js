@@ -31,6 +31,12 @@ module.exports = {
 							name: "[name].[ext]",
 							outputPath: "images/"
 						}
+					},
+					{
+						loader: "image-webpack-loader",
+						options: {
+							bypassOnDebug: true
+						}
 					}
 				]
 			},
