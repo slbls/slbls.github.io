@@ -1,4 +1,11 @@
-@import "./_reset.css";
+@import "./_reset";
+
+@mixin selection($text-color, $background-color) {
+	&::selection {
+		background-color: $background-color;
+		color: $text-color;
+	}
+}
 
 .about {
 	height: 100vh;
@@ -31,9 +38,9 @@
 
 		white-space: pre;
 		
-		font-family: var(--ibm-plex);
+		font-family: $ibm-plex;
 		font-weight: 900;
-		color: var(--white);
+		color: $white;
 	}
 }
 
@@ -41,7 +48,7 @@
 	margin: 0;
 
 	text-transform: uppercase;
-	font-family: var(--ibm-plex);
+	font-family: $ibm-plex;
 	font-weight: 900;
 }
 
@@ -50,7 +57,7 @@
 	z-index: -1;
 	top: .45em;
 	
-	color: var(--white);
+	color: $white;
 }
 
 .about__heading--name {
@@ -61,7 +68,7 @@
 	margin-top: .75em;
 
 	line-height: 1.5;
-	font-family: var(--roboto-slab);
+	font-family: $roboto-slab;
 	font-size: .8em;
 	font-weight: 300;
 }
