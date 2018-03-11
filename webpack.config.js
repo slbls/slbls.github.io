@@ -53,14 +53,15 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.css$/,
+				test: /\.scss$/,
 				use: ExtractTextPlugin.extract({
 					use: [
 						{
 							loader: "css-loader",
 							options: { minimize: "true" }
 						},
-						"postcss-loader"
+						"postcss-loader",
+						"sass-loader"
 					],
 					fallback: "style-loader"
 				})
