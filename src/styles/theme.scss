@@ -53,6 +53,8 @@
 }
 
 .about__heading--title {
+	user-select: none;
+
 	position: relative;
 	z-index: -1;
 	top: .45em;
@@ -62,6 +64,7 @@
 
 .about__heading--name {
 	font-size: 1em;
+	@include selection($black, yellow);
 }
 
 .about__description {
@@ -71,4 +74,6 @@
 	font-family: $roboto-slab;
 	font-size: .8em;
 	font-weight: 300;
+
+	@include selection($black, yellow);
 }
