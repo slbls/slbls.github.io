@@ -8,17 +8,16 @@
 }
 
 .about {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
 	height: 100vh;
-	padding: 7.5% 15%;
-}
-
-.about__caricature, .about__content {
-	display: inline-block;
-	vertical-align: middle;
+	padding: 15vmax 5vmin;
 }
 
 .about__caricature {
-	height: 65vh;
+	height: 35vmin;
 
 	> img {
 		height: 100%;
@@ -52,6 +51,8 @@
 	font-weight: 900;
 }
 
+// Although this is technically a semantic heading and accessible by screen readers (hence being its own element and not a psuedo-element)
+// it shouldn't be selectable because it is intended to be behind the name part of the heading and purely visual.
 .about__heading--title {
 	user-select: none;
 
