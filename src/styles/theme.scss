@@ -13,7 +13,7 @@
 	justify-content: center;
 	
 	height: 100vh;
-	padding: 15vmax 5vmin;
+	padding: 0 5%;
 }
 
 .about__caricature {
@@ -77,4 +77,11 @@
 	font-weight: 300;
 
 	@include selection($black, yellow);
+}
+
+@media (orientation: landscape){
+	.about {
+		justify-content: flex-start;
+		padding: 0 17.5%;
+	}
 }
