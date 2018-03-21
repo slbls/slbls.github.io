@@ -23,7 +23,7 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.(jpg|jpeg|png|ico|svg)$/,
+				test: /\.(jpg|jpeg|png|ico)$/,
 				use: [
 					{
 						loader: "file-loader",
@@ -41,7 +41,7 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(eot|woff|woff2)$/,
+				test: /\.(eot|woff|woff2|ttf|svg)$/,
 				use: [
 					{
 						loader: "file-loader",
@@ -63,7 +63,8 @@ module.exports = {
 						"postcss-loader",
 						"sass-loader"
 					],
-					fallback: "style-loader"
+					fallback: "style-loader",
+					publicPath: "../"
 				})
 			},
 			{
