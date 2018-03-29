@@ -79,7 +79,7 @@
 	@include selection($black, yellow);
 }
 
-@media (orientation: landscape){
+@media (orientation: landscape) {
 	.about {
 		justify-content: flex-start;
 		padding: 0 17.5%;
