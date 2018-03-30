@@ -1,7 +1,8 @@
 const path = require("path"),
 	CleanPlugin = require("clean-webpack-plugin"),
 	ExtractTextPlugin = require("extract-text-webpack-plugin"),
-	HtmlPlugin = require("html-webpack-plugin");
+	HtmlPlugin = require("html-webpack-plugin"),
+	CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	entry: {
@@ -82,6 +83,7 @@ module.exports = {
 	},
 	plugins: [
 		new CleanPlugin("dist"),
+		new CopyPlugin([{ from: "src/favicon.ico", to: "" }]),
 		new ExtractTextPlugin("styles/theme-[contenthash].css"),
 		new HtmlPlugin({
 			template: "src/index.html"
