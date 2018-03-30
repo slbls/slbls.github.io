@@ -6,6 +6,7 @@ $gray: #777;
 
 /* Modifies the box model to include padding as part of elements' width and height. */
 html {
+	// position: relative;
 	box-sizing: border-box;
 }
 
@@ -21,10 +22,10 @@ body {
 	// Flexbox could be used for vertical and horizontal center positioning
 	// (and would be easier to understand), but IE 9 does not support it.
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	right: 50%;
+	bottom: 50%;
 
-	transform: translate(-50%, -50%);
+	transform: translate(50%, 50%);
 
 	width: 20em;
 	background-color: $white;
