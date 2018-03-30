@@ -29,25 +29,44 @@
 </head>
 
 <body>
-	<header class="about">
-		<aside class="about__caricature">
-			<img src="./images/spencer.svg" alt="Spencer's Caricature">
-		</aside>
-		
-		<section class="about__introduction">
-			<h1 class="about__heading about__heading--title">About</h1>
-			<h2 class="about__heading about__heading--name">Spencer Berenson</h2>
-
-			<p class="about__description">
-				I am a web developer and designer from Connecticut with a passion for technology.
-
-				<br>
-				<br>
-				
-				Currently, I work for All Star Software Systems as a Junior Solution Developer.
-			</p>
-		</section>
+	<header class="heading">
+		<img class="heading__icon" src="images/technologist.png" alt="👨🏻‍💻">
+		<h1 class="heading__introduction">
+			I'm <b class="heading__name">Spencer Berenson</b>, a front-end web developer from Connecticut.
+		</h1>
 	</header>
+
+	<main class="projects">
+		<ul class="projects__list">
+			<li class="project">
+				<b class="project__name">
+					<a class="project__link" href="//uhsse.org" target="_blank" rel="noopener">UHSSE.org</a>
+				</b>
+
+				is a redesign of my high school's website.
+			</li>
+
+			<li class="project">
+				<b class="project__name">
+					<a class="project__link" href="//github.com/spoonbytes/quotecord" target="_blank" rel="noopener">Quotecord</a>
+				</b>
+
+				is a Discord bot for quoting messages.
+			</li>
+
+			<li class="project">
+				<b class="project__name">
+					<a class="project__link" href="//github.com/spoonbytes/quotecord" target="_blank" rel="noopener">swear-search</a>
+				</b>
+
+				is a crawler that analyzes programming languages vs profanities.
+			</li>
+		</ul>
+	</main>
+
+	<footer class="contact">
+		For inquiries or just to say hello: <a class="contact__email" href="mailto:spencer@berenson.me">spencer@berenson.me</a>
+	</footer>
 </body>
 
 </html>
