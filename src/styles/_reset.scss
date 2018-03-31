@@ -30,6 +30,9 @@ body {
 	width: 20em;
 	background-color: $white;
 
+	// W3C accessibility guidelines recommend at least 1.5 line height.
+	// See: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation
+	// See: https://ux.stackexchange.com/a/35275
 	line-height: 1.5;
 
 	// Improves font rendering on non-Webkit browsers (smooths jagged edges).
