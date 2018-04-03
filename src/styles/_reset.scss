@@ -1,7 +1,7 @@
 @import "~normalize.css/normalize";
 
 $white: whitesmoke;
-$black: #333;
+$brown: #3b3535;
 $gray: #777;
 $blue: #2f3bcc;
 
@@ -45,5 +45,5 @@ body {
 	font-kerning: auto;
 	font-size: calc(.5em + 1vmin);
 
-	color: $black;
+	color: $brown;
 }
