@@ -24,9 +24,7 @@ module.exports = {
 			},
 			{
 				test: /\.(jpg|jpeg|png|ico|svg)$/,
-				include: [
-					path.resolve(__dirname, "src/images")
-				],
+				include: [path.resolve(__dirname, "src/images")],
 				use: [
 					{
 						loader: "file-loader",
@@ -45,9 +43,7 @@ module.exports = {
 			},
 			{
 				test: /\.(eot|woff|woff2|ttf|svg)$/,
-				include: [
-					path.resolve(__dirname, "src/fonts")
-				],
+				include: [path.resolve(__dirname, "src/fonts")],
 				use: [
 					{
 						loader: "file-loader",
