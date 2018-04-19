@@ -1,7 +1,7 @@
 @import "./_reset";
 
 .heading {
-	margin-bottom: 5em;
+	margin-bottom: 3.75em;
 }
 
 .heading__icon {
@@ -30,7 +30,7 @@
 
 .project {
 	&:not(:last-of-type) {
-		margin-bottom: 1em;
+		margin-bottom: 1.5em;
 	}
 }
 
@@ -56,7 +56,7 @@
 }
 
 .contact {
-	margin-top: 5em;
+	margin-top: 3.75em;
 }
 
 .contact__email {
