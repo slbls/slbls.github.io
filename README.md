@@ -1,4 +1,4 @@
 # berenson.me
 My personal website.
 
-![Screenshot](https://i.imgur.com/EdbPPpB.png)
+![Screenshot](https://i.imgur.com/pBkWKsF.png)
