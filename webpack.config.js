@@ -78,7 +78,7 @@ module.exports = {
 	},
 	plugins: [
 		new CleanPlugin("dist"),
-		new ExtractTextPlugin("styles/theme-[contenthash].css"),
+		new ExtractTextPlugin("styles/theme.css"),
 		new HtmlPlugin({
 			template: "src/index.html"
 		})
