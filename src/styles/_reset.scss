@@ -8,6 +8,7 @@ $blue: #2f3bcc;
 /* Modifies the box model to include padding as part of elements" width and height. */
 html {
 	box-sizing: border-box;
+	background-color: $white;
 }
 
 *,
@@ -29,8 +30,11 @@ body {
 
 	transform: translate(50%, 50%);
 
-	width: 20em;
-	background-color: $white;
+	border-radius: 2px;
+	box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.025);
+	padding: 3em 3em;
+	width: 25em;
+	background-color: white;
 
 	// W3C accessibility guidelines recommend at least 1.5 line height.
 	// See: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation
