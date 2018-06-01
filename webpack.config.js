@@ -2,7 +2,8 @@ const path = require("path"),
 	CleanPlugin = require("clean-webpack-plugin"),
 	ExtractTextPlugin = require("extract-text-webpack-plugin"),
 	HtmlPlugin = require("html-webpack-plugin"),
-	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin");
+	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin"),
+	CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	entry: {
@@ -80,11 +81,8 @@ module.exports = {
 	plugins: [
 		new CleanPlugin("dist"),
 		new ExtractTextPlugin("styles/theme.css"),
-		new HtmlPlugin({
-			template: "src/index.html"
-		}),
-		new ScriptExtHtmlPlugin({
-			defaultAttribute: "defer"
-		})
+		new HtmlPlugin({ template: "src/index.html" }),
+		new ScriptExtHtmlPlugin({ defaultAttribute: "defer" }),
+		new CopyPlugin([{ from: "_redirects", to: "_redirects", toType: "file" }])
 	]
 };
