@@ -1,2 +1,5 @@
 # Redirect default Netlify subdomain to primary domain
 https://berenson.netlify.com/* https://berenson.me/:splat 301!
+
+# Redirect 404s to the root domain
+/* / 404
