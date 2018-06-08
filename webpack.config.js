@@ -83,6 +83,8 @@ module.exports = {
 		new ExtractTextPlugin("styles/theme.css"),
 		new HtmlPlugin({ template: "src/index.html" }),
 		new ScriptExtHtmlPlugin({ defaultAttribute: "defer" }),
-		new CopyPlugin([{ from: "_redirects", to: "_redirects", toType: "file" }])
+		new CopyPlugin([
+			{ from: "_redirects", to: "_redirects", toType: "file" }
+		])
 	]
 };
