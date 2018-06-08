@@ -1,8 +1,7 @@
 {
 	"name": "berenson.me",
 	"version": "1.0.0",
-	"description":
-		"Spencer Berenson's personal portfolio site for himself and his projects.",
+	"description": "Spencer Berenson's personal portfolio site for himself and his projects.",
 	"scripts": {
 		"test": "webpack-dev-server --host 0.0.0.0 --mode development",
 		"start": "webpack --mode production",
