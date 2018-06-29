@@ -20,6 +20,10 @@
 
 .heading__name {
 	font-weight: 600;
+
+	&:hover {
+		color: black;
+	}
 }
 
 .projects {
