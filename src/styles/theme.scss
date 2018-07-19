@@ -1,5 +1,14 @@
 @import "./_reset";
 
+.card {
+	border-radius: 4px;
+	box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.025);
+	margin: 0 auto;
+	padding: 3em 3em;
+	width: 25em;
+	background-color: white;
+}
+
 .heading {
 	margin-bottom: 3.75em;
 }
