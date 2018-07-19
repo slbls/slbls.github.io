@@ -7,7 +7,11 @@ $blue: #2f3bcc;
 
 /* Modifies the box model to include padding as part of elements" width and height. */
 html {
+	display: table;
+
 	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
 	background-color: $white;
 }
 
@@ -22,19 +26,11 @@ html {
 }
 
 body {
-	// Flexbox could be used for vertical and horizontal center positioning
-	// (and would be easier to understand), but IE 9 does not support it.
-	position: absolute;
-	right: 50%;
-	bottom: 50%;
+	display: table-cell;
+	vertical-align: middle;
 
-	transform: translate(50%, 50%);
-
-	border-radius: 4px;
-	box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.025);
-	padding: 3em 3em;
-	width: 25em;
-	background-color: white;
+	min-height: 100%;
+	min-width: 100%;
 
 	// W3C accessibility guidelines recommend at least 1.5 line height.
 	// See: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation
