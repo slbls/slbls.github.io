@@ -30,7 +30,8 @@
 .heading__name {
 	font-weight: 600;
 
-	&:hover {
+	&:hover,
+	&:active {
 		color: black;
 	}
 }
@@ -67,12 +68,14 @@
 		background-color: $gray;
 	}
 
-	&:hover {
+	&:hover,
+	&:active {
 		top: -1px;
 		color: black;
 	}
 
-	&:hover::before {
+	&:hover::before,
+	&:active::before {
 		background-color: $blue;
 	}
 }
@@ -103,11 +106,13 @@
 		background-color: $blue;
 	}
 
-	&:hover {
+	&:hover,
+	&:active {
 		color: black;
 	}
 
-	&:hover::before {
+	&:hover::before,
+	&:active::before {
 		transition: 0.25s width ease;
 		width: 100%;
 	}
