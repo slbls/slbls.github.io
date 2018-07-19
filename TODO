@@ -1,0 +1,3 @@
+Bugs:
+	☐ In landscape mode on mobile sized screens, the body clips past the viewport
+		This is due to the absolute/transform method for centering an element.  
