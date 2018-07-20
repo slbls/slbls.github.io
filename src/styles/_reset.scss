@@ -18,6 +18,11 @@ html {
 	box-sizing: inherit;
 }
 
+::selection {
+	background-color: #333;
+	color: white;
+}
+
 body {
 	background-color: white;
 
