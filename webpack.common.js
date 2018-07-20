@@ -25,38 +25,6 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.(jpg|jpeg|png|ico|svg)$/,
-				include: [path.resolve(__dirname, "src/images")],
-				use: [
-					{
-						loader: "file-loader",
-						options: {
-							name: "[name].[ext]",
-							outputPath: "images/"
-						}
-					},
-					{
-						loader: "image-webpack-loader",
-						options: {
-							bypassOnDebug: true
-						}
-					}
-				]
-			},
-			{
-				test: /\.(eot|woff|woff2|ttf|svg)$/,
-				include: [path.resolve(__dirname, "src/fonts")],
-				use: [
-					{
-						loader: "file-loader",
-						options: {
-							name: "[name].[ext]",
-							outputPath: "fonts/"
-						}
-					}
-				]
-			},
-			{
 				test: /\.scss$/,
 				use: ExtractTextPlugin.extract({
 					use: [
