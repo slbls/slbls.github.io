@@ -1,12 +1,15 @@
 @import "~normalize.css/normalize";
 
+$mobile: 768px;
+$tablet: 769px;
+$desktop: 1024px;
+$widescreen: 1216px;
+$fullhd: 1408px;
+
 /* Modifies the box model to include padding as part of elements" width and height. */
 html {
 	box-sizing: border-box;
-	padding-top: 10em;
-	padding-bottom: 10em;
-	padding-left: 17.5em;
-	background-color: whitesmoke;
+	padding: 10% 0 10% 13.5%;
 }
 
 *,
@@ -16,13 +19,6 @@ html {
 }
 
 body {
-	border-radius: 5px;
-	box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.025);
-
-	padding: 3em;
-	padding-right: 7.5em;
-	max-width: 35em;
-
 	background-color: white;
 
 	// Improves font rendering on non-Webkit browsers (smooths jagged edges).
@@ -36,4 +32,43 @@ body {
 	font-size: calc(0.625em + 1vmin);
 	font-kerning: auto;
 	color: #333;
+}
+
+@media (orientation: portrait) {
+	html {
+		padding: 0;
+		background-color: white;
+	}
+
+	body {
+		box-shadow: none;
+		padding: 15% 10% 15% 10%;
+		width: 100%;
+	}
+}
+
+@media (orientation: portrait) and (min-height: #{$tablet}) {
+	body {
+		padding: 17.5% 20% 17.5% 15%;
+	}
+}
+
+@media (orientation: landscape) {
+	html {
+		background-color: whitesmoke;
+	}
+
+	body {
+		border-radius: 5px;
+		box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.025);
+		padding: 3em;
+		padding-right: 9em;
+		width: 30em;
+	}
+}
+
+@media (orientation: landscape) and (min-width: #{$tablet}) {
+	body {
+		width: 35em;
+	}
 }
