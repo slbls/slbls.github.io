@@ -50,11 +50,17 @@
 
 	@include link;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		transition: 0.15s all ease;
 
 		z-index: 1;
+		color: black;
+	}
+
+	&:focus {
+		transition: 0.15s all ease;
+
+		z-index: 2;
 		color: black;
 	}
 
