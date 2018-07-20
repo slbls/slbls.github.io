@@ -70,13 +70,13 @@
 		background-color: white;
 	}
 
+
 	&:hover::before,
 	&:focus::before {
 		transition: 0.15s all ease;
 
 		box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 		transform: scale(1.1, 1.075);
-	}
 }
 
 .showcase-item__emoji,
@@ -134,7 +134,8 @@
 		background-color: black;
 	}
 
-	&:hover {
+	&:hover,
+	&:active {
 		color: black;
 	}
 
