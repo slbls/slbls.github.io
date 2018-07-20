@@ -7,8 +7,16 @@
 		"start": "webpack --config webpack.prod.js",
 		"update": "ncu -u"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/u1f944/berenson.me.git"
+	},
 	"author": "Spencer Berenson",
 	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/u1f944/berenson.me/issues"
+	},
+	"homepage": "https://berenson.me",
 	"devDependencies": {
 		"autoprefixer": "^9.0.0",
 		"babel-core": "^6.26.3",
@@ -17,6 +25,7 @@
 		"clean-webpack-plugin": "^0.1.19",
 		"copy-webpack-plugin": "^4.5.2",
 		"css-loader": "^1.0.0",
+		"cssnano": "^4.0.3",
 		"extract-text-webpack-plugin": "^4.0.0-beta.0",
 		"html-loader": "^0.5.5",
 		"html-webpack-plugin": "^3.2.0",
