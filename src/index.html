@@ -7,84 +7,105 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<meta name="description" content="Spencer Berenson's personal portfolio site for himself and his projects.">
-
-	<!-- Google / Search Engine Tags -->
-	<meta itemprop="name" content="Spencer Berenson">
-	<meta itemprop="description" content="Spencer Berenson's personal portfolio site for himself and his projects.">
-
-	<!-- Facebook Meta Tags -->
-	<meta property="og:url" content="https://berenson.me">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Spencer Berenson">
-	<meta property="og:description" content="Spencer Berenson's personal portfolio site for himself and his projects.">
-
-	<!-- Twitter Meta Tags -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Spencer Berenson">
-	<meta name="twitter:description" content="Spencer Berenson's personal portfolio site for himself and his projects.">
-
-	<link id="favicon" rel="icon" type="image/png" href="images/technologist.png">
-
-	<noscript>
-		<style type="text/css">
-			.heading__icon:first-of-type {
-				display: block;
-			}
-		</style>
-	</noscript>
-
 	<title>Spencer Berenson</title>
 </head>
 
 <body>
-	<div class="card">
-		<header class="heading">
-			<img class="heading__icon" src="images/technologist.png" alt="👨🏻‍💻">
-			<img class="heading__icon" src="images/student.png" alt="👨🏻‍🎓">
-			<img class="heading__icon" src="images/runner.png" alt="🏃🏻">
-			<img class="heading__icon" src="images/greeter.png" alt="🙋🏻‍♂️">
+	<header class="header">
+		<h1 class="header__heading">Hello!</h1>
+		<p class="header__introduction">
+			I'm
+			<b class="header__name">Spencer Berenson,</b>
+			a front-end developer and technology enthusiast from Connecticut. Check out my recent projects below. 👇🏻
+		</p>
+	</header>
 
-			<h1 class="heading__introduction">
-				I'm
-				<b class="heading__name">Spencer Berenson</b>, a front-end web developer from Connecticut.
-			</h1>
-		</header>
-
-		<main>
-			<ul class="projects">
-				<li class="project">
-					<b class="project__name">
-						<a class="project__link" href="http://uhsse.org" target="_blank" rel="noopener">UHSSE.org</a>
-					</b>
-
-					is a redesign of my high school's website.
-					<small>(Now managed by current UHSSE students.)</small>
+	<main>
+		<section class="showcase">
+			<h1 class="showcase__heading">Projects</h1>
+			<ul class="showcase-items">
+				<li class="showcase-item">
+					<a class="showcase-item__link" href="http://uhsse.org" target="_blank" rel="noopener">
+						<span class="showcase-item__emoji">🎒</span>
+						<p class="showcase-item__text">
+							<b class="showcase-item__name">UHSSE.org</b>
+							<br>
+							<span class="showcase-item__description">
+								Redesign of my high school website
+							</span>
+						</p>
+					</a>
 				</li>
 
-				<li class="project">
-					<b class="project__name">
-						<a class="project__link" href="//github.com/spoonbytes/quotecord" target="_blank" rel="noopener">Quotecord</a>
-					</b>
-
-					is a Discord bot for quoting messages.
+				<li class="showcase-item">
+					<a class="showcase-item__link" href="//github.com/u1f944/quotecord" target="_blank" rel="noopener">
+						<span class="showcase-item__emoji">💬</span>
+						<p class="showcase-item__text">
+							<b class="showcase-item__name">Quotecord</b>
+							<br>
+							<span class="showcase-item__description">
+								Discord self-bot for quoting images
+							</span>
+						</p>
+					</a>
 				</li>
 
-				<li class="project">
-					<b class="project__name">
-						<a class="project__link" href="//github.com/spoonbytes/swear-search" target="_blank" rel="noopener">swear-search</a>
-					</b>
-
-					is a crawler that analyzes programming languages vs profanities.
+				<li class="showcase-item">
+					<a class="showcase-item__link" href="//github.com/u1f944/swear-search" target="_blank" rel="noopener">
+						<span class="showcase-item__emoji">🤬</span>
+						<p class="showcase-item__text">
+							<b class="showcase-item__name">swear-search</b>
+							<br>
+							<span class="showcase-item__description">
+								Analyzes programming languages vs profanities
+							</span>
+						</p>
+					</a>
 				</li>
 			</ul>
-		</main>
+		</section>
 
-		<footer class="contact">
-			For inquiries or just to say hello:
-			<a class="contact__email" href="mailto:spencer@berenson.me">spencer@berenson.me</a>
-		</footer>
-	</div>
+		<section class="showcase">
+			<h1 class="showcase__heading">Work Experience</h1>
+			<ul class="showcase-items">
+				<li class="showcase-item">
+					<a class="showcase-item__link" href="http://www.acehardware.com/mystore/index.jsp?store=14625&cid=localstore14625" target="_blank"
+					 rel="noopener">
+						<span class="showcase-item__emoji">🔨</span>
+						<p class="showcase-item__text">
+							<b class="showcase-item__name">Ace Hardware</b>
+							<br>
+							<span class="showcase-item__description">
+								Cashier
+							</span>
+						</p>
+					</a>
+				</li>
+
+				<li class="showcase-item">
+					<a class="showcase-item__link" href="//allstarss.com" target="_blank" rel="noopener">
+						<span class="showcase-item__emoji">🌟</span>
+						<p class="showcase-item__text">
+							<b class="showcase-item__name">All Star Software Systems</b>
+							<br>
+							<span class="showcase-item__description">
+								Junior Solution Architect
+							</span>
+						</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="contact">
+		<p class="contact__text">
+			Say hello —
+			<a class="contact__link" href="mailto:spencer@berenson.me" rel="noopener">
+				<b class="contact__email">spencer@berenson.me</b>
+			</a>
+		</p>
+	</footer>
 </body>
 
 </html>
