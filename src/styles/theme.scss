@@ -50,7 +50,8 @@
 
 	@include link;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		transition: 0.15s all ease;
 
 		z-index: 1;
@@ -73,7 +74,8 @@
 		background-color: white;
 	}
 
-	&:hover::before {
+	&:hover::before,
+	&:focus::before {
 		transition: 0.15s all ease;
 
 		box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
@@ -83,6 +85,7 @@
 	&:active::before {
 		transition: 0.15s all ease;
 
+		box-shadow: 0 0 25px rgba(0, 0, 0, 0.035);
 		transform: scale(1.05, 1.025);
 	}
 }
@@ -144,7 +147,8 @@
 		background-color: black;
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		transition: 0.15s all ease;
 		color: black;
 	}
@@ -154,7 +158,8 @@
 		top: 1px;
 	}
 
-	&:hover::before {
+	&:hover::before,
+	&:focus::before {
 		transition: 0.15s all ease;
 		width: 100%;
 	}
