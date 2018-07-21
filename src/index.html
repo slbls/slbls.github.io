@@ -37,9 +37,38 @@
 	<meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
 
 	<title>Spencer Berenson</title>
+
+	<!--[if IE]>
+		<style type="text/css">
+			.old-browser {
+				line-height: 1.75;
+				font-weight: 300;
+			}
+
+			.old-browser__important {
+				font-weight: 400;
+			}
+		</style>
+	<![endif]-->
 </head>
 
 <body>
+	<!--[if IE]>
+		<p class="old-browser">
+			You are using an outdated version of
+			<b class="old-browser__important">Internet Explorer.</b>
+
+			<br>
+			<br>
+
+			<em>Please</em> upgrade to at least
+			<b class="old-browser__important">version 10</b> or use
+			<b class="old-browser__important">Firefox</b> or
+			<b class="old-browser__important">Chrome</b> to view this website.
+		</p>
+	<![endif]-->
+
+	<!--[if !IE]><!-->
 	<header class="header">
 		<h1 class="header__heading">Hello!</h1>
 		<p class="header__introduction">
@@ -135,6 +164,7 @@
 			</a>
 		</p>
 	</footer>
+	<!--<![endif]-->
 </body>
 
 </html>
