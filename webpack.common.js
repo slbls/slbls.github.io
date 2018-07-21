@@ -59,6 +59,7 @@ module.exports = {
 			favicons: {
 				background: "#f5f5f5",
 				theme_color: "#333333",
+				display: "browser",
 				icons: {
 					android: true,
 					appleIcon: true,
