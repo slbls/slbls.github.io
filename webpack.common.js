@@ -58,7 +58,10 @@ module.exports = {
 			inject: true,
 			background: "#f5f5f5",
 			icons: {
-				android: true,
+				// Android option will remain false until
+				// favicons-webpack-plugin injects manifest.json and
+				// manifest.webapp into the HTML
+				android: false,
 				appleIcon: true,
 				appleStartup: false,
 				favicons: true,
