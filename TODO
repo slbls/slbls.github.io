@@ -1,3 +1,8 @@
 Bugs:
 	✔ In landscape mode on mobile sized screens, the body clips past the viewport @done(18-07-19 19:31)
-		This is due to the absolute/transform method for centering an element.  
+		This is due to the absolute/transform method for centering an element.
+
+General:
+	☐ Investigate support for IE 9
+		If providing support would involve anything other than small 
+		modifications, consider displaying an "upgrade browser" message.
