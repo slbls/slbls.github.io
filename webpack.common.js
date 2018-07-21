@@ -3,6 +3,7 @@ const path = require("path"),
 	ExtractTextPlugin = require("extract-text-webpack-plugin"),
 	HtmlPlugin = require("html-webpack-plugin"),
 	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin"),
+	FaviconsPlugin = require("favicons-webpack-plugin"),
 	CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
@@ -51,6 +52,12 @@ module.exports = {
 		new ExtractTextPlugin("styles/theme.css"),
 		new HtmlPlugin({ template: "src/index.html" }),
 		new ScriptExtHtmlPlugin({ defaultAttribute: "defer" }),
+		new FaviconsPlugin({
+			logo: "./src/favicon.png",
+			prefix: "icons/",
+			inject: true,
+			background: "#f5f5f5"
+		}),
 		new CopyPlugin([
 			{ from: "_redirects", to: "_redirects", toType: "file" }
 		])
