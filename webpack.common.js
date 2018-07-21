@@ -56,7 +56,15 @@ module.exports = {
 			logo: "./src/favicon.png",
 			prefix: "icons/",
 			inject: true,
-			background: "#f5f5f5"
+			background: "#f5f5f5",
+			icons: {
+				android: true,
+				appleIcon: true,
+				appleStartup: false,
+				favicons: true,
+				firefox: true,
+				windows: true
+			}
 		}),
 		new CopyPlugin([
 			{ from: "_redirects", to: "_redirects", toType: "file" }
