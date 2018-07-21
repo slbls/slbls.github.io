@@ -3,7 +3,7 @@ const path = require("path"),
 	ExtractTextPlugin = require("extract-text-webpack-plugin"),
 	HtmlPlugin = require("html-webpack-plugin"),
 	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin"),
-	FaviconsPlugin = require("favicons-webpack-plugin"),
+	WebappPlugin = require("webapp-webpack-plugin"),
 	CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
@@ -52,21 +52,23 @@ module.exports = {
 		new ExtractTextPlugin("styles/theme.css"),
 		new HtmlPlugin({ template: "src/index.html" }),
 		new ScriptExtHtmlPlugin({ defaultAttribute: "defer" }),
-		new FaviconsPlugin({
+		new WebappPlugin({
 			logo: "./src/favicon.png",
 			prefix: "icons/",
 			inject: true,
-			background: "#f5f5f5",
-			icons: {
-				// Android option will remain false until
-				// favicons-webpack-plugin injects manifest.json and
-				// manifest.webapp into the HTML
-				android: false,
-				appleIcon: true,
-				appleStartup: false,
-				favicons: true,
-				firefox: true,
-				windows: true
+			favicons: {
+				background: "#f5f5f5",
+				theme_color: "#333333",
+				icons: {
+					android: true,
+					appleIcon: true,
+					appleStartup: false,
+					coast: false,
+					favicons: true,
+					firefox: true,
+					windows: true,
+					yandex: true
+				}
 			}
 		}),
 		new CopyPlugin([
