@@ -1,10 +1,6 @@
 @import "~normalize.css/normalize";
-
-$mobile: 768px;
-$tablet: 769px;
-$desktop: 1024px;
-$widescreen: 1216px;
-$fullhd: 1408px;
+@import "./_resolutions";
+@import "./_colors";
 
 /* Modifies the box model to include padding as part of elements" width and height. */
 html {
@@ -31,12 +27,12 @@ body {
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-size: calc(0.625em + 1vmin);
 	font-kerning: auto;
-	color: #333;
+	color: $black;
 }
 
 ::selection {
-	background-color: #333;
-	color: white;
+	background-color: $black;
+	color: $white;
 }
 
 :focus {
