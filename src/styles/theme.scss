@@ -8,7 +8,7 @@
 @mixin heading {
 	color: $dark-black;
 
-	&::selection {
+	::selection {
 		background-color: $dark-black;
 	}
 }
