@@ -7,11 +7,11 @@
 
 .header__introduction {
 	line-height: 1.75;
-	font-weight: 300;
 }
 
-.header__name {
-	font-weight: 400;
+.header__heading {
+	margin-bottom: 0.75em;
+	color: $dark-black;
 }
 
 .showcase {
@@ -19,8 +19,8 @@
 }
 
 .showcase__heading {
-	font-size: 1.25em;
-	font-weight: 600;
+	font-size: 1.35em;
+	color: $dark-black;
 }
 
 .showcase-items {
@@ -54,14 +54,12 @@
 		transition: 0.15s all ease;
 
 		z-index: 1;
-		color: $pure-black;
 	}
 
 	&:focus {
 		transition: 0.15s all ease;
 
 		z-index: 2;
-		color: $pure-black;
 	}
 
 	&::before {
@@ -105,7 +103,7 @@
 }
 
 .showcase-item__name {
-	font-weight: 400;
+	font-weight: 600;
 }
 
 .showcase-item__description {
@@ -113,7 +111,6 @@
 	margin-top: 0.25em;
 
 	font-size: 0.9em;
-	font-weight: 300;
 }
 
 .contact {
@@ -144,13 +141,7 @@
 
 		width: 0;
 		height: 3px;
-		background-color: $pure-black;
-	}
-
-	&:hover,
-	&:focus {
-		transition: 0.15s all ease;
-		color: $pure-black;
+		background-color: $dark-black;
 	}
 
 	&:active {
@@ -167,4 +158,5 @@
 
 .contact__email {
 	font-weight: 700;
+	color: $dark-black;
 }
