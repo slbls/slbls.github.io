@@ -130,13 +130,37 @@
 }
 
 .contact__link {
+	display: block;
+
+	@include link;
+
+	&:active {
+		transition: 0.15s all ease;
+		top: 1px;
+	}
+
+	&:hover .contact__email-part::before,
+	&:focus .contact__email-part::before {
+		transition: 0.15s all ease;
+		width: 100%;
+	}
+}
+
+.contact__email {
+	font-weight: 700;
+	@include heading;
+}
+
+.contact__email--desktop {
+	display: none;
+}
+
+.contact__email-part {
 	transition: 0.15s all ease;
 
 	position: relative;
 
 	display: inline-block;
-
-	@include link;
 
 	&::before {
 		transition: 0.15s all ease;
@@ -151,30 +175,42 @@
 		height: 3px;
 		background-color: $dark-black;
 	}
-
-	&:active {
-		transition: 0.15s all ease;
-		top: 1px;
-	}
-
-	&:hover::before,
-	&:focus::before {
-		transition: 0.15s all ease;
-		width: 100%;
-	}
-}
-
-.contact__email {
-	font-weight: 700;
-	@include heading;
-}
-
-.contact__mobile-separation {
-	display: block;
 }
 
 @media (min-width: 425px) {
-	.contact__mobile-separation {
+	.contact__link {
+		transition: 0.15s all ease;
+
+		position: relative;
+
+		display: inline-block;
+
+		&::before {
+			transition: 0.15s all ease;
+
+			content: "";
+
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			width: 0;
+			height: 3px;
+			background-color: $dark-black;
+		}
+
+		&:hover::before,
+		&:focus::before {
+			transition: 0.15s all ease;
+			width: 100%;
+		}
+	}
+
+	.contact__email--desktop {
 		display: inline;
+	}
+
+	.contact__email--mobile {
+		display: none;
 	}
 }
