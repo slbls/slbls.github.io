@@ -5,13 +5,21 @@
 	color: inherit;
 }
 
+@mixin heading {
+	color: $dark-black;
+
+	&::selection {
+		background-color: $dark-black;
+	}
+}
+
 .header__introduction {
 	line-height: 1.75;
 }
 
 .header__heading {
 	margin-bottom: 0.75em;
-	color: $dark-black;
+	@include heading;
 }
 
 .showcase {
@@ -20,7 +28,7 @@
 
 .showcase__heading {
 	font-size: 1.35em;
-	color: $dark-black;
+	@include heading;
 }
 
 .showcase-items {
@@ -158,5 +166,5 @@
 
 .contact__email {
 	font-weight: 700;
-	color: $dark-black;
+	@include heading;
 }
