@@ -144,7 +144,7 @@
 		content: "";
 
 		position: absolute;
-		bottom: -20%;
+		bottom: 0;
 		left: 0;
 
 		width: 0;
@@ -167,4 +167,14 @@
 .contact__email {
 	font-weight: 700;
 	@include heading;
+}
+
+.contact__mobile-separation {
+	display: block;
+}
+
+@media (min-width: 425px) {
+	.contact__mobile-separation {
+		display: inline;
+	}
 }
