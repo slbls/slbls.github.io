@@ -17,13 +17,16 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.html$/,
-				use: {
-					loader: "html-loader",
-					options: {
-						minimize: true
-					}
-				}
+				test: /\.pug$/,
+				use: [
+					{
+						loader: "html-loader",
+						options: {
+							minimize: true
+						}
+					},
+					"pug-html-loader"
+				]
 			},
 			{
 				test: /\.scss$/,
@@ -50,7 +53,7 @@ module.exports = {
 	plugins: [
 		new CleanPlugin("dist"),
 		new ExtractTextPlugin("styles/theme.css"),
-		new HtmlPlugin({ template: "src/index.html" }),
+		new HtmlPlugin({ template: "src/pug/index.pug" }),
 		new ScriptExtHtmlPlugin({ defaultAttribute: "defer" }),
 		new WebappPlugin({
 			logo: "./src/favicon.png",
