@@ -1,0 +1,94 @@
+extends templates/base.pug
+
+mixin showcase(heading)
+	section.showcase
+		h1.showcase__heading= heading
+		block
+
+mixin showcase-items(items)
+	ul.showcase-items
+		each item in items
+			li.showcase-item
+				a.showcase-item__link(href=item.url target="_blank" rel="noopener")
+					span.showcase-item__emoji= item.emoji
+					p.showcase-item__text
+						b.showcase-item__name= item.name
+						br
+						span.showcase-item__description= item.description
+
+block body
+	<!--[if IE]>
+		<p class="old-browser">
+			You are using an outdated version of
+			<b class="old-browser__important">Internet Explorer.</b>
+
+			<br>
+			<br>
+
+			<em>Please upgrade</em> to at least
+			<b class="old-browser__important">version 10</b> or use
+			<b class="old-browser__important">Firefox</b> or
+			<b class="old-browser__important">Chrome</b> to view this website.
+		</p>
+	<![endif]-->
+
+	<!--[if !IE]><!-->
+		header.header
+			h1.header__heading Hi, I'm Spencer.
+			p.header__introduction
+				.
+					Front-end developer and tech. enthusiast from Connecticut, I 
+					currently study Computer Science at CCSU and work as a Junior 
+					Solution Architect at All Star Software Systems.
+
+		main
+			+showcase("Projects")
+				+showcase-items([
+					{
+						url: "http://uhsse.org",
+						emoji: "🎒",
+						name: "UHSSE.org",
+						description: "Redesign of my high school website"
+					},
+					{
+						url: "//github.com/bearinsun/quotecord",
+						emoji: "💬",
+						name: "Quotecord",
+						description: "Discord self-bot for quoting messages"
+					},
+					{
+						url: "//github.com/bearinsun/swear-search",
+						emoji: "🔎",
+						name: "swear-search",
+						description: "Analyzes programming languages vs profanities"
+					}
+				])
+
+			+showcase("Work Experience")
+				+showcase-items([
+					{
+						url: "http://www.acehardware.com/mystore/index.jsp?store=14625&cid=localstore14625",
+						emoji: "🔨",
+						name: "Ace Hardware",
+						description: "Cashier"
+					},
+					{
+						url: "//allstarss.com",
+						emoji: "🌟",
+						name: "All Star Software Systems",
+						description: "Junior Solution Architect"
+					}
+				])
+		
+		footer.contact
+			p.contact__text
+				| Say hello —
+				a.contact__link(href="mailto:spencer@berenson.me" target="_blank" rel="noopener")
+					b.contact__email.contact__email--mobile
+						span.contact__email-part spencer
+						br
+						span.contact__email-part @berenson.me
+
+					b.contact__email.contact__email--desktop 
+						| spencer@berenson.me
+	<!--<![endif]-->
