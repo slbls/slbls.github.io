@@ -14,8 +14,8 @@ html {
 }
 
 body {
+	max-width: 37.5em;
 	padding: 0 1em;
-	max-width: 30em;
 	background-color: $white;
 
 	// Improves font rendering on non-Webkit browsers (smooths jagged edges).
