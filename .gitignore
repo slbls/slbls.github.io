@@ -60,5 +60,8 @@ typings/
 # Parcel cache
 .cache
 
+# package-lock.json
+package-lock.json
+
 # distribution files
 dist/
