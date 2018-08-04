@@ -15,6 +15,7 @@ html {
 
 body {
 	max-width: 37.5em;
+	margin: 20vmin auto;
 	padding: 0 1em;
 	background-color: $white;
 
@@ -29,18 +30,6 @@ body {
 	font-size: calc(1em + 0.5vmin);
 	font-kerning: auto;
 	color: $light-black;
-}
-
-@media (orientation: portrait) {
-	body {
-		margin: 20% auto;
-	}
-}
-
-@media (orientation: landscape) {
-	body {
-		margin: 10% auto;
-	}
 }
 
 ::selection {
