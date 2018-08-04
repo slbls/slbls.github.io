@@ -1,21 +1,18 @@
 extends templates/base.pug
 
-mixin showcase(heading)
+mixin showcase(heading, items)
 	section.showcase
 		h1.showcase__heading= heading
-		block
-
-mixin showcase-items(items)
-	ul.showcase-items
-		each item in items
-			li.showcase-item
-				a.showcase-item__link(href=item.url target="_blank" rel="noopener")
-					span.showcase-item__emoji= item.emoji
-					p.showcase-item__text
-						b.showcase-item__name= item.name
-						br
-						span.showcase-item__description= item.description
-
+		ul.showcase-items
+			each item in items
+				li.showcase-item
+					a.showcase-item__link(href=item.url target="_blank" rel="noopener")
+						span.showcase-item__emoji= item.emoji
+						p.showcase-item__text
+							b.showcase-item__name= item.name
+							br
+							span.showcase-item__description= item.description
+	
 block body
 	<!--[if IE]>
 		p.old-browser
@@ -42,43 +39,41 @@ block body
 					Solution Architect at All Star Software Systems.
 
 		main
-			+showcase("Projects")
-				+showcase-items([
+			+showcase("Projects", [
 					{
-						url: "http://uhsse.org",
-						emoji: "🎒",
-						name: "UHSSE.org",
-						description: "Redesign of my high school website"
-					},
-					{
-						url: "//github.com/bearinsun/quotecord",
-						emoji: "💬",
-						name: "Quotecord",
-						description: "Discord self-bot for quoting messages"
-					},
-					{
-						url: "//github.com/bearinsun/swear-search",
-						emoji: "🔎",
-						name: "swear-search",
-						description: "Analyzes programming languages vs profanities"
-					}
-				])
+					url: "http://uhsse.org",
+					emoji: "🎒",
+					name: "UHSSE.org",
+					description: "Redesign of my high school website"
+				},
+				{
+					url: "//github.com/bearinsun/quotecord",
+					emoji: "💬",
+					name: "Quotecord",
+					description: "Discord self-bot for quoting messages"
+				},
+				{
+					url: "//github.com/bearinsun/swear-search",
+					emoji: "🔎",
+					name: "swear-search",
+					description: "Analyzes programming languages vs profanities"
+				}
+			])
 
-			+showcase("Work Experience")
-				+showcase-items([
-					{
-						url: "//www.acehardware.com/store-details/14625",
-						emoji: "🔨",
-						name: "Ace Hardware",
-						description: "Cashier"
-					},
-					{
-						url: "//allstarss.com",
-						emoji: "🌟",
-						name: "All Star Software Systems",
-						description: "Junior Solution Architect"
-					}
-				])
+			+showcase("Work Experience", [
+				{
+					url: "//www.acehardware.com/store-details/14625",
+					emoji: "🔨",
+					name: "Ace Hardware",
+					description: "Cashier"
+				},
+				{
+					url: "//allstarss.com",
+					emoji: "🌟",
+					name: "All Star Software Systems",
+					description: "Junior Solution Architect"
+				}
+			])
 		
 		footer.contact
 			p.contact__text
