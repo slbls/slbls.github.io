@@ -14,9 +14,9 @@ html {
 }
 
 body {
-	max-width: 37.5em;
-	margin: 20vmin auto;
-	padding: 0 1em;
+	max-width: 35em;
+	margin: 0 auto;
+	padding: 12.5vmin 1em;
 	background-color: $white;
 
 	// Improves font rendering on non-Webkit browsers (smooths jagged edges).
@@ -30,6 +30,13 @@ body {
 	font-size: calc(1em + 0.5vmin);
 	font-kerning: auto;
 	color: $light-black;
+}
+
+@media (min-width: $widescreen) {
+	body {
+		margin-right: 0;
+		margin-left: 25vmin;
+	}
 }
 
 ::selection {
