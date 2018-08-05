@@ -156,23 +156,13 @@ $heading-margin: 1em;
 }
 
 .footer__text {
-	display: block;
 	line-height: 1.5;
-}
-
-.footer__text--contact {
-	border-bottom: 1px solid $gray;
-	padding-bottom: 1em;
-}
-
-.footer__text--copyright {
-	padding-top: 1em;
 }
 
 .footer__link {
 	@include link;
 }
 
-.footer__important {
+.footer__copyright {
 	font-weight: 600;
 }
