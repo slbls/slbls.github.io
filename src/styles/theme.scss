@@ -14,18 +14,23 @@ $heading-margin: 1em;
 
 	color: $dark-black;
 
-	::selection {
+	&::selection {
 		background-color: $dark-black;
+		color: $white;
 	}
 }
 
 @mixin link {
 	text-decoration: none;
-	color: #6bf;
+	color: $blue;
 
 	&:hover,
 	&:focus {
 		text-decoration: underline;
+	}
+
+	&::selection {
+		color: $blue;
 	}
 }
 
@@ -156,7 +161,7 @@ $heading-margin: 1em;
 }
 
 .footer__text--contact {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid $gray;
 	padding-bottom: 1em;
 }
 
