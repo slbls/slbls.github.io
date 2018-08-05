@@ -1,11 +1,17 @@
 @import "./_reset";
 
-@mixin link {
-	text-decoration: none;
-	color: inherit;
+$section-padding: 2.75em;
+
+@mixin section {
+	padding: $section-padding 0;
 }
 
+$heading-margin: 1em;
+
 @mixin heading {
+	margin: 0;
+	margin-bottom: $heading-margin;
+
 	color: $dark-black;
 
 	::selection {
@@ -13,22 +19,40 @@
 	}
 }
 
-.header__heading {
-	margin-bottom: 0.75em;
-	@include heading;
+@mixin link {
+	text-decoration: none;
+	color: #6bf;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+.header {
+	@include section;
 }
 
 .header__introduction {
+	@include heading;
+}
+
+.header__about {
+	margin: 0;
 	line-height: 1.5;
 }
 
-.showcase {
-	padding: 2.25em 0;
+.header__link {
+	@include link;
 }
 
-.showcase__heading {
-	font-size: 1.5em;
+.showcase {
+	@include section;
+}
+
+.showcase__title {
 	@include heading;
+	font-size: 1.5em;
 }
 
 .showcase-items {
@@ -56,7 +80,8 @@
 	width: 100%;
 	height: 100%;
 
-	@include link;
+	text-decoration: none;
+	color: inherit;
 
 	&:hover {
 		transition: 0.15s all ease;
@@ -121,96 +146,28 @@
 	font-size: 0.9em;
 }
 
-.contact {
-	padding-top: 2.25em;
+.footer {
+	@include section;
 }
 
-.contact__text {
-	font-size: 2em;
-}
-
-.contact__link {
+.footer__text {
 	display: block;
+	line-height: 1.5;
+}
 
+.footer__text--contact {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 1em;
+}
+
+.footer__text--copyright {
+	padding-top: 1em;
+}
+
+.footer__link {
 	@include link;
-
-	&:active {
-		transition: 0.15s all ease;
-		top: 1px;
-	}
-
-	&:hover .contact__email-part::before,
-	&:focus .contact__email-part::before {
-		transition: 0.15s all ease;
-		width: 100%;
-	}
 }
 
-.contact__email {
-	font-weight: 700;
-	@include heading;
-}
-
-.contact__email--desktop {
-	display: none;
-}
-
-.contact__email-part {
-	transition: 0.15s all ease;
-
-	position: relative;
-
-	display: inline-block;
-
-	&::before {
-		transition: 0.15s all ease;
-
-		content: "";
-
-		position: absolute;
-		bottom: 0;
-		left: 0;
-
-		width: 0;
-		height: 3px;
-		background-color: $dark-black;
-	}
-}
-
-@media (min-width: 425px) {
-	.contact__link {
-		transition: 0.15s all ease;
-
-		position: relative;
-
-		display: inline-block;
-
-		&::before {
-			transition: 0.15s all ease;
-
-			content: "";
-
-			position: absolute;
-			bottom: 0;
-			left: 0;
-
-			width: 0;
-			height: 3px;
-			background-color: $dark-black;
-		}
-
-		&:hover::before,
-		&:focus::before {
-			transition: 0.15s all ease;
-			width: 100%;
-		}
-	}
-
-	.contact__email--desktop {
-		display: inline;
-	}
-
-	.contact__email--mobile {
-		display: none;
-	}
+.footer__important {
+	font-weight: 600;
 }
