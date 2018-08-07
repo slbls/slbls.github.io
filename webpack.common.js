@@ -34,7 +34,7 @@ module.exports = {
 					use: [
 						{
 							loader: "css-loader",
-							options: { minimize: "true" }
+							options: { minimize: true }
 						},
 						"postcss-loader",
 						"sass-loader"
