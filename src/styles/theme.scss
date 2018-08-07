@@ -12,11 +12,11 @@ $heading-margin: 1em;
 	margin: 0;
 	margin-bottom: $heading-margin;
 
-	color: $primary-black;
+	color: $dark-black;
 
 	&::selection {
-		background-color: $primary-black;
-		color: $primary-white;
+		background-color: $dark-black;
+		color: $off-white;
 	}
 }
 
@@ -113,7 +113,7 @@ $heading-margin: 1em;
 		border-radius: 5px;
 		width: 100%;
 		height: 100%;
-		background-color: $primary-white;
+		background-color: $off-white;
 	}
 
 	&:hover::before,
