@@ -29,8 +29,12 @@ $heading-margin: 1em;
 		text-decoration: underline;
 	}
 
+	&:visited {
+		color: #666eff;
+	}
+
 	&::selection {
-		color: $blue;
+		color: currentColor;
 	}
 }
 
