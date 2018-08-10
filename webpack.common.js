@@ -1,18 +1,16 @@
 const path = require("path"),
 	CleanPlugin = require("clean-webpack-plugin"),
-	ExtractTextPlugin = require("extract-text-webpack-plugin"),
 	HtmlPlugin = require("html-webpack-plugin"),
 	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin"),
+	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
 	WebappPlugin = require("webapp-webpack-plugin"),
 	CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-	entry: {
-		"scripts/app": "./src/scripts/app.js"
-	},
+	entry: [path.resolve("src/scripts/index.js")],
 	output: {
-		path: path.join(__dirname, "dist"),
-		filename: "[name].js"
+		path: path.resolve("dist"),
+		filename: "static/js/bundle.js"
 	},
 	module: {
 		rules: [
@@ -29,19 +27,13 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.scss$/,
-				use: ExtractTextPlugin.extract({
-					use: [
-						{
-							loader: "css-loader",
-							options: { minimize: true }
-						},
-						"postcss-loader",
-						"sass-loader"
-					],
-					fallback: "style-loader",
-					publicPath: "../"
-				})
+				test: /\.(sa|sc|c)ss$/,
+				use: [
+					"style-loader",
+					"css-loader",
+					"postcss-loader",
+					"sass-loader"
+				]
 			},
 			{
 				test: /\.js$/,
@@ -52,7 +44,9 @@ module.exports = {
 	},
 	plugins: [
 		new CleanPlugin("dist"),
-		new ExtractTextPlugin("styles/theme.css"),
+		new MiniCssExtractPlugin({
+			filename: "static/css/bundle.css"
+		}),
 		new HtmlPlugin({ template: "src/pug/index.pug" }),
 		new ScriptExtHtmlPlugin({ defaultAttribute: "defer" }),
 		new WebappPlugin({
