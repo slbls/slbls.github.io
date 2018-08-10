@@ -17,7 +17,7 @@ body {
 	max-width: 35.5em;
 	margin: 0 auto;
 	padding: 12.5vmin 1em;
-	background-color: $off-white;
+	background-color: $white;
 
 	// Improves font rendering on non-Webkit browsers (smooths jagged edges).
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
@@ -42,7 +42,7 @@ body {
 
 ::selection {
 	background-color: $light-black;
-	color: $dark-white;
+	color: $off-white;
 }
 
 :focus {
