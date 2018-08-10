@@ -1,4 +1,4 @@
-import "../styles/theme.scss";
+import "../styles/index.scss";
 
 let isClick;
 document.body.addEventListener("click", () => (isClick = true));
