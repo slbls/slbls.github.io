@@ -40,11 +40,6 @@ body {
 	}
 }
 
-::selection {
-	background-color: $light-black;
-	color: $off-white;
-}
-
 :focus {
 	outline: none;
 }

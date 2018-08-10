@@ -49,6 +49,12 @@ $heading-margin: 1em;
 .header__about {
 	margin: 0;
 	line-height: 1.5;
+
+	&::selection,
+	::selection {
+		background-color: $light-black;
+		color: $off-white;
+	}
 }
 
 .header__link {
@@ -73,6 +79,12 @@ $heading-margin: 1em;
 .showcase-item {
 	&:not(:last-of-type) {
 		border-bottom: 1px solid $gray;
+	}
+
+	&::selection,
+	::selection {
+		background-color: $light-black;
+		color: $off-white;
 	}
 }
 
