@@ -29,7 +29,7 @@ body {
 	font-size: calc(1em + 0.5vmin);
 	font-kerning: auto;
 	color: $light-black;
-	quotes: "“" "”";
+	quotes: "“" "”" "‘" "’";
 }
 
 @media (min-width: $widescreen) {
