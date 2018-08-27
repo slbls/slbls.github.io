@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"description": "Spencer Berenson's personal/portfolio website.",
 	"scripts": {
-		"test": "webpack-dev-server --host 0.0.0.0 --mode=development",
-		"start": "webpack --mode=production"
+		"start": "webpack-dev-server --host 0.0.0.0 --mode=development",
+		"build": "webpack --mode=production"
 	},
 	"repository": {
 		"type": "git",
