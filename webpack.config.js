@@ -13,14 +13,15 @@ module.exports = (_env, options) => {
 				filename: "static/css/bundle-[hash].css"
 			}),
 			new HtmlPlugin({
-				template: "src/pug/index.pug"
+				template: "src/index.pug",
+				filename: isProduction ? "public/index.html" : "index.html"
 			}),
 			new ScriptExtHtmlPlugin({
 				defaultAttribute: "defer"
 			}),
 			new WebappPlugin({
-				logo: "./src/favicon.png",
-				prefix: "icons/",
+				logo: "./src/media/favicon.png",
+				prefix: "public/icons/",
 				inject: true,
 				favicons: {
 					background: "#f5f5f5",
@@ -51,7 +52,7 @@ module.exports = (_env, options) => {
 
 	return {
 		devtool: isProduction ? "source-map" : "inline-source-map",
-		entry: path.resolve("src/scripts/index.js"),
+		entry: path.resolve("src/index.js"),
 		output: {
 			path: path.resolve("dist"),
 			filename: "static/js/bundle-[hash].js"
