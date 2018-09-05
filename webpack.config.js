@@ -13,15 +13,14 @@ module.exports = (_env, options) => {
 				filename: "static/css/bundle-[hash].css"
 			}),
 			new HtmlPlugin({
-				template: "src/index.pug",
-				filename: isProduction ? "public/index.html" : "index.html"
+				template: "src/index.pug"
 			}),
 			new ScriptExtHtmlPlugin({
 				defaultAttribute: "defer"
 			}),
 			new WebappPlugin({
 				logo: "./src/media/favicon.png",
-				prefix: "public/icons/",
+				prefix: "icons/",
 				inject: true,
 				favicons: {
 					background: "#f5f5f5",
