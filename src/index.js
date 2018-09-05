@@ -1,5 +1,5 @@
 import "normalize.css/normalize.css";
-import "../styles/index.scss";
+import "./index.scss";
 
 let isClick;
 document.body.addEventListener("click", () => (isClick = true));
