@@ -51,13 +51,13 @@ module.exports = (_env, options) => {
 
 	return {
 		devtool: isProduction ? "source-map" : "inline-source-map",
-		entry: path.resolve("src/index.js"),
+		entry: path.resolve("src/index.ts"),
 		output: {
 			path: path.resolve("dist"),
 			filename: "static/js/bundle-[hash].js"
 		},
 		resolve: {
-			extensions: [".js", ".json", ".jsx"]
+			extensions: [".js", ".jsx", ".json", ".ts", ".tsx"]
 		},
 		module: {
 			rules: [
@@ -88,9 +88,9 @@ module.exports = (_env, options) => {
 					]
 				},
 				{
-					test: /\.j(s|sx)$/,
+					test: /\.tsx?$/,
 					exclude: /node_modules/,
-					use: ["babel-loader"]
+					use: ["ts-loader"]
 				}
 			]
 		},
