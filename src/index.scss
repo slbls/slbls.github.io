@@ -173,6 +173,12 @@ $heading-margin: 1em;
 
 .footer__text {
 	line-height: 1.5;
+
+	&::selection,
+	::selection {
+		background-color: $light-black;
+		color: $off-white;
+	}
 }
 
 .footer__link {
