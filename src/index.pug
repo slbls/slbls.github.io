@@ -6,7 +6,7 @@ mixin showcase(heading, items)
 		ul.showcase-items
 			each item in items
 				li.showcase-item
-					a.showcase-item__link(href=item.url target="_blank" rel="noopener")
+					a.showcase-item__link(href=item.url target="_blank" rel="noopener noreferrer")
 						span.showcase-item__emoji= item.emoji
 						p.showcase-item__text
 							b.showcase-item__name= item.name
@@ -93,7 +93,7 @@ block body
 		footer.footer
 			small.footer__text
 				| For inquiries or just to say hello—
-				a.footer__link(href="mailto:spencer@berenson.me" target="_blank" rel="noopener")
+				a.footer__link(href="mailto:spencer@berenson.me" target="_blank" rel="noopener noreferrer")
 					| spencer@berenson.me
 
 				br
