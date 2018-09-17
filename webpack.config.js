@@ -10,7 +10,7 @@ module.exports = (_env, options) => {
 	const isProduction = options.mode.toLowerCase() === "production",
 		plugins = [
 			new MiniCssExtractPlugin({
-				filename: "static/css/bundle-[hash].css"
+				filename: "css/bundle-[hash].css"
 			}),
 			new HtmlPlugin({
 				template: "src/index.pug"
@@ -20,7 +20,7 @@ module.exports = (_env, options) => {
 			}),
 			new WebappPlugin({
 				logo: "./src/media/favicon.png",
-				prefix: "icons/",
+				prefix: "media/",
 				inject: true,
 				favicons: {
 					background: "#f5f5f5",
@@ -51,13 +51,10 @@ module.exports = (_env, options) => {
 
 	return {
 		devtool: isProduction ? "source-map" : "inline-source-map",
-		entry: path.resolve("src/index.ts"),
+		entry: path.resolve("src/index.js"),
 		output: {
 			path: path.resolve("dist"),
-			filename: "static/js/bundle-[hash].js"
-		},
-		resolve: {
-			extensions: [".js", ".jsx", ".json", ".ts", ".tsx"]
+			filename: "js/bundle-[hash].js"
 		},
 		module: {
 			rules: [
@@ -90,7 +87,7 @@ module.exports = (_env, options) => {
 				{
 					test: /\.tsx?$/,
 					exclude: /node_modules/,
-					use: ["ts-loader"]
+					use: ["babel-loader"]
 				}
 			]
 		},
