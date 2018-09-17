@@ -1,6 +1,6 @@
 @import "./styles/_reset";
 
-$section-padding: 2.75em;
+$section-padding: 2em;
 
 @mixin section {
 	padding: $section-padding 0;
@@ -9,9 +9,6 @@ $section-padding: 2.75em;
 $heading-margin: 1em;
 
 @mixin heading {
-	margin: 0;
-	margin-bottom: $heading-margin;
-
 	color: $dark-black;
 
 	&::selection {
@@ -47,7 +44,6 @@ $heading-margin: 1em;
 }
 
 .header__about {
-	margin: 0;
 	line-height: 1.5;
 
 	&::selection,
