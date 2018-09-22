@@ -9,11 +9,11 @@ $section-padding: 2em;
 $heading-margin: 1em;
 
 @mixin heading {
-	color: $dark-black;
+	color: $primary-light;
 
 	&::selection {
-		background-color: $dark-black;
-		color: $white;
+		background-color: $primary-dark;
+		color: $primary-light;
 	}
 }
 
@@ -48,8 +48,8 @@ $heading-margin: 1em;
 
 	&::selection,
 	::selection {
-		background-color: $light-black;
-		color: $off-white;
+		background-color: $secondary-dark;
+		color: $secondary-light;
 	}
 }
 
@@ -73,14 +73,10 @@ $heading-margin: 1em;
 }
 
 .showcase-item {
-	&:not(:last-of-type) {
-		border-bottom: 1px solid $gray;
-	}
-
 	&::selection,
 	::selection {
-		background-color: $light-black;
-		color: $off-white;
+		background-color: $secondary-dark;
+		color: $secondary-light;
 	}
 }
 
@@ -88,27 +84,22 @@ $heading-margin: 1em;
 	transition: 0.15s all ease;
 
 	position: relative;
-	z-index: 0;
 
 	display: flex;
 	align-items: center;
 
 	padding: 0.5em 0;
-	width: 100%;
-	height: 100%;
 
 	text-decoration: none;
 	color: inherit;
 
 	&:hover {
 		transition: 0.15s all ease;
-
 		z-index: 1;
 	}
 
 	&:focus {
 		transition: 0.15s all ease;
-
 		z-index: 2;
 	}
 
@@ -125,21 +116,21 @@ $heading-margin: 1em;
 		border-radius: 5px;
 		width: 100%;
 		height: 100%;
-		background-color: $white;
+		background-color: transparent;
 	}
 
 	&:hover::before,
 	&:focus::before {
 		transition: 0.15s all ease;
 
-		box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 0 17.5px rgba($secondary-light, 0.05);
 		transform: scale(1.1, 1.075);
 	}
 
 	&:active::before {
 		transition: 0.15s all ease;
 
-		box-shadow: 0 0 25px rgba(0, 0, 0, 0.035);
+		box-shadow: 0 0 17.5px rgba($secondary-light, 0.035);
 		transform: scale(1.05, 1.025);
 	}
 }
@@ -172,8 +163,8 @@ $heading-margin: 1em;
 
 	&::selection,
 	::selection {
-		background-color: $light-black;
-		color: $off-white;
+		background-color: $secondary-dark;
+		color: $secondary-light;
 	}
 }
 

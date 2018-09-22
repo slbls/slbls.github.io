@@ -5,7 +5,8 @@ body {
 	max-width: 35.5em;
 	margin: 0 auto;
 	padding: 10vmin 1em;
-	background-color: $white;
+	background-color: $primary-dark;
+	background-image: linear-gradient($primary-dark, $secondary-dark);
 
 	// Improves font rendering on non-Webkit browsers (smooths jagged edges).
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
@@ -15,7 +16,7 @@ body {
 
 	font-size: calc(1em + 0.5vmin);
 	font-kerning: auto;
-	color: $light-black;
+	color: $secondary-light;
 	quotes: "“" "”" "‘" "’";
 }
 
