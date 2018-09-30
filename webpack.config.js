@@ -10,7 +10,7 @@ module.exports = (_env, options) => {
 	const isProduction = options.mode.toLowerCase() === "production",
 		plugins = [
 			new MiniCssExtractPlugin({
-				filename: "css/bundle-[hash].css"
+				filename: "css/bundle.[hash].css"
 			}),
 			new HtmlPlugin({
 				template: "src/index.pug"
@@ -53,7 +53,7 @@ module.exports = (_env, options) => {
 		entry: path.resolve("src/index.js"),
 		output: {
 			path: path.resolve("dist"),
-			filename: "js/bundle-[hash].js"
+			filename: "js/bundle.[hash].js"
 		},
 		module: {
 			rules: [
