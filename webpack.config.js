@@ -40,14 +40,13 @@ module.exports = (_env, options) => {
 			})
 		];
 
-	if (isProduction) {
-		plugins.push(new CleanPlugin("dist"));
+	if (isProduction)
 		plugins.push(
+			new CleanPlugin("dist"),
 			new CopyPlugin([
 				{ from: "_redirects", to: "_redirects", toType: "file" }
 			])
 		);
-	}
 
 	return {
 		devtool: isProduction ? "source-map" : "inline-source-map",
