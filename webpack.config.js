@@ -85,7 +85,7 @@ module.exports = (_env, options) => {
 					]
 				},
 				{
-					test: /\.tsx?$/,
+					test: /\.js$/,
 					exclude: /node_modules/,
 					use: ["babel-loader"]
 				}
