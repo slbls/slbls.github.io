@@ -10,7 +10,7 @@ module.exports = (_env, options) => {
 	const isProduction = options.mode.toLowerCase() === "production",
 		plugins = [
 			new MiniCssExtractPlugin({
-				filename: "css/bundle-[hash].css"
+				filename: "css/bundle.[hash].css"
 			}),
 			new HtmlPlugin({
 				template: "src/index.pug"
@@ -23,8 +23,8 @@ module.exports = (_env, options) => {
 				prefix: "media/",
 				inject: true,
 				favicons: {
-					background: "#f5f5f5",
-					theme_color: "#333333",
+					background: "#121217",
+					theme_color: "#121217",
 					display: "browser",
 					icons: {
 						android: true,
@@ -40,21 +40,20 @@ module.exports = (_env, options) => {
 			})
 		];
 
-	if (isProduction) {
-		plugins.push(new CleanPlugin("dist"));
+	if (isProduction)
 		plugins.push(
+			new CleanPlugin("dist"),
 			new CopyPlugin([
 				{ from: "_redirects", to: "_redirects", toType: "file" }
 			])
 		);
-	}
 
 	return {
 		devtool: isProduction ? "source-map" : "inline-source-map",
 		entry: path.resolve("src/index.js"),
 		output: {
 			path: path.resolve("dist"),
-			filename: "js/bundle-[hash].js"
+			filename: "js/bundle.[hash].js"
 		},
 		module: {
 			rules: [
@@ -85,7 +84,7 @@ module.exports = (_env, options) => {
 					]
 				},
 				{
-					test: /\.tsx?$/,
+					test: /\.js$/,
 					exclude: /node_modules/,
 					use: ["babel-loader"]
 				}
