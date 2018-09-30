@@ -12,8 +12,8 @@ $heading-margin: 1em;
 	color: $primary-light;
 
 	&::selection {
-		background-color: $primary-dark;
-		color: $primary-light;
+		background-color: $primary-light;
+		color: $primary-dark;
 	}
 }
 
@@ -45,11 +45,12 @@ $heading-margin: 1em;
 
 .header__about {
 	line-height: 1.5;
+	font-weight: 300;
 
 	&::selection,
 	::selection {
-		background-color: $secondary-dark;
-		color: $secondary-light;
+		background-color: $secondary-light;
+		color: $secondary-dark;
 	}
 }
 
@@ -75,8 +76,8 @@ $heading-margin: 1em;
 .showcase-item {
 	&::selection,
 	::selection {
-		background-color: $secondary-dark;
-		color: $secondary-light;
+		background-color: $secondary-light;
+		color: $secondary-dark;
 	}
 }
 
@@ -145,13 +146,14 @@ $heading-margin: 1em;
 }
 
 .showcase-item__name {
-	font-weight: 600;
+	font-weight: 400;
 }
 
 .showcase-item__description {
 	display: inline-block;
 
 	font-size: 0.9em;
+	font-weight: 300;
 }
 
 .footer {
@@ -163,8 +165,8 @@ $heading-margin: 1em;
 
 	&::selection,
 	::selection {
-		background-color: $secondary-dark;
-		color: $secondary-light;
+		background-color: $secondary-light;
+		color: $secondary-dark;
 	}
 }
 
