@@ -1,104 +1,11 @@
 extends templates/base.pug
-
-mixin showcase(heading, items)
-	section.showcase
-		h1.showcase__title= heading
-		ul.showcase-items
-			each item in items
-				li.showcase-item
-					a.showcase-item__link(href=item.url target="_blank" rel="noopener noreferrer")
-						span.showcase-item__emoji= item.emoji
-						p.showcase-item__text
-							b.showcase-item__name= item.name
-							br
-							span.showcase-item__description= item.description
 	
+mixin link(link, text, tab)
+	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
+
 block body
-	<!--[if IE]>
-		p.browser-warning
-			.
-				You are using an outdated version of
-				#[b.browser-warning__important Internet Explorer.]
+	h1.name Spencer Berenson
+	p.about Front-end developer and technology enthusiast from Connecticut.
 
-				#[br]
-				#[br]
-
-				#[em Please upgrade] to at least
-				#[b.browser-warning__important version 10] or use
-				#[b.browser-warning__important Firefox] or 
-				#[b.browser-warning__important Chrome] to view this website.
-	<![endif]-->
-
-	<!--[if !IE]><!-->
-		header.header
-			h1.header__introduction(title="140+ WPM typing speed!") Hi, I'm Spencer.
-			p.header__about
-				.
-					I'm your friendly neighborhood programmer and technology 
-					enthusiast from Connecticut, USA. I strive to create 
-					#[em intuitive] and #[em expressive] experiences for the 
-					web.
-
-					#[br]
-					#[br]
-
-					Currently studying Computer Science at 
-					#[a.header__link(href="//ccsu.edu" target="_blank" rel="noopener noreferrer") CCSU] 
-					and working as a Junior Solution Architect at 
-					#[a.header__link(href="//allstarss.com" target="_blank" rel="noopener noreferrer") All Star Software Systems].
-
-		main
-			+showcase("Projects", [
-				{
-					url: "http://uhsse.org",
-					emoji: "🎒",
-					name: "UHSSE.org",
-					description: "Redesign of my high school website"
-				},
-				{
-					url: "//github.com/bearinsun/quotecord",
-					emoji: "💬",
-					name: "Quotecord",
-					description: "Discord self-bot for quoting messages"
-				},
-				{
-					url: "//github.com/bearinsun/swear-search",
-					emoji: "🔎",
-					name: "swear-search",
-					description: "Analyzes programming languages vs profanities"
-				},
-				{
-					url: "//github.com/bearinsun/type-fast",
-					emoji: "💨",
-					name: "type-fast",
-					description: "Simple, minimal typing practice"
-				}
-			])
-
-			+showcase("Work Experience", [
-				{
-					url: "//www.acehardware.com/store-details/14625",
-					emoji: "🔨",
-					name: "Ace Hardware",
-					description: "Cashier"
-				},
-				{
-					url: "//allstarss.com",
-					emoji: "🌟",
-					name: "All Star Software Systems",
-					description: "Junior Solution Architect"
-				}
-			])
-		
-		footer.footer
-			small.footer__text
-				| For inquiries or just to say hello—
-				a.footer__link(href="mailto:spencer@berenson.me" target="_blank" rel="noopener noreferrer")
-					| spencer@berenson.me
-
-				br
-
-				b.footer__copyright © 
-					= new Date().getFullYear()
-			
-	<!--<![endif]-->
+	+link("mailto:spencer@berenson.me", "spencer [at] berenson.me", true)(class="link" title="Get in touch—send an email!")
+	+link("//github.com/bearinsun", "github.com/bearinsun", true)(class="link" title="Browse my projects!")
