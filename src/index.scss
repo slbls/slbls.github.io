@@ -1,1 +1,55 @@
-@import "./styles/_reset";
+@import "./styles/_colors";
+@import "./styles/resolutions";
+
+html {
+	height: 100%;
+	background-color: #fff;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	max-width: 500px;
+	min-height: 100%;
+	padding: 50px;
+	background-color: $side-background;
+}
+
+::selection {
+	background-color: yellow;
+}
+
+.name {
+	margin: 0; // Margins do not collapse on flexbox children.
+
+	font-size: 100%;
+	color: $heading;
+}
+
+.about {
+	line-height: 1.5;
+	color: $paragraph;
+}
+
+.link {
+	transition: 0.15s ease-in-out border-bottom;
+
+	display: table;
+	width: 0;
+	border-bottom: 1px dashed $link-underline;
+
+	white-space: nowrap;
+	text-decoration: none;
+	color: $link;
+
+	& + & {
+		margin-top: 8px;
+	}
+
+	&:hover {
+		transition: 0.15s ease-in-out border-bottom;
+		border-bottom: 1px dashed $link;
+	}
+}
