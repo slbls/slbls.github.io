@@ -23,8 +23,8 @@ module.exports = (_env, options) => {
 				prefix: "media/",
 				inject: true,
 				favicons: {
-					background: "#121217",
-					theme_color: "#121217",
+					background: "#fafafa",
+					theme_color: "#111111",
 					display: "browser",
 					icons: {
 						android: true,
