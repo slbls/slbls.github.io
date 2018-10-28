@@ -13,7 +13,7 @@ body {
 	justify-content: center;
 
 	max-width: 500px;
-	height: 100%; // Column Flexbox in IE does not work properly with min-height
+	height: 100%; // Column flexbox in IE does not work properly with min-height
 	padding: 50px;
 	background-color: $side-background;
 }
@@ -37,8 +37,7 @@ body {
 .link {
 	transition: 0.15s ease-in-out border-bottom;
 
-	display: table;
-	width: 0;
+	align-self: flex-start;
 	border-bottom: 1px dashed $link-underline;
 
 	white-space: nowrap;
