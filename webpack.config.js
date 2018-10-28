@@ -4,6 +4,7 @@ const path = require("path"),
 	HtmlExcludeAssetsPlugin = require("html-webpack-exclude-assets-plugin"),
 	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
 	WebappPlugin = require("webapp-webpack-plugin"),
+	ImageminPlugin = require("imagemin-webpack-plugin").default,
 	ExtraneousFileCleanupPlugin = require("webpack-extraneous-file-cleanup-plugin"),
 	CopyPlugin = require("copy-webpack-plugin");
 
@@ -68,7 +69,9 @@ module.exports = (_env, options) => {
 					}
 				}
 			}),
-
+			new ImageminPlugin({
+				disable: !isProduction
+			}),
 			...(isProduction
 				? [
 						new CleanPlugin("dist"),
