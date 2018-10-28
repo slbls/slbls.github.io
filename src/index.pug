@@ -1,4 +1,11 @@
 extends templates/base.pug
 	
+mixin link(link, text, tab)
+	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
+
 block body
-	
+	h1.name Spencer Berenson
+	p.about Front-end developer and technology enthusiast from Connecticut.
+
+	+link("mailto:spencer@berenson.me", "spencer [at] berenson.me", true)(class="link")
+	+link("//github.com/bearinsun", "github.com/bearinsun", true)(class="link")
