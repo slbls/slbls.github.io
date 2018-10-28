@@ -48,7 +48,6 @@ module.exports = (_env, options) => {
 				template: "src/index.pug",
 				...(isProduction && { excludeAssets: [/main\.(map.)*js/] })
 			}),
-			new HtmlExcludeAssetsPlugin(),
 			new WebappPlugin({
 				logo: "./src/media/favicon.png",
 				prefix: "media/",
@@ -69,9 +68,7 @@ module.exports = (_env, options) => {
 					}
 				}
 			}),
-			new ExtraneousFileCleanupPlugin({
-				extensions: [".js"]
-			}),
+
 			...(isProduction
 				? [
 						new CleanPlugin("dist"),
@@ -81,7 +78,11 @@ module.exports = (_env, options) => {
 								to: "_redirects",
 								toType: "file"
 							}
-						])
+						]),
+						new HtmlExcludeAssetsPlugin(),
+						new ExtraneousFileCleanupPlugin({
+							extensions: [".js"]
+						})
 				  ]
 				: [])
 		]
