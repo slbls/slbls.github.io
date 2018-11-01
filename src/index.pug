@@ -4,4 +4,53 @@ mixin link(link, text, tab)
 	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 
 block body
-	
+	header.header
+		h1.header__introduction.
+			Spencer Berenson is a front-end developer and tech enthusiast from 
+			Connecticut.
+
+	main
+		section.section
+			h1.section__name Currently
+			p.section__content.
+				Junior Solution Architect at All Star Software Systems
+
+		section.section
+			h1.section__name Projects
+			ul.section__content.section__content--list
+				li.project
+					strong.project__name
+						+link("//uhsse.org", "UHSSE.org", true)(class="project__link")
+
+					small.project__description.
+						Redesign of my high school website.
+				
+				li.project
+					strong.project__name
+						+link("//github.com/bearinsun/quotecord", "Quotecord", true)(class="project__link")
+					
+					small.project__description.
+						Prototype self-bot quoting in Discord.
+
+				li.project
+					strong.project__name
+						+link("//github.com/bearinsun/swear-search", "swear-search", true)(class="project__link")
+					
+					small.project__description.
+						Analyzes programming languages vs profanities.
+
+				li.project
+					strong.project__name
+						+link("//github.com/bearinsun/type-fast", "type-fast", true)(class="project__link")
+					
+					small.project__description.
+						Simple and minimal typing practice.
+
+		section.section
+			h1.section__name Contact
+			ul.section__content.section__content--list
+				li.contact
+					+link("mailto:spencer@berenson.me", "spencer [at] berenson.me", true)(class="contact__link")
+
+				li.contact
+					+link("//github.com/bearinsun", "github.com/bearinsun", true)(class="contact__link")
