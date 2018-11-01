@@ -1,3 +1,140 @@
 @import "~sanitize.css";
 @import "./styles/_colors";
 @import "./styles/resolutions";
+
+@function vmax($scalar) {
+	@return calc(#{$scalar} * (1vw + 1vh - 1vmin));
+}
+
+@function spacing($scalar) {
+	@return calc(#{vmax($scalar)} + 56px);
+}
+
+html {
+	padding: 0 3.5vh;
+	text-align: center;
+}
+
+body {
+	display: inline-block;
+	max-width: 700px;
+	padding-bottom: spacing(5);
+
+	text-align: left;
+}
+
+::selection {
+	background-color: $transparent-accent;
+	color: $accent;
+}
+
+.header {
+	padding-top: spacing(15);
+	padding-bottom: spacing(5);
+}
+
+.header__introduction {
+	line-height: 1.5;
+
+	font-size: 1.5em;
+	font-weight: 400;
+	color: $black;
+}
+
+.section {
+	& + & {
+		margin-top: spacing(2.5);
+	}
+}
+
+.section__name {
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: 300;
+	color: $light-gray;
+}
+
+.section__content {
+	color: $dark-gray;
+
+	&--list {
+		padding: 0;
+
+		list-style: none;
+	}
+}
+
+.project {
+	& + & {
+		margin-top: 35px;
+	}
+}
+
+.project__name {
+	transition: 0.1s all linear;
+
+	border-bottom: 1px dotted currentColor;
+
+	font-weight: inherit;
+
+	&:hover {
+		color: $accent;
+	}
+
+	& + .project__description {
+		margin-top: 10px;
+	}
+}
+
+.project__link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.project__description {
+	display: block;
+
+	font-size: 0.8em;
+	color: $gray;
+}
+
+.contact {
+	& + & {
+		margin-top: 10px;
+	}
+}
+
+.contact__link {
+	transition: 0.1s all linear;
+
+	border-bottom: 1px dotted currentColor;
+
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		color: $accent;
+	}
+}
+
+@media (min-width: $mobile) {
+	html {
+		padding: 0 10vh;
+	}
+}
+
+@media (min-width: $desktop) {
+	.section {
+		display: flex;
+	}
+
+	.section__name {
+		flex-basis: 75px;
+		margin-top: 0;
+		margin-right: 125px;
+	}
+
+	.section__content {
+		margin-top: 0;
+	}
+}
