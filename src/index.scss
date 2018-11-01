@@ -2,12 +2,8 @@
 @import "./styles/_colors";
 @import "./styles/resolutions";
 
-@function vmax($scalar) {
-	@return calc(#{$scalar} * (1vw + 1vh - 1vmin));
-}
-
 @function spacing($scalar) {
-	@return calc(#{vmax($scalar)} + 56px);
+	@return calc(#{$scalar}vw + 56px);
 }
 
 html {
