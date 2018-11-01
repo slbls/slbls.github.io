@@ -122,15 +122,15 @@ body {
 @media (min-width: $desktop) {
 	.section {
 		display: flex;
+		justify-content: space-between;
 	}
 
 	.section__name {
-		flex-basis: 75px;
 		margin-top: 0;
-		margin-right: 125px;
 	}
 
 	.section__content {
+		flex-basis: 72.5%;
 		margin-top: 0;
 	}
 }
