@@ -3,6 +3,16 @@ extends templates/base.pug
 mixin link(link, text, tab)
 	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 
+mixin projects(projects)
+	dl.section__content.section__content-list
+		each project in projects
+			+project(project.name, project.link, project.description)
+
+mixin project(name, link, description)
+	dt.project__name
+		+link(link, name, true)(class="project__link")
+	dd.project__description= description
+
 block body
 	header.header
 		h1.header__introduction.
@@ -17,26 +27,31 @@ block body
 
 		section.section
 			h1.section__name Projects
-			dl.section__content.section__content-list
-				dt.project__name
-					+link("//uhsse.org", "UHSSE.org", true)(class="project__link")
-				dd.project__description.
-					Redesign of my high school website.
-
-				dt.project__name
-					+link("//github.com/bearinsun/quotecord", "Quotecord", true)(class="project__link")
-				dd.project__description.
-					Prototype self-bot quoting in Discord.
-
-				dt.project__name
-					+link("//github.com/bearinsun/swear-search", "swear-search", true)(class="project__link")
-				dd.project__description.
-					Analyzes programming languages vs profanities.
-				
-				dt.project__name
-					+link("//github.com/bearinsun/type-fast", "type-fast", true)(class="project__link")
-				dd.project__description.
-					Simple and minimal typing practice.
+			+projects(
+				[
+					{
+						name: "UHSSE.org",
+						link: "//uhsse.org",
+						description: "Redesign of my high school website."
+					},
+					{
+						name: "Quotecord",
+						link: "//github.com/bearinsun/quotecord",
+						description: "Prototype self-bot quoting in Discord."
+					},
+					{
+						name: "swear-search",
+						link: "//github.com/bearinsun/swear-search",
+						description: "Analyzes programming languages vs profanities."
+					},
+					{
+						name: "type-fast",
+						link: "//github.com/bearinsun/type-fast",
+						description: "Simple and minimal typing practice."
+					}
+				]
+			)
+					
 
 		section.section
 			h1.section__name Contact
