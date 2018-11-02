@@ -17,34 +17,26 @@ block body
 
 		section.section
 			h1.section__name Projects
-			ul.section__content.section__content--list
-				li.project
-					strong.project__name
-						+link("//uhsse.org", "UHSSE.org", true)(class="project__link")
+			dl.section__content.section__content-list
+				dt.project__name
+					+link("//uhsse.org", "UHSSE.org", true)(class="project__link")
+				dd.project__description.
+					Redesign of my high school website.
 
-					small.project__description.
-						Redesign of my high school website.
+				dt.project__name
+					+link("//github.com/bearinsun/quotecord", "Quotecord", true)(class="project__link")
+				dd.project__description.
+					Prototype self-bot quoting in Discord.
+
+				dt.project__name
+					+link("//github.com/bearinsun/swear-search", "swear-search", true)(class="project__link")
+				dd.project__description.
+					Analyzes programming languages vs profanities.
 				
-				li.project
-					strong.project__name
-						+link("//github.com/bearinsun/quotecord", "Quotecord", true)(class="project__link")
-					
-					small.project__description.
-						Prototype self-bot quoting in Discord.
-
-				li.project
-					strong.project__name
-						+link("//github.com/bearinsun/swear-search", "swear-search", true)(class="project__link")
-					
-					small.project__description.
-						Analyzes programming languages vs profanities.
-
-				li.project
-					strong.project__name
-						+link("//github.com/bearinsun/type-fast", "type-fast", true)(class="project__link")
-					
-					small.project__description.
-						Simple and minimal typing practice.
+				dt.project__name
+					+link("//github.com/bearinsun/type-fast", "type-fast", true)(class="project__link")
+				dd.project__description.
+					Simple and minimal typing practice.
 
 		section.section
 			h1.section__name Contact
