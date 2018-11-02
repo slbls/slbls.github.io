@@ -48,6 +48,6 @@
 		"webpack-extraneous-file-cleanup-plugin": "^2.0.0"
 	},
 	"dependencies": {
-		"sanitize.css": "^8.0.0"
+		"normalize.css": "^8.0.0"
 	}
 }

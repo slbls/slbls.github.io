@@ -1,5 +1,7 @@
-$side-background: #fafafa;
-$heading: #111;
-$paragraph: #222;
-$link: #444;
-$link-underline: #aaa;
+$black: #1b1b1b;
+$dark-gray: transparentize($black, 0.15);
+$gray: transparentize($black, 0.25);
+$light-gray: transparentize($black, 0.35);
+
+$accent: #31235c;
+$transparent-accent: transparentize($accent, 0.85);
