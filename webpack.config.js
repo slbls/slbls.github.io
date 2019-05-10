@@ -31,9 +31,10 @@ module.exports = (_env, options) => {
 				{
 					test: /.(c|sc|sa)ss$/,
 					use: [
-						isProduction
-							? MiniCssExtractPlugin.loader
-							: "style-loader",
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: { hmr: !isProduction }
+						},
 						"css-loader",
 						"postcss-loader",
 						{
@@ -79,7 +80,7 @@ module.exports = (_env, options) => {
 			}),
 			...(isProduction
 				? [
-						new CleanPlugin("dist"),
+						new CleanPlugin(),
 						new CopyPlugin([
 							{
 								from: "_redirects",
