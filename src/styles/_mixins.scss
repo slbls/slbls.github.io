@@ -12,19 +12,41 @@
 }
 
 @mixin link {
+	position: relative;
+
 	text-decoration: none;
 	color: $blue;
 
+	&::before {
+		content: "";
+
+		transition: transform 0.25s ease;
+
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		transform: scaleX(0);
+		transform-origin: bottom right;
+
+		height: 2px;
+		background-color: currentColor;
+	}
+
+	&:hover::before,
+	&:focus::before {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+
 	&:hover,
 	&:focus {
-		text-decoration: underline;
+		transform: scaleX(1);
+		transform-origin: bottom left;
 	}
 
 	&:visited {
 		color: $purple;
-	}
-
-	&::selection {
-		color: currentColor;
 	}
 }
