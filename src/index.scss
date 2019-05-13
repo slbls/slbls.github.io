@@ -50,7 +50,7 @@
 }
 
 .showcase-item__link {
-	transition: 0.15s all ease;
+	transition: 0.25s all ease;
 
 	position: relative;
 	z-index: 0;
@@ -66,19 +66,19 @@
 	color: inherit;
 
 	&:hover {
-		transition: 0.15s all ease;
+		transition: 0.25s all ease;
 
 		z-index: 1;
 	}
 
 	&:focus {
-		transition: 0.15s all ease;
+		transition: 0.25s all ease;
 
 		z-index: 2;
 	}
 
 	&::before {
-		transition: 0.15s all ease;
+		transition: 0.25s all ease;
 
 		content: "";
 
@@ -95,14 +95,14 @@
 
 	&:hover::before,
 	&:focus::before {
-		transition: 0.15s all ease;
+		transition: 0.25s all ease;
 
 		box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 		transform: scale(1.1, 1.075);
 	}
 
 	&:active::before {
-		transition: 0.15s all ease;
+		transition: 0.25s all ease;
 
 		box-shadow: 0 0 25px rgba(0, 0, 0, 0.035);
 		transform: scale(1.05, 1.025);
