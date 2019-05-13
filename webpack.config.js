@@ -7,13 +7,73 @@ const path = require("path"),
 	CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = (_env, options) => {
-	const isProduction = options.mode.toLowerCase() === "production",
-		plugins = [
+	const isProduction = options.mode.toLowerCase() === "production";
+
+	return {
+		devtool: isProduction ? "source-map" : "inline-source-map",
+		entry: path.resolve("src/index.js"),
+		output: {
+			path: path.resolve("dist"),
+			filename: isProduction ? "js/bundle.[hash].js" : "js/bundle.js"
+		},
+		module: {
+			rules: [
+				{
+					test: /.pug$/,
+					use: [
+						{
+							loader: "html-loader",
+							options: {
+								attrs: [":src"]
+							}
+						},
+						"pug-html-loader"
+					]
+				},
+				{
+					test: /.(sc|c|sa)ss$/,
+					use: [
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: { hmr: !isProduction }
+						},
+						"css-loader",
+						"postcss-loader",
+						{
+							loader: "sass-loader",
+							options: {
+								implementation: require("sass")
+							}
+						}
+					]
+				},
+				{
+					test: /\.js?$/,
+					exclude: /node_modules/,
+					use: "babel-loader"
+				}
+			]
+		},
+		plugins: [
 			new MiniCssExtractPlugin({
-				filename: "css/bundle-[hash].css"
+				filename: isProduction
+					? "css/bundle.[hash].css"
+					: "css/bundle.css"
 			}),
 			new HtmlPlugin({
-				template: "src/index.pug"
+				template: "src/index.pug",
+				...(isProduction && {
+					filename: "index.[hash].html",
+					minify: {
+						collapseBooleanAttributes: true,
+						removeEmptyAttributes: true,
+						removeScriptTypeAttributes: true,
+						removeStyleLinkTypeAttributes: true,
+						useShortDoctype: true,
+						sortAttributes: true,
+						sortClassName: true
+					}
+				})
 			}),
 			new ScriptExtHtmlPlugin({
 				defaultAttribute: "defer"
@@ -37,60 +97,19 @@ module.exports = (_env, options) => {
 						yandex: true
 					}
 				}
-			})
-		];
-
-	if (isProduction) {
-		plugins.push(new CleanPlugin("dist"));
-		plugins.push(
-			new CopyPlugin([
-				{ from: "_redirects", to: "_redirects", toType: "file" }
-			])
-		);
-	}
-
-	return {
-		devtool: isProduction ? "source-map" : "inline-source-map",
-		entry: path.resolve("src/index.js"),
-		output: {
-			path: path.resolve("dist"),
-			filename: "js/bundle-[hash].js"
-		},
-		module: {
-			rules: [
-				{
-					test: /.pug$/,
-					use: [
-						{
-							loader: "html-loader",
-							options: {
-								minimize: true
+			}),
+			...(isProduction
+				? [
+						new CleanPlugin(),
+						new CopyPlugin([
+							{
+								from: "_redirects",
+								to: "_redirects",
+								toType: "file"
 							}
-						},
-						"pug-html-loader"
-					]
-				},
-				{
-					test: /.(c|sc|sa)ss$/,
-					use: [
-						isProduction
-							? MiniCssExtractPlugin.loader
-							: "style-loader",
-						{
-							loader: "css-loader",
-							options: { minimize: "true" }
-						},
-						"postcss-loader",
-						"sass-loader"
-					]
-				},
-				{
-					test: /\.tsx?$/,
-					exclude: /node_modules/,
-					use: ["babel-loader"]
-				}
-			]
-		},
-		plugins: plugins
+						])
+				  ]
+				: [])
+		]
 	};
 };

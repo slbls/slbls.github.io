@@ -1,12 +1,16 @@
 extends templates/base.pug
 
+mixin link(link, text, tab)
+	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
+		block
+
 mixin showcase(heading, items)
 	section.showcase
 		h1.showcase__title= heading
 		ul.showcase-items
 			each item in items
 				li.showcase-item
-					a.showcase-item__link(href=item.url target="_blank" rel="noopener noreferrer")
+					+link(item.url, null, true)(class="showcase-item__link")
 						span.showcase-item__emoji= item.emoji
 						p.showcase-item__text
 							b.showcase-item__name= item.name
@@ -43,9 +47,9 @@ block body
 					#[br]
 
 					Currently studying Computer Science at 
-					#[a.header__link(href="//ccsu.edu" target="_blank" rel="noopener noreferrer") CCSU] 
+					#[+link("//ccsu.edu", "CCSU", true)(class="header__link")] 
 					and working as a Junior Solution Architect at 
-					#[a.header__link(href="//allstarss.com" target="_blank" rel="noopener noreferrer") All Star Software Systems].
+					#[+link("//allstarss.com", "All Star Software Systems", true)(class="header__link")].
 
 		main
 			+showcase("Projects", [
@@ -59,7 +63,7 @@ block body
 					url: "//github.com/bearinsun/quotecord",
 					emoji: "💬",
 					name: "Quotecord",
-					description: "Discord self-bot for quoting messages"
+					description: "Prototype self-bot quoting in Discord."
 				},
 				{
 					url: "//github.com/bearinsun/swear-search",
@@ -71,7 +75,7 @@ block body
 					url: "//github.com/bearinsun/type-fast",
 					emoji: "💨",
 					name: "type-fast",
-					description: "Simple, minimal typing practice"
+					description: "Simple and minimal typing practice"
 				}
 			])
 
