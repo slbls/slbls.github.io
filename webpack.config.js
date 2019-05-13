@@ -63,7 +63,7 @@ module.exports = (_env, options) => {
 			new HtmlPlugin({
 				template: "src/index.pug",
 				...(isProduction && {
-					filename: "index.[hash].html",
+					filename: "index.html",
 					minify: {
 						collapseBooleanAttributes: true,
 						removeEmptyAttributes: true,
