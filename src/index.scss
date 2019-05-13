@@ -1,39 +1,4 @@
-@import "./styles/_reset";
-
-$section-padding: 2em;
-
-@mixin section {
-	padding: $section-padding 0;
-}
-
-$heading-margin: 1em;
-
-@mixin heading {
-	color: $dark-black;
-
-	&::selection {
-		background-color: $dark-black;
-		color: $white;
-	}
-}
-
-@mixin link {
-	text-decoration: none;
-	color: $blue;
-
-	&:hover,
-	&:focus {
-		text-decoration: underline;
-	}
-
-	&:visited {
-		color: $purple;
-	}
-
-	&::selection {
-		color: currentColor;
-	}
-}
+@import "./styles/reset";
 
 .header {
 	@include section;
