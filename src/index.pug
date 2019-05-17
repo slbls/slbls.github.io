@@ -4,6 +4,12 @@ mixin link(link, text, tab)
 	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 		block
 
+mixin section(heading)
+	section.section
+		h1.section__heading= heading
+		
+		block
+
 mixin projects(projects)
 	ul.projects
 		each project in projects
@@ -18,9 +24,7 @@ block body
 		h1.introduction__name Spencer Berenson
 		h2.introduction__tags Developer. Geek. Human being.
 	
-	section.section
-		h1.section__heading Projects
-
+	+section("Projects")
 		+projects([
 			{
 				emoji: "🎒",
@@ -64,9 +68,7 @@ block body
 			}
 		])
 
-	section.section
-		h1.section__heading About
-
+	+section("About")
 		p.section__content.
 			I'm Spencer Berenson, your friendly neighborhood programmer and 
 			run-of-the-mill geek from Connecticut, USA. I strive to create 
