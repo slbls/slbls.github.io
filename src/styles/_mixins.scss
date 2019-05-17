@@ -6,4 +6,8 @@
 	&:focus {
 		text-decoration: underline;
 	}
+
+	&::after {
+		content: " →";
+	}
 }
