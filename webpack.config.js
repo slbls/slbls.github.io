@@ -4,7 +4,8 @@ const path = require("path"),
 	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin"),
 	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
 	WebappPlugin = require("webapp-webpack-plugin"),
-	CopyPlugin = require("copy-webpack-plugin");
+	CopyPlugin = require("copy-webpack-plugin"),
+	ImageminPlugin = require("imagemin-webpack-plugin").default;
 
 module.exports = (_env, options) => {
 	const isProduction = options.mode.toLowerCase() === "production";
@@ -107,7 +108,8 @@ module.exports = (_env, options) => {
 								to: "_redirects",
 								toType: "file"
 							}
-						])
+						]),
+						new ImageminPlugin()
 				  ]
 				: [])
 		]
