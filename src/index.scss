@@ -83,13 +83,15 @@ body {
 
 .projects {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: 1fr; // By default, take as much space as available.
 	gap: 1.75em;
 
 	padding: 0;
 	list-style: none;
 }
 
+// Once screen width is at least 131px, allow projects to be a minimum of 130px
+// wide.
 @media screen and (min-width: #{$minimum-project-width + 1px}) {
 	.projects {
 		grid-template-columns: repeat(
