@@ -1,0 +1,9 @@
+@mixin link {
+	text-decoration: none;
+	color: $secondary-white;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
