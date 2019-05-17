@@ -3,6 +3,64 @@ extends templates/base.pug
 mixin link(link, text, tab)
 	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 		block
+
+mixin projects(projects)
+	ul.projects
+		each project in projects
+			li.project
+				small.project__emoji= project.emoji
+				b.project__name= project.name
+				p.project__description= project.description
+				+link(project.link.link, project.link.text, project.link.tab)(class="project__link")
 	
 block body
+	header.introduction
+		h1.introduction__name Spencer Berenson
+		h2.introduction__tags.
+			Developer. Geek. Human being.
 	
+	section.section
+		h1.section__heading Projects
+
+		+projects([
+			{
+				emoji: "🎒",
+				name: "UHSSE.org",
+				description: "Redesign of my high school website.",
+				link: {
+					link: "//uhsse.org",
+					text: "Website →",
+					tab: true
+				}
+			},
+			{
+				emoji: "💬",
+				name: "Quotecord",
+				description: "Prototype self-bot quoting in Discord",
+				link: {
+					link: "//github.com/bearinsun/quotecord",
+					text: "GitHub →",
+					tab: true
+				}
+			},
+			{
+				emoji: "🔎",
+				name: "swear-search",
+				description: "Analyzes programming languages vs profanities",
+				link: {
+					link: "//github.com/bearinsun/swear-search",
+					text: "GitHub →",
+					tab: true
+				}
+			},
+			{
+				emoji: "🏁",
+				name: "type-fast",
+				description: "Simple and minimal typing practice",
+				link: {
+					link: "//github.com/bearinsun/type-fast",
+					text: "GitHub →",
+					tab: true
+				}
+			}
+		])
