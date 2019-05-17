@@ -4,7 +4,8 @@ const path = require("path"),
 	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin"),
 	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
 	WebappPlugin = require("webapp-webpack-plugin"),
-	CopyPlugin = require("copy-webpack-plugin");
+	CopyPlugin = require("copy-webpack-plugin"),
+	ImageminPlugin = require("imagemin-webpack-plugin").default;
 
 module.exports = (_env, options) => {
 	const isProduction = options.mode.toLowerCase() === "production";
@@ -83,8 +84,8 @@ module.exports = (_env, options) => {
 				prefix: "media/",
 				inject: true,
 				favicons: {
-					background: "#f5f5f5",
-					theme_color: "#333333",
+					background: "#111111",
+					theme_color: "#111111",
 					display: "browser",
 					icons: {
 						android: true,
@@ -107,7 +108,8 @@ module.exports = (_env, options) => {
 								to: "_redirects",
 								toType: "file"
 							}
-						])
+						]),
+						new ImageminPlugin()
 				  ]
 				: [])
 		]

@@ -4,104 +4,87 @@ mixin link(link, text, tab)
 	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 		block
 
-mixin showcase(heading, items)
-	section.showcase
-		h1.showcase__title= heading
-		ul.showcase-items
-			each item in items
-				li.showcase-item
-					+link(item.url, null, true)(class="showcase-item__link")
-						span.showcase-item__emoji= item.emoji
-						p.showcase-item__text
-							b.showcase-item__name= item.name
-							br
-							span.showcase-item__description= item.description
+mixin section(heading)
+	section.section
+		h1.section__heading= heading
+		
+		block
+
+mixin projects(projects)
+	ul.projects
+		each project in projects
+			li.project
+				small.project__emoji= project.emoji
+				b.project__name= project.name
+				p.project__description= project.description
+				+link(project.link.link, project.link.text, project.link.tab)(class="project__link")
 	
 block body
-	<!--[if IE]>
-		p.browser-warning
-			.
-				You are using an outdated version of
-				#[b.browser-warning__important Internet Explorer.]
-
-				#[br]
-				#[br]
-
-				#[em Please upgrade] to at least
-				#[b.browser-warning__important version 10] or use
-				#[b.browser-warning__important Firefox] or 
-				#[b.browser-warning__important Chrome] to view this website.
-	<![endif]-->
-
-	<!--[if !IE]><!-->
-		header.header
-			h1.header__introduction(title="140+ WPM typing speed!") Hi, I'm Spencer.
-			p.header__about
-				.
-					I'm your friendly neighborhood programmer and technology 
-					enthusiast from Connecticut, USA. I strive to create 
-					#[em intuitive] and #[em expressive] experiences for the 
-					web.
-
-					#[br]
-					#[br]
-
-					Currently studying Computer Science at 
-					#[+link("//ccsu.edu", "CCSU", true)(class="header__link")] 
-					and working as a Junior Solution Architect at 
-					#[+link("//allstarss.com", "All Star Software Systems", true)(class="header__link")].
-
-		main
-			+showcase("Projects", [
-				{
-					url: "http://uhsse.org",
-					emoji: "🎒",
-					name: "UHSSE.org",
-					description: "Redesign of my high school website"
-				},
-				{
-					url: "//github.com/bearinsun/quotecord",
-					emoji: "💬",
-					name: "Quotecord",
-					description: "Prototype self-bot quoting in Discord"
-				},
-				{
-					url: "//github.com/bearinsun/swear-search",
-					emoji: "🔎",
-					name: "swear-search",
-					description: "Analyzes programming languages vs profanities"
-				},
-				{
-					url: "//github.com/bearinsun/type-fast",
-					emoji: "💨",
-					name: "type-fast",
-					description: "Simple and minimal typing practice"
+	header.introduction
+		h1.introduction__name Spencer Berenson
+		h2.introduction__tags Developer. Geek. Human being.
+	
+	+section("Projects")
+		+projects([
+			{
+				emoji: "🎒",
+				name: "UHSSE.org",
+				description: "Redesign of my high school website.",
+				link: {
+					link: "//uhsse.org",
+					text: "Website",
+					tab: true
 				}
-			])
-
-			+showcase("Work Experience", [
-				{
-					url: "//www.acehardware.com/store-details/14625",
-					emoji: "🔨",
-					name: "Ace Hardware",
-					description: "Cashier"
-				},
-				{
-					url: "//allstarss.com",
-					emoji: "🌟",
-					name: "All Star Software Systems",
-					description: "Junior Solution Architect"
+			},
+			{
+				emoji: "💬",
+				name: "Quotecord",
+				description: "Prototype self-bot quoting in Discord",
+				link: {
+					link: "//github.com/bearinsun/quotecord",
+					text: "GitHub",
+					tab: true
 				}
-			])
-		
-		footer.footer
-			small.footer__text
-				| For inquiries or just to say hello—
-				+link("mailto:spencer@berenson.me", "spencer@berenson.me", true)(class="footer__link")
+			},
+			{
+				emoji: "🔎",
+				name: "swear-search",
+				description: "Analyzes programming languages vs profanities",
+				link: {
+					link: "//github.com/bearinsun/swear-search",
+					text: "GitHub",
+					tab: true
+				}
+			},
+			{
+				emoji: "🏁",
+				name: "type-fast",
+				description: "Simple and minimal typing practice",
+				link: {
+					link: "//github.com/bearinsun/type-fast",
+					text: "GitHub",
+					tab: true
+				}
+			}
+		])
 
-				br
+	+section("About")
+		p.section__content.
+			I'm Spencer Berenson, your friendly neighborhood programmer and 
+			run-of-the-mill geek from Connecticut, USA. I strive to create 
+			#[em intuitive] and #[em expressive] experiences for the web.
 
-				b.footer__copyright © 
-					= new Date().getFullYear()
-			
-	<!--<![endif]-->
+			#[br]
+			#[br]
+
+			I am currently studying Computer Science at 
+			#[+link("//ccsu.edu", "CCSU", true)(class="section__link")] 
+			and working as a Junior Solution Architect at 
+			#[+link("//allstarss.com", "All Star Software Systems", true)(class="section__link")].
+
+			#[br]
+			#[br]
+
+			For inquiries or just to say hello, send a message:
+			#[br]
+			#[+link("mailto:spencer@berenson.me", "spencer [at] berenson.me", true)(class="section__link")]

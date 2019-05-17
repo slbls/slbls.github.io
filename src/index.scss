@@ -1,151 +1,157 @@
-@import "./styles/reset";
+@import "./styles/variables";
+@import "./styles/mixins";
 
-.header {
-	@include section;
+html {
+	box-sizing: border-box;
 }
 
-.header__introduction {
-	@include heading;
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
 
-.header__about {
-	line-height: 1.5;
-
-	&::selection,
-	::selection {
-		background-color: $light-black;
-		color: $off-white;
+@keyframes appear {
+	0% {
+		opacity: 0;
+		transform: translateY(2.5%);
 	}
 }
 
-.header__link {
+body {
+	padding: $vertical-page-padding $horizontal-page-padding-mobile;
+	background-color: $background-black;
+
+	animation: appear 1s ease forwards;
+
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: calc(0.625rem + 0.625vmin);
+	line-height: 1.65;
+	quotes: "“" "”" "‘" "’";
+}
+
+@media screen and (min-width: 639px) {
+	body {
+		padding-right: $horizontal-page-padding-desktop;
+		padding-left: $horizontal-page-padding-desktop;
+	}
+}
+
+:focus {
+	outline: none;
+}
+
+::-moz-focus-inner {
+	border: 0;
+}
+
+.introduction {
+	margin-bottom: $vertical-page-padding;
+}
+
+.introduction__name {
+	margin: 0;
+
+	font-size: 2.75em;
+	color: $heading-white;
+}
+
+.introduction__tags {
+	margin: 0;
+
+	font-weight: 400;
+	color: $primary-white;
+}
+
+.section {
+	& + & {
+		margin-top: #{$vertical-page-padding / 2};
+	}
+}
+
+.section__heading {
+	margin-bottom: 2.5em;
+
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 1em;
+	font-weight: 600;
+	color: $secondary-white;
+}
+
+.section__content {
+	max-width: #{$minimum-project-width * 2};
+
+	color: $primary-white;
+}
+
+.section__link {
 	@include link;
 }
 
-.showcase {
-	@include section;
-}
+.projects {
+	display: grid;
+	grid-template-columns: 1fr; // By default, take as much space as available.
+	gap: 1.75em;
 
-.showcase__title {
-	@include heading;
-	font-size: 1.5em;
-}
-
-.showcase-items {
-	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.showcase-item {
-	&:not(:last-of-type) {
-		border-bottom: 1px solid $gray;
-	}
-
-	&::selection,
-	::selection {
-		background-color: $light-black;
-		color: $off-white;
+// Once screen width is at least 131px, allow projects to be a minimum of 130px
+// wide.
+@media screen and (min-width: #{$minimum-project-width + 1px}) {
+	.projects {
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax($minimum-project-width, 1fr)
+		);
 	}
 }
 
-.showcase-item__link {
-	transition: 0.25s all ease;
-
-	position: relative;
-	z-index: 0;
-
-	display: flex;
+.project {
+	display: grid;
+	grid-template-columns: min-content auto;
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas:
+		"emoji name"
+		"emoji description"
+		"emoji link";
+	column-gap: 1.5em;
 	align-items: center;
 
-	padding: 0.5em 0;
-	width: 100%;
-	height: 100%;
-
-	text-decoration: none;
-	color: inherit;
-
-	&:hover {
-		transition: 0.25s all ease;
-
-		z-index: 1;
-	}
-
-	&:focus {
-		transition: 0.25s all ease;
-
-		z-index: 2;
-	}
-
-	&::before {
-		transition: 0.25s all ease;
-
-		content: "";
-
-		position: absolute;
-		z-index: -1;
-		top: 0;
-		right: 0;
-
-		border-radius: 5px;
-		width: 100%;
-		height: 100%;
-		background-color: $white;
-	}
-
-	&:hover::before,
-	&:focus::before {
-		transition: 0.25s all ease;
-
-		box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
-		transform: scale(1.1, 1.075);
-	}
-
-	&:active::before {
-		transition: 0.25s all ease;
-
-		box-shadow: 0 0 25px rgba(0, 0, 0, 0.035);
-		transform: scale(1.05, 1.025);
-	}
+	padding: 2em;
+	background-color: $overlay-black;
 }
 
-.showcase-item__emoji {
-	font-size: 1.5em;
+.project__emoji {
+	grid-area: emoji;
+	font-size: 2.5em;
+	user-select: none;
 }
 
-.showcase-item__text {
-	margin-left: 1em;
+.project__name {
+	grid-area: name;
+
+	font-weight: 600;
+	color: $heading-white;
+}
+
+.project__description {
+	grid-area: description;
+
 	line-height: 1.35;
+	color: $primary-white;
 }
 
-.showcase-item__name {
+.project__link {
+	grid-area: link;
+
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 0.75em;
 	font-weight: 600;
-}
 
-.showcase-item__description {
-	display: inline-block;
-
-	font-size: 0.9em;
-}
-
-.footer {
-	@include section;
-}
-
-.footer__text {
-	line-height: 1.5;
-
-	&::selection,
-	::selection {
-		background-color: $light-black;
-		color: $off-white;
-	}
-}
-
-.footer__link {
 	@include link;
-}
-
-.footer__copyright {
-	font-weight: 600;
 }

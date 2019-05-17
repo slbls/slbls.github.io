@@ -4,15 +4,13 @@ $desktop: 1024px;
 $widescreen: 1216px;
 $fullhd: 1408px;
 
-$dark-black: #111;
-$light-black: #222;
+$background-black: #111;
+$overlay-black: rgba(black, 0.25);
+$heading-white: #f5f5f5;
+$primary-white: #aaa;
+$secondary-white: #888;
 
-$gray: #eee;
-$off-white: #fafafa;
-$white: white;
-
-$blue: #6bf;
-$purple: #666eff;
-
-$section-padding: 2em;
-$heading-margin: 1em;
+$vertical-page-padding: 32vh;
+$horizontal-page-padding-mobile: 6.65%;
+$horizontal-page-padding-desktop: 18%;
+$minimum-project-width: 320px;
