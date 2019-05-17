@@ -10,6 +10,6 @@ module.exports = {
 				}
 			]
 		}),
-		require("autoprefixer")
+		require("autoprefixer")({ grid: "autoplace" })
 	]
 };
