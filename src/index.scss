@@ -97,7 +97,8 @@
 	font-weight: 600;
 	color: $secondary-white;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: underline;
 	}
 }
