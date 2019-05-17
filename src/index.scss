@@ -1,1 +1,103 @@
 @import "./styles/reset";
+
+.introduction {
+	margin-bottom: $vertical-page-padding;
+}
+
+.introduction__name {
+	margin: 0;
+
+	font-size: 2.75em;
+	color: $heading-white;
+}
+
+.introduction__tags {
+	margin: 0;
+	margin-top: 0.75em;
+
+	font-weight: 400;
+	color: $primary-white;
+}
+
+.section {
+	& + & {
+		margin-top: #{$vertical-page-padding / 2};
+	}
+}
+
+.section__heading {
+	margin-bottom: 2.5em;
+
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 1em;
+	font-weight: 600;
+	color: $secondary-white;
+}
+
+.projects {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.75em;
+
+	padding: 0;
+	list-style: none;
+}
+
+@media screen and (min-width: #{$minimum-project-width + 1px}) {
+	.projects {
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax($minimum-project-width, 1fr)
+		);
+	}
+}
+
+.project {
+	display: grid;
+	grid-template-columns: min-content auto;
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas:
+		"emoji name"
+		"emoji description"
+		"emoji link";
+	column-gap: 1.5em;
+	align-items: center;
+
+	padding: 2em;
+	background-color: $overlay-black;
+}
+
+.project__emoji {
+	grid-area: emoji;
+	font-size: 2.5em;
+}
+
+.project__name {
+	grid-area: name;
+
+	font-weight: 600;
+	color: $heading-white;
+}
+
+.project__description {
+	grid-area: description;
+
+	line-height: 1.35;
+	color: $primary-white;
+}
+
+.project__link {
+	grid-area: link;
+
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	font-size: 0.75em;
+	font-weight: 600;
+	color: $secondary-white;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
