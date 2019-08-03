@@ -1,7 +1,6 @@
 extends templates/base.pug
 
-mixin link(link, text, tab)
-	- tab = tab || true
+mixin link(link, text, tab = true)
 	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 		block
 
