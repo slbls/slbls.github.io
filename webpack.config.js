@@ -1,5 +1,5 @@
 const path = require("path"),
-	CleanPlugin = require("clean-webpack-plugin"),
+	{ CleanWebpackPlugin } = require("clean-webpack-plugin"),
 	HtmlPlugin = require("html-webpack-plugin"),
 	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin"),
 	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
@@ -101,7 +101,7 @@ module.exports = (_env, options) => {
 			}),
 			...(isProduction
 				? [
-						new CleanPlugin(),
+						new CleanWebpackPlugin(),
 						new CopyPlugin([
 							{
 								from: "_redirects",
