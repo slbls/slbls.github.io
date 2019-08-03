@@ -46,6 +46,10 @@ body {
 	border: 0;
 }
 
+::selection {
+	background-color: transparentize($selection-purple, 0.75);
+}
+
 .introduction {
 	margin-bottom: $vertical-page-padding;
 }
