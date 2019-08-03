@@ -1,6 +1,7 @@
 extends templates/base.pug
 
 mixin link(link, text, tab)
+	- tab = tab || true
 	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 		block
 
@@ -32,8 +33,7 @@ block body
 				description: "Redesign of my high school website.",
 				link: {
 					link: "//uhsse.org",
-					text: "Website",
-					tab: true
+					text: "Website"
 				}
 			},
 			{
@@ -42,8 +42,7 @@ block body
 				description: "Prototype self-bot quoting in Discord",
 				link: {
 					link: "//github.com/bearinsun/quotecord",
-					text: "GitHub",
-					tab: true
+					text: "GitHub"
 				}
 			},
 			{
@@ -52,8 +51,7 @@ block body
 				description: "Analyzes programming languages vs profanities",
 				link: {
 					link: "//github.com/bearinsun/swear-search",
-					text: "GitHub",
-					tab: true
+					text: "GitHub"
 				}
 			},
 			{
@@ -62,8 +60,7 @@ block body
 				description: "Simple and minimal typing practice",
 				link: {
 					link: "//github.com/bearinsun/type-fast",
-					text: "GitHub",
-					tab: true
+					text: "GitHub"
 				}
 			},
 			{
@@ -72,8 +69,7 @@ block body
 				description: "A neverending stream of bongocat media",
 				link: {
 					link: "//bongocat.io",
-					text: "Website",
-					tab: true
+					text: "Website"
 				}
 			},
 			{
@@ -82,8 +78,7 @@ block body
 				description: "A winter poem for a certain someone",
 				link: {
 					link: "//snowflakes.netlify.com",
-					text: "Website",
-					tab: true
+					text: "Website"
 				}
 			}
 		])
@@ -100,11 +95,11 @@ block body
 			I am currently studying Computer Science at 
 			#[+link("//ccsu.edu", "CCSU", true)(class="section__link")] 
 			and working as a Junior Software Developer at 
-			#[+link("//allstarss.com", "All Star Software Systems", true)(class="section__link")].
+			#[+link("//allstarss.com", "All Star Software Systems")(class="section__link")].
 
 			#[br]
 			#[br]
 
 			For inquiries or just to say hello, send a message:
 			#[br]
-			#[+link("mailto:spencer@berenson.me", "spencer [at] berenson.me", true)(class="section__link")]
+			#[+link("mailto:spencer@berenson.me", "spencer [at] berenson.me")(class="section__link")]
