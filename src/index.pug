@@ -17,7 +17,7 @@ mixin projects(projects)
 				small.project__emoji= project.emoji
 				b.project__name= project.name
 				p.project__description= project.description
-				+link(project.link.link, project.link.text, project.link.tab)(class="project__link")
+				+link(`//${project.link.link}`, project.link.text, project.link.tab)(class="project__link")
 	
 block body
 	header.introduction
@@ -31,7 +31,7 @@ block body
 				name: "UHSSE.org",
 				description: "Redesign of my high school website.",
 				link: {
-					link: "//uhsse.org",
+					link: "uhsse.org",
 					text: "Website"
 				}
 			},
@@ -40,7 +40,7 @@ block body
 				name: "Quotecord",
 				description: "Prototype self-bot quoting in Discord",
 				link: {
-					link: "//github.com/bearinsun/quotecord",
+					link: "github.com/bearinsun/quotecord",
 					text: "GitHub"
 				}
 			},
@@ -49,7 +49,7 @@ block body
 				name: "swear-search",
 				description: "Analyzes programming languages vs profanities",
 				link: {
-					link: "//github.com/bearinsun/swear-search",
+					link: "github.com/bearinsun/swear-search",
 					text: "GitHub"
 				}
 			},
@@ -58,7 +58,7 @@ block body
 				name: "type-fast",
 				description: "Simple and minimal typing practice",
 				link: {
-					link: "//github.com/bearinsun/type-fast",
+					link: "github.com/bearinsun/type-fast",
 					text: "GitHub"
 				}
 			},
@@ -67,7 +67,7 @@ block body
 				name: "bongocat",
 				description: "A neverending stream of bongocat media",
 				link: {
-					link: "//bongocat.io",
+					link: "bongocat.io",
 					text: "Website"
 				}
 			},
@@ -76,7 +76,7 @@ block body
 				name: "Snowflakes",
 				description: "A winter poem for a certain someone",
 				link: {
-					link: "//snowflakes.netlify.com",
+					link: "snowflakes.netlify.com",
 					text: "Website"
 				}
 			}
