@@ -12,10 +12,13 @@ module.exports = (_env, options) => {
 
 	return {
 		devtool: isProduction ? "source-map" : "inline-source-map",
-		entry: path.resolve("src/index.js"),
+		entry: path.resolve("src/index.ts"),
 		output: {
 			path: path.resolve("dist"),
 			filename: isProduction ? "js/bundle.[hash].js" : "js/bundle.js"
+		},
+		resolve: {
+			extensions: [".ts", ".js"]
 		},
 		module: {
 			rules: [
@@ -29,6 +32,19 @@ module.exports = (_env, options) => {
 							}
 						},
 						"pug-html-loader"
+					]
+				},
+				{
+					test: /\.(jpg|jpeg|png|ico|svg)$/,
+					use: [
+						{
+							loader: "file-loader",
+							options: {
+								name: "[name].[ext]",
+								outputPath: "media/",
+								esModule: false
+							}
+						}
 					]
 				},
 				{
@@ -49,9 +65,9 @@ module.exports = (_env, options) => {
 					]
 				},
 				{
-					test: /\.js?$/,
+					test: /\.ts$/,
 					exclude: /node_modules/,
-					use: "babel-loader"
+					use: "ts-loader"
 				}
 			]
 		},

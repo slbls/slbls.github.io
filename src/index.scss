@@ -11,31 +11,10 @@ html {
 	box-sizing: inherit;
 }
 
-@keyframes appear {
-	0% {
-		opacity: 0;
-		transform: translateY(2.5%);
-	}
-}
-
 body {
-	padding: $vertical-page-padding $horizontal-page-padding-mobile;
-	background-color: $background-black;
-
-	animation: appear 1s ease forwards;
-
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-	font-size: calc(0.625rem + 0.625vmin);
-	line-height: 1.65;
 	quotes: "“" "”" "‘" "’";
-}
-
-@media screen and (min-width: 639px) {
-	body {
-		padding-right: $horizontal-page-padding-desktop;
-		padding-left: $horizontal-page-padding-desktop;
-	}
 }
 
 :focus {
@@ -44,117 +23,4 @@ body {
 
 ::-moz-focus-inner {
 	border: 0;
-}
-
-::selection {
-	background-color: transparentize($selection-purple, 0.75);
-}
-
-.introduction {
-	margin-bottom: $vertical-page-padding;
-}
-
-.introduction__name {
-	margin: 0;
-
-	font-size: 2.75em;
-	color: $heading-white;
-}
-
-.introduction__tags {
-	margin: 0;
-
-	font-weight: 400;
-	color: $primary-white;
-}
-
-.section {
-	& + & {
-		margin-top: #{$vertical-page-padding / 2};
-	}
-}
-
-.section__heading {
-	margin-bottom: 2.5em;
-
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	font-size: 1em;
-	font-weight: 600;
-	color: $secondary-white;
-}
-
-.section__content {
-	max-width: #{$minimum-project-width * 2};
-
-	color: $primary-white;
-}
-
-.section__link {
-	@include link;
-}
-
-.projects {
-	display: grid;
-	gap: 1.75em;
-
-	padding: 0;
-	list-style: none;
-}
-
-// Once screen width is at least 131px, allow projects to be a minimum of 130px
-// wide.
-@media screen and (min-width: #{$minimum-project-width + 1px}) {
-	.projects {
-		grid-template-columns: repeat(
-			auto-fit,
-			minmax($minimum-project-width, 1fr)
-		);
-	}
-}
-
-.project {
-	display: grid;
-	grid-template-columns: min-content auto;
-	grid-template-rows: repeat(3, auto);
-	grid-template-areas:
-		"emoji name"
-		"emoji description"
-		"emoji link";
-	column-gap: 2em;
-	align-items: center;
-
-	padding: 2em;
-	background-color: $overlay-black;
-}
-
-.project__emoji {
-	grid-area: emoji;
-	font-size: 2.5em;
-	user-select: none;
-}
-
-.project__name {
-	grid-area: name;
-
-	font-weight: 600;
-	color: $heading-white;
-}
-
-.project__description {
-	grid-area: description;
-
-	line-height: 1.35;
-	color: $primary-white;
-}
-
-.project__link {
-	grid-area: link;
-
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	font-size: 0.75em;
-	font-weight: 600;
-
-	@include link;
 }
