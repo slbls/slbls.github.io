@@ -1,13 +1,3 @@
-@mixin link {
-	text-decoration: none;
-	color: $secondary-white;
-
-	&:hover,
-	&:focus {
-		text-decoration: underline;
-	}
-
-	&::after {
-		content: " →";
-	}
+@mixin default-font-family {
+	font-family: $default-font-family;
 }
