@@ -37,5 +37,9 @@ body {
 .content__paragraph {
 	margin: 0.75rem 0;
 	padding: 0;
-	max-width: 550px;
+	max-width: var(--paragraph-width);
+
+	&--introduction {
+		margin-bottom: calc(0.75rem * 4);
+	}
 }

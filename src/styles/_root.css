@@ -1,5 +1,6 @@
 :root {
 	--content-width: 1080px;
+	--paragraph-width: 550px;
 	--default-text-color: #000;
 	--default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
