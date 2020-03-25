@@ -1,0 +1,41 @@
+@import "./styles/root";
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	padding: 1rem 0;
+
+	line-height: 150%;
+	font-family: var(--default-font-family);
+	font-weight: lighter;
+	quotes: "“" "”" "‘" "’";
+	color: var(--default-text-color);
+}
+
+:focus {
+	outline: none;
+}
+
+::-moz-focus-inner {
+	border: 0;
+}
+
+.content {
+	max-width: var(--content-width);
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+.content__paragraph {
+	margin: 0.75rem 0;
+	padding: 0;
+	max-width: 550px;
+}

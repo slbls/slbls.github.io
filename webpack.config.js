@@ -24,15 +24,7 @@ module.exports = (_env, options) => {
 			rules: [
 				{
 					test: /.pug$/,
-					use: [
-						{
-							loader: "html-loader",
-							options: {
-								attrs: [":src"]
-							}
-						},
-						"pug-html-loader"
-					]
+					use: ["html-loader", "pug-html-loader"]
 				},
 				{
 					test: /\.(jpg|jpeg|png|ico|svg)$/,
@@ -48,20 +40,14 @@ module.exports = (_env, options) => {
 					]
 				},
 				{
-					test: /.(sc|c|sa)ss$/,
+					test: /.css$/,
 					use: [
 						{
 							loader: MiniCssExtractPlugin.loader,
 							options: { hmr: !isProduction }
 						},
 						"css-loader",
-						"postcss-loader",
-						{
-							loader: "sass-loader",
-							options: {
-								implementation: require("sass")
-							}
-						}
+						"postcss-loader"
 					]
 				},
 				{
