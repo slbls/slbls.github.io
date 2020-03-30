@@ -4,14 +4,46 @@ mixin link(link, text, tab = true)
 	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 		block
 
+mixin content__link(link, text)
+	+link(link, text)(class="content__link")
+		block
+
+mixin navigation(links)
+	nav.content__navigation
+		ul
+			each link in links
+				li
+					+content__link(link.link, link.text)
+
 block body
 	main.content
-		p.content__paragraph.content__paragraph--introduction.
-			Spencer Berenson — web developer and technology enthusiast
+		h1.content__paragraph.content__paragraph--introduction.
+			Spencer Berenson — web dev / tech enthusiast
 
 		p.content__paragraph.
-			Currently, I study Computer Science at CCSU and work as a Junior Software Developer for All Star 
-			Software Systems.
+			I'm currently a junior software developer for 
+			#[+link("//allstarss.com", "All Star Software Systems")(class="content__link")]
+			and studying computer science at 
+			#[+link("//ccsu.edu", "CCSU")(class="content__link")]
+			.
 
 		p.content__paragraph.
-			Here are a few of my projects: 
+			Looking for more? Say hello by sending me an email or checking 
+			out some of my projects on GitHub.
+
+		+navigation(
+			[
+				{
+					link: "mailto:spencer@berenson.me",
+					text: "Email"
+				},
+				{
+					link: "//github.com/bearinsun",
+					text: "GitHub"
+				},
+				{
+					link: "//twitter.com/bearinsun",
+					text: "Twitter"
+				}
+			]
+		)
