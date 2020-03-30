@@ -4,101 +4,46 @@ mixin link(link, text, tab = true)
 	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 		block
 
-mixin section(heading)
-	section.section
-		h1.section__heading= heading
-		
+mixin content__link(link, text)
+	+link(link, text)(class="content__link")
 		block
 
-mixin projects(projects)
-	ul.projects
-		each project in projects
-			li.project
-				small.project__emoji= project.emoji
-				b.project__name= project.name
-				p.project__description= project.description
-				+link(`//${project.link.link}`, project.link.text, project.link.tab)(class="project__link")
-	
+mixin navigation(links)
+	nav.content__navigation
+		ul
+			each link in links
+				li
+					+content__link(link.link, link.text)
+
 block body
-	header.introduction
-		h1.introduction__name Spencer Berenson
-		h2.introduction__tags Developer. Geek. Human being.
-	
-	+section("Projects")
-		+projects([
-			{
-				emoji: "🎒",
-				name: "UHSSE.org",
-				description: "Redesign of my high school website.",
-				link: {
-					link: "uhsse.org",
-					text: "Website"
-				}
-			},
-			{
-				emoji: "💬",
-				name: "Quotecord",
-				description: "Prototype self-bot quoting in Discord",
-				link: {
-					link: "github.com/bearinsun/quotecord",
+	main.content
+		h1.content__paragraph.content__paragraph--introduction.
+			Spencer Berenson — web dev / tech enthusiast
+
+		p.content__paragraph.
+			I'm currently a junior software developer for 
+			#[+link("//allstarss.com", "All Star Software Systems")(class="content__link")]
+			and studying computer science at 
+			#[+link("//ccsu.edu", "CCSU")(class="content__link")]
+			.
+
+		p.content__paragraph.
+			Looking for more? Say hello by sending me an email or checking 
+			out some of my projects on GitHub.
+
+		+navigation(
+			[
+				{
+					link: "mailto:spencer@berenson.me",
+					text: "Email"
+				},
+				{
+					link: "//github.com/bearinsun",
 					text: "GitHub"
+				},
+				{
+					link: "//twitter.com/bearinsun",
+					text: "Twitter"
 				}
-			},
-			{
-				emoji: "🔎",
-				name: "swear-search",
-				description: "Analyzes programming languages vs profanities",
-				link: {
-					link: "github.com/bearinsun/swear-search",
-					text: "GitHub"
-				}
-			},
-			{
-				emoji: "🏁",
-				name: "type-fast",
-				description: "Simple and minimal typing practice",
-				link: {
-					link: "github.com/bearinsun/type-fast",
-					text: "GitHub"
-				}
-			},
-			{
-				emoji: "😺",
-				name: "bongocat",
-				description: "A neverending stream of bongocat media",
-				link: {
-					link: "bongocat.io",
-					text: "Website"
-				}
-			},
-			{
-				emoji: "⛄",
-				name: "Snowflakes",
-				description: "A winter poem for a certain someone",
-				link: {
-					link: "snowflakes.netlify.com",
-					text: "Website"
-				}
-			}
-		])
-
-	+section("About")
-		p.section__content.
-			I'm Spencer Berenson, your friendly neighborhood programmer and 
-			run-of-the-mill geek from Connecticut, USA. I strive to create 
-			#[em intuitive] and #[em expressive] experiences for the web.
-
-			#[br]
-			#[br]
-
-			I am currently studying Computer Science at 
-			#[+link("//ccsu.edu", "CCSU", true)(class="section__link")] 
-			and working as a Junior Software Developer at 
-			#[+link("//allstarss.com", "All Star Software Systems")(class="section__link")].
-
-			#[br]
-			#[br]
-
-			For inquiries or just to say hello, send a message:
-			#[br]
-			#[+link("mailto:spencer@berenson.me", "spencer [at] berenson.me")(class="section__link")]
+			]
+		)

@@ -12,46 +12,48 @@ module.exports = (_env, options) => {
 
 	return {
 		devtool: isProduction ? "source-map" : "inline-source-map",
-		entry: path.resolve("src/index.js"),
+		entry: path.resolve("src/index.ts"),
 		output: {
 			path: path.resolve("dist"),
 			filename: isProduction ? "js/bundle.[hash].js" : "js/bundle.js"
+		},
+		resolve: {
+			extensions: [".ts", ".js"]
 		},
 		module: {
 			rules: [
 				{
 					test: /.pug$/,
+					use: ["html-loader", "pug-html-loader"]
+				},
+				{
+					test: /\.(jpg|jpeg|png|ico|svg)$/,
 					use: [
 						{
-							loader: "html-loader",
+							loader: "file-loader",
 							options: {
-								attrs: [":src"]
+								name: "[name].[ext]",
+								outputPath: "media/",
+								esModule: false
 							}
-						},
-						"pug-html-loader"
+						}
 					]
 				},
 				{
-					test: /.(sc|c|sa)ss$/,
+					test: /.css$/,
 					use: [
 						{
 							loader: MiniCssExtractPlugin.loader,
 							options: { hmr: !isProduction }
 						},
 						"css-loader",
-						"postcss-loader",
-						{
-							loader: "sass-loader",
-							options: {
-								implementation: require("sass")
-							}
-						}
+						"postcss-loader"
 					]
 				},
 				{
-					test: /\.js?$/,
+					test: /\.ts$/,
 					exclude: /node_modules/,
-					use: "babel-loader"
+					use: "ts-loader"
 				}
 			]
 		},
@@ -84,8 +86,8 @@ module.exports = (_env, options) => {
 				prefix: "media/",
 				inject: true,
 				favicons: {
-					background: "#111111",
-					theme_color: "#111111",
+					background: "#121212",
+					theme_color: "#06c",
 					display: "browser",
 					icons: {
 						android: true,

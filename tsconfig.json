@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist",
+		"sourceMap": true,
+		"noEmitOnError": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"target": "es5"
+	}
+}
