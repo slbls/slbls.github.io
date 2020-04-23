@@ -82,7 +82,7 @@ module.exports = (_env, options) => {
 				defaultAttribute: "defer"
 			}),
 			new WebappPlugin({
-				logo: "./src/media/favicon.png",
+				logo: "./src/media/favicon.jpg",
 				prefix: "media/",
 				inject: true,
 				favicons: {
