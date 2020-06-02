@@ -8,7 +8,9 @@
 		"noImplicitThis": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
+		"alwaysStrict": true,
 		"noFallthroughCasesInSwitch": true,
+		"strict": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"target": "es5"
