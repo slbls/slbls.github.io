@@ -1,3 +1,3 @@
-# berenson.me
+# berenson.dev
 
 My personal website.
