@@ -1,5 +1,5 @@
 {
-	"name": "berenson.me",
+	"name": "berenson.dev",
 	"version": "1.0.0",
 	"description": "Spencer Berenson's personal/portfolio website.",
 	"scripts": {
@@ -8,18 +8,18 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/u1f944/berenson.me.git"
+		"url": "git+https://github.com/u1f944/berenson.dev.git"
 	},
 	"author": {
 		"name": "Spencer Berenson",
-		"email": "spencer@berenson.me",
-		"url": "https://berenson.me"
+		"email": "spencer@berenson.dev",
+		"url": "https://berenson.dev"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/u1f944/berenson.me/issues"
+		"url": "https://github.com/u1f944/berenson.dev/issues"
 	},
-	"homepage": "https://berenson.me",
+	"homepage": "https://berenson.dev",
 	"husky": {
 		"hooks": {
 			"pre-commit": "pretty-quick --staged"
