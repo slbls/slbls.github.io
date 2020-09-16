@@ -41,12 +41,12 @@ body {
 	margin: 0.75rem 0;
 	padding: 0;
 	max-width: var(--paragraph-width);
+}
 
-	&--introduction {
-		margin-bottom: var(--vertical-spacing-margin);
-		font-weight: inherit;
-		font-size: inherit;
-	}
+.content__paragraph--introduction {
+	margin-bottom: var(--vertical-spacing-margin);
+	font-weight: inherit;
+	font-size: inherit;
 }
 
 .content__link {
@@ -63,13 +63,13 @@ body {
 	margin-top: var(--vertical-spacing-margin);
 	margin-bottom: 0.75rem;
 
-	ul {
+	& ul {
 		margin: 0;
 		padding: 0;
 
 		list-style: none;
 
-		li {
+		& li {
 			display: inline-block;
 			margin-right: 0.75rem;
 		}
