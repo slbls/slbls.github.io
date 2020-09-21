@@ -1,44 +1,41 @@
 extends templates/base.pug
 
 mixin link(link, text, tab = true)
-	a(href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
-		block
-
-mixin content__link(link, text)
-	+link(link, text)(class="content__link")
+	a(class="font-bold text-yellow-300 hover:underline" href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 		block
 
 mixin navigation(links)
-	nav.content__navigation
+	nav.mt-12.mb-3
 		ul
 			each link in links
-				li
-					+content__link(link.link, link.text)
+				li.inline-block.mr-3
+					+link(link.link, link.text)
 
-block body
-	main.content
-		h1.content__paragraph.content__paragraph--introduction.
-			Spencer Berenson — web dev / tech enthusiast
+block content
+	body.container.mx-auto.py-4.bg-gray-900.text-gray-200
+		main.max-w-screen-sm.py-8.px-4
+			h1.mt-3.mb-12.p-0.
+				Spencer Berenson — web dev / tech enthusiast
 
-		p.content__paragraph.
-			I'm currently a junior software developer for 
-			#[+link("//allstarss.com", "All Star Software Systems")(class="content__link")]
-			and studying computer science at 
-			#[+link("//ccsu.edu", "CCSU")(class="content__link")].
+			p.my-3.p-0.
+				I'm currently a junior software developer for 
+				#[+link("//allstarss.com", "All Star Software Systems")(class="content__link")]
+				and studying computer science at 
+				#[+link("//ccsu.edu", "CCSU")(class="content__link")].
 
-		p.content__paragraph.
-			Looking for more? Say hello by sending me an email or checking 
-			out some of my projects on GitHub.
+			p.my-3.p-0.
+				Looking for more? Say hello by sending me an email or checking 
+				out some of my projects on GitHub.
 
-		+navigation(
-			[
-				{
-					link: "mailto:spencer@berenson.dev",
-					text: "Email"
-				},
-				{
-					link: "//github.com/slbls",
-					text: "GitHub"
-				}
-			]
-		)
+			+navigation(
+				[
+					{
+						link: "mailto:spencer@berenson.dev",
+						text: "Email"
+					},
+					{
+						link: "//github.com/slbls",
+						text: "GitHub"
+					}
+				]
+			)

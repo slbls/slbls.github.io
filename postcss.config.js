@@ -1,6 +1,7 @@
 module.exports = {
 	plugins: [
 		require("postcss-easy-import")({ prefix: "_" }),
+		require("tailwindcss"),
 		require("postcss-calc"),
 		require("postcss-preset-env")({
 			stage: 0,
