@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Spencer Berenson's personal/portfolio website.",
 	"scripts": {
-		"start": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --mode=development",
+		"start": "cross-env NODE_ENV=development webpack-dev-server --mode=development",
 		"build": "cross-env NODE_ENV=production webpack -p"
 	},
 	"repository": {
@@ -30,30 +30,30 @@
 		"cross-env": "^7.0.2",
 		"css-loader": "^4.3.0",
 		"cssnano": "^4.1.10",
-		"file-loader": "^6.1.0",
-		"html-loader": "^1.3.0",
-		"html-webpack-plugin": "^4.4.1",
+		"file-loader": "^6.1.1",
+		"html-loader": "^1.3.2",
+		"html-webpack-plugin": "^4.5.0",
 		"husky": "^4.3.0",
 		"imagemin-webpack-plugin": "^2.4.2",
-		"mini-css-extract-plugin": "^0.11.1",
-		"postcss": "^7.0.32",
-		"postcss-calc": "^7.0.4",
+		"mini-css-extract-plugin": "^1.0.0",
+		"postcss": "^8.1.1",
+		"postcss-calc": "^7.0.5",
 		"postcss-easy-import": "^3.0.0",
-		"postcss-loader": "^4.0.1",
+		"postcss-loader": "^4.0.4",
 		"postcss-preset-env": "^6.7.0",
-		"prettier": "^2.1.1",
+		"prettier": "^2.1.2",
 		"pretty-quick": "^3.0.2",
 		"pug-html-loader": "^1.1.5",
 		"script-ext-html-webpack-plugin": "^2.1.4",
-		"style-loader": "^1.2.1",
-		"ts-loader": "^8.0.3",
-		"typescript": "^4.0.2",
+		"style-loader": "^2.0.0",
+		"ts-loader": "^8.0.4",
+		"typescript": "^4.0.3",
 		"webapp-webpack-plugin": "^2.7.1",
-		"webpack": "^4.44.1",
+		"webpack": "^4.44.2",
 		"webpack-cli": "^3.3.12",
 		"webpack-dev-server": "^3.11.0"
 	},
 	"dependencies": {
-		"tailwindcss": "^1.8.10"
+		"tailwindcss": "^1.8.13"
 	}
 }

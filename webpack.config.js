@@ -43,7 +43,11 @@ module.exports = (_env, options) => {
 					use: [
 						{
 							loader: MiniCssExtractPlugin.loader,
-							options: { hmr: !isProduction }
+							options: {
+								...(!isProduction && {
+									publicPath: "../"
+								})
+							}
 						},
 						"css-loader",
 						"postcss-loader"
