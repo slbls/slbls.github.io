@@ -1,5 +1,3 @@
-extends templates/base.pug
-
 mixin link(link, text, tab = true)
 	a(class="font-bold text-yellow-300 hover:underline" href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
 		block
@@ -11,31 +9,34 @@ mixin navigation(links)
 				li.inline-block.mr-3
 					+link(link.link, link.text)
 
-block content
-	body.container.mx-auto.py-4.bg-gray-900.text-gray-200
-		main.max-w-screen-sm.py-8.px-4
-			h1.mt-3.mb-12.p-0.
-				Spencer Berenson — web dev / tech enthusiast
+doctype html
+html(lang="en")
+	head
+		include partials/head.pug
 
-			p.my-3.p-0.
-				I'm currently a junior software developer for 
-				#[+link("//allstarss.com", "All Star Software Systems")(class="content__link")]
-				and studying computer science at 
-				#[+link("//ccsu.edu", "CCSU")(class="content__link")].
+body.container.mx-auto.py-4.bg-gray-900.text-gray-200
+	main.max-w-screen-sm.py-8.px-4
+		h1.mt-3.mb-12.p-0 Spencer Berenson — web dev / tech enthusiast
 
-			p.my-3.p-0.
-				Looking for more? Say hello by sending me an email or checking 
-				out some of my projects on GitHub.
+		p.my-3.p-0.
+			I'm currently a junior software developer for 
+			#[+link("//allstarss.com", "All Star Software Systems")]
+			and studying computer science at 
+			#[+link("//ccsu.edu", "CCSU")].
 
-			+navigation(
-				[
-					{
-						link: "mailto:spencer@berenson.dev",
-						text: "Email"
-					},
-					{
-						link: "//github.com/slbls",
-						text: "GitHub"
-					}
-				]
-			)
+		p.my-3.p-0.
+			Looking for more? Say hello by sending me an email or checking 
+			out some of my projects on GitHub.
+
+		+navigation(
+			[
+				{
+					link: "mailto:spencer@berenson.dev",
+					text: "Email"
+				},
+				{
+					link: "//github.com/slbls",
+					text: "GitHub"
+				}
+			]
+		)
