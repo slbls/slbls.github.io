@@ -36,7 +36,7 @@
 		"husky": "^4.3.0",
 		"imagemin-webpack-plugin": "^2.4.2",
 		"mini-css-extract-plugin": "^1.0.0",
-		"postcss": "^8.1.1",
+		"postcss": "^7.0.35",
 		"postcss-calc": "^7.0.5",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-loader": "^4.0.4",
