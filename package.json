@@ -26,6 +26,7 @@
 		}
 	},
 	"devDependencies": {
+		"@prettier/plugin-pug": "^1.8.1",
 		"clean-webpack-plugin": "^3.0.0",
 		"cross-env": "^7.0.2",
 		"css-loader": "^4.3.0",

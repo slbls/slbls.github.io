@@ -4,7 +4,12 @@ html(lang="en")
 		include partials/head.pug
 
 mixin link(link, text, tab = true)
-	a(class="font-bold text-yellow-300 hover:underline" href=link rel="noreferrer noopener" target=tab ? "_blank" : null)&attributes(attributes)= text
+	a.font-bold.text-yellow-300(
+		class="hover:underline"
+		href=link
+		rel="noreferrer noopener"
+		target=tab ? '_blank' : null
+	)&attributes(attributes)= text
 		block
 
 mixin navigation(links)
@@ -32,15 +37,4 @@ body.container.mx-auto.py-4.bg-gray-900.text-gray-200
 			Looking for more? Say hello by sending me an email or checking 
 			out some of my projects on GitHub.
 
-		+navigation(
-			[
-				{
-					link: "mailto:spencer@berenson.dev",
-					text: "Email"
-				},
-				{
-					link: "//github.com/slbls",
-					text: "GitHub"
-				}
-			]
-		)
+		+navigation([ { link: "mailto:spencer@berenson.dev", text: "Email" }, { link: "//github.com/slbls", text: "GitHub" } ])
