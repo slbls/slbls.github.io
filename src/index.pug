@@ -1,40 +1,5 @@
 doctype html
 html(lang="en")
-	head
-		include partials/head.pug
+	include partials/head.pug
 
-mixin link(link, text, tab = true)
-	a.font-bold.text-yellow-300(
-		class="hover:underline"
-		href=link
-		rel="noreferrer noopener"
-		target=tab ? '_blank' : null
-	)&attributes(attributes)= text
-		block
-
-mixin navigation(links)
-	nav.mt-12.mb-3
-		ul
-			each link in links
-				li.inline-block.mr-3
-					+link(link.link, link.text)
-
-mixin paragraph
-	p.my-3.p-0
-		block
-
-body.container.mx-auto.py-4.bg-gray-900.text-gray-200
-	main.max-w-screen-sm.py-8.px-4
-		h1.mt-3.mb-12.p-0 Spencer Berenson — web dev / tech enthusiast
-
-		+paragraph.
-			I'm currently a junior software developer for 
-			#[+link("//allstarss.com", "All Star Software Systems")]
-			and studying computer science at 
-			#[+link("//ccsu.edu", "CCSU")].
-
-		+paragraph.
-			Looking for more? Say hello by sending me an email or checking 
-			out some of my projects on GitHub.
-
-		+navigation([ { link: "mailto:spencer@berenson.dev", text: "Email" }, { link: "//github.com/slbls", text: "GitHub" } ])
+	include partials/body.pug

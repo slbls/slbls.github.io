@@ -1,12 +1,9 @@
 module.exports = {
 	plugins: [
-		require("postcss-easy-import")({ prefix: "_" }),
+		require("postcss-easy-import"),
 		require("tailwindcss"),
 		require("postcss-calc"),
-		require("postcss-preset-env")({
-			stage: 0,
-			autoprefixer: { grid: "autoplace" }
-		}),
+		require("autoprefixer"),
 		require("cssnano")({
 			preset: [
 				"default",

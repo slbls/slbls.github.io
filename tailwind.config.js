@@ -1,9 +1,5 @@
 module.exports = {
-	future: {
-		removeDeprecatedGapUtilities: true,
-		purgeLayersByDefault: true
-	},
-	purge: ["./src/**/*.pug"],
+	purge: ["./src/**/*.pug", "./src/**/*.ts"],
 	theme: {
 		extend: {}
 	},

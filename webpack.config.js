@@ -1,9 +1,8 @@
 const path = require("path"),
 	{ CleanWebpackPlugin } = require("clean-webpack-plugin"),
 	HtmlPlugin = require("html-webpack-plugin"),
-	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin"),
 	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
-	WebappPlugin = require("webapp-webpack-plugin"),
+	FaviconsPlugin = require("favicons-webpack-plugin"),
 	ImageminPlugin = require("imagemin-webpack-plugin").default;
 
 module.exports = (_env, options) => {
@@ -14,7 +13,9 @@ module.exports = (_env, options) => {
 		entry: path.resolve("src/index.ts"),
 		output: {
 			path: path.resolve("dist"),
-			filename: isProduction ? "js/bundle.[hash].js" : "js/bundle.js"
+			filename: isProduction
+				? "js/bundle.[contenthash].js"
+				: "js/bundle.js"
 		},
 		resolve: {
 			extensions: [".ts", ".js"]
@@ -23,7 +24,7 @@ module.exports = (_env, options) => {
 			rules: [
 				{
 					test: /.pug$/,
-					use: ["html-loader", "pug-html-loader"]
+					use: ["html-loader", "pug-plain-loader"]
 				},
 				{
 					test: /\.(jpg|jpeg|png|ico|svg)$/,
@@ -63,7 +64,7 @@ module.exports = (_env, options) => {
 		plugins: [
 			new MiniCssExtractPlugin({
 				filename: isProduction
-					? "css/bundle.[hash].css"
+					? "css/bundle.[contenthash].css"
 					: "css/bundle.css"
 			}),
 			new HtmlPlugin({
@@ -81,11 +82,9 @@ module.exports = (_env, options) => {
 					}
 				})
 			}),
-			new ScriptExtHtmlPlugin({
-				defaultAttribute: "defer"
-			}),
-			new WebappPlugin({
+			new FaviconsPlugin({
 				logo: "./src/media/favicon.jpg",
+				mode: "auto",
 				prefix: "media/",
 				inject: true,
 				favicons: {
@@ -96,7 +95,7 @@ module.exports = (_env, options) => {
 						android: true,
 						appleIcon: true,
 						appleStartup: false,
-						coast: false,
+						coast: true,
 						favicons: true,
 						firefox: true,
 						windows: true,
