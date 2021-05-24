@@ -8,18 +8,16 @@ interface FooterProps {
 export default function Footer({ github }: FooterProps) {
 	return (
 		<footer className="text-sm bg-full">
-			<p className="">
-				For more projects,{" "}
-				<Link
-					href={`github.com/${github}`}
-					text="visit my GitHub profile"
-				/>
-				.
-				<br className="mb-2" />
-				<small className="text-sm text-gray-400">
-					© {new Date().getFullYear()}
-				</small>
-			</p>
+			For more projects,{" "}
+			<Link
+				href={`github.com/${github}`}
+				text="visit my GitHub profile"
+			/>
+			.
+			<br className="mb-2" />
+			<small className="text-sm text-gray-400">
+				© {new Date().getFullYear()}
+			</small>
 		</footer>
 	);
 }
