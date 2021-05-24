@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import SidenoteList from "./components/SidenoteList";
 import Sidenote from "./components/Sidenote";
+import Attention from "./components/Attention";
 import Link from "./components/Link";
 import CardList from "./components/CardList";
 import Card from "./components/Card";
@@ -32,27 +33,23 @@ function App() {
 				<p className="max-w-xl text-gray-800 lg:float-left lg:!mt-0">
 					I'm{" "}
 					<strong className="font-semibold">Spencer Berenson</strong>,
-					friendly neighborhood programmer and geek from{" "}
-					<span
-						className="underline underline-style-dotted cursor-help"
-						title="The Constitution state!"
-					>
-						Connecticut, USA.
-					</span>{" "}
-					My superpower is learning, whether it's tech, music
+					friendly neighborhood programmer and geek from Connecticut,
+					USA. My superpower is learning, whether it's tech, music
 					production, or linguistics—I love the rush of discovery and
 					solving problems.
 				</p>
 
 				<p className="max-w-xl text-gray-800 lg:float-left">
-					I currently work as a Junior Software Developer at{" "}
+					I currently work as a{" "}
+					<Attention text="Junior Software Developer" /> at{" "}
 					<Link
 						href="allstarss.com"
 						text="All Star Software Systems"
 					/>
 					, where I design and develop data-oriented web applications
-					with React and OnBase, along with desktop utilities built on
-					the .NET platform.
+					with <Attention text="React" /> and{" "}
+					<Attention text="OnBase" />, along with desktop utilities
+					built on the <Attention text=".NET" /> platform.
 				</p>
 
 				<p className="max-w-xl italic text-gray-800 lg:float-left">

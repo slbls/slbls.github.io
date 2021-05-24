@@ -1,4 +1,5 @@
 import React from "react";
+import Attention from "../Attention";
 import Link from "../Link";
 
 interface CardProps {
@@ -18,7 +19,7 @@ export default function Card({
 	return (
 		<li className="p-4 text-gray-100 bg-gray-800 rounded shadow-sm">
 			<p>
-				<b className="text-xl font-medium">{title}</b>
+				<Attention className="text-xl" text={title} />
 				<span className="float-right text-xl">{emoji}</span>
 			</p>
 			<p className="py-4">{children}</p>
