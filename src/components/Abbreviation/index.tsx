@@ -5,7 +5,7 @@ interface AbbreviationProps {
 	readonly text: string;
 }
 
-export default function Abbreviation({ title, text }) {
+export default function Abbreviation({ title, text }: AbbreviationProps) {
 	return (
 		<abbr title={title} className="cursor-help">
 			{text}
