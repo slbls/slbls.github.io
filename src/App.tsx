@@ -17,8 +17,8 @@ function App() {
 				subtitle="Front-end developer, technology enthusiast, geek."
 			/>
 
-			<section className="!mt-10 lg:!mt-12 space-y-6 lg:relative">
-				<p className="max-w-xl text-gray-800">
+			<section className="!mt-10 lg:!mt-12 space-y-6 lg:flow-root">
+				<p className="max-w-xl text-gray-800 lg:float-left">
 					I'm{" "}
 					<strong className="font-semibold">Spencer Berenson</strong>,
 					your friendly neighborhood programmer and run-of-the-mill
@@ -57,7 +57,7 @@ function App() {
 					/>
 				</SidenoteList>
 
-				<p className="max-w-xl text-gray-800">
+				<p className="max-w-xl text-gray-800 lg:float-left">
 					Check out some of my projects below! 👇🏻
 				</p>
 			</section>
