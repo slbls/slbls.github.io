@@ -85,7 +85,7 @@ function App() {
 				</CardList>
 			</section>
 
-			<Footer github="slbls" />
+			<Footer github="slbls" email="spencer@berenson.dev" />
 		</div>
 	);
 }
