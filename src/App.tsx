@@ -16,8 +16,8 @@ function App() {
 				subtitle="Front-end developer, technology enthusiast, geek."
 			/>
 
-			<main className="space-y-24">
-				<section className="px-4">
+			<main className="space-y-20">
+				<section className="px-4 space-y-6">
 					<SidenoteList>
 						<Sidenote
 							top="Born in"
@@ -31,7 +31,7 @@ function App() {
 						/>
 					</SidenoteList>
 
-					<p className="mt-6 text-gray-800">
+					<p className="text-gray-800">
 						I'm{" "}
 						<strong className="font-semibold">
 							Spencer Berenson
@@ -48,7 +48,7 @@ function App() {
 						<em>expressive</em> experiences for the web.
 					</p>
 
-					<p className="mt-6 text-gray-800">
+					<p className="text-gray-800">
 						I just graduated from{" "}
 						<abbr
 							title="Central Connecticut State University"
@@ -57,7 +57,7 @@ function App() {
 							CSSU
 						</abbr>{" "}
 						with a Bachelor of Science in Computer Science and am
-						working as a Junior Software Developer at{" "}
+						currently working as a Junior Software Developer at{" "}
 						<Link
 							href="allstarss.com"
 							text="All Star Software Systems"
@@ -65,7 +65,7 @@ function App() {
 						.
 					</p>
 
-					<p className="mt-6 text-gray-800">
+					<p className="text-gray-800">
 						Check out some of my projects below! 👇🏻
 					</p>
 				</section>

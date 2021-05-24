@@ -7,7 +7,7 @@ interface FooterProps {
 
 export default function Footer({ github }: FooterProps) {
 	return (
-		<footer className="px-4 pt-24 pb-12 text-sm bg-gray-100">
+		<footer className="px-4 pt-20 pb-12 text-sm bg-gray-100">
 			For more projects,{" "}
 			<Link
 				href={`github.com/${github}`}
