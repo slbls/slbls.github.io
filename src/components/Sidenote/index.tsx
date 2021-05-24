@@ -1,5 +1,3 @@
-import React from "react";
-
 interface SidenoteProps {
 	readonly top: string;
 	readonly center: string;

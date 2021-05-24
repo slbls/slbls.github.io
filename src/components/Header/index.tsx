@@ -1,5 +1,3 @@
-import React from "react";
-
 interface HeaderProps {
 	readonly title: string;
 	readonly subtitle: string;

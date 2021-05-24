@@ -1,5 +1,3 @@
-import React from "react";
-
 interface AbbreviationProps {
 	readonly title: string;
 	readonly text: string;
