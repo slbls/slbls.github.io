@@ -8,7 +8,7 @@ interface FooterProps {
 export default function Footer({ github }: FooterProps) {
 	return (
 		<footer className="text-sm bg-full">
-			For more projects,{" "}
+			For more,{" "}
 			<Link
 				href={`github.com/${github}`}
 				text="visit my GitHub profile"
