@@ -1,6 +1,5 @@
 import "./App.css";
 import Header from "./components/Header";
-import Abbreviation from "./components/Abbreviation";
 import SidenoteList from "./components/SidenoteList";
 import Sidenote from "./components/Sidenote";
 import Link from "./components/Link";
@@ -13,41 +12,15 @@ function App() {
 		<div className="max-w-2xl px-4 py-20 mx-auto space-y-20 lg:py-24 lg:max-w-4xl lg:space-y-24">
 			<Header
 				title="Home"
-				subtitle="Front-end developer, technology enthusiast, geek."
+				subtitle="Developer, technology enthusiast, human being."
 			/>
 
 			<section className="!mt-10 lg:!mt-12 space-y-6 lg:flow-root">
-				<p className="max-w-xl text-gray-800 lg:float-left">
-					I'm{" "}
-					<strong className="font-semibold">Spencer Berenson</strong>,
-					your friendly neighborhood programmer and run-of-the-mill
-					geek from{" "}
-					<span
-						className="underline underline-style-dotted cursor-help"
-						title="The Constitution state!"
-					>
-						Connecticut, USA.
-					</span>{" "}
-					I have a{" "}
-					<Abbreviation title="Bachelor of Science" text="B.S." /> in
-					Computer Science from{" "}
-					<Abbreviation
-						title="Central Connecticut State University"
-						text="CSSU"
-					/>{" "}
-					and am currently working as a Junior Software Developer at{" "}
-					<Link
-						href="allstarss.com"
-						text="All Star Software Systems"
-					/>
-					.
-				</p>
-
 				<SidenoteList>
 					<Sidenote
-						top="Born in"
-						center="1999"
-						bottom="on May 14th"
+						top="Bachelor of Science"
+						center="Computer Science"
+						bottom="Central Connecticut State University"
 					/>
 					<Sidenote
 						top="Programming since"
@@ -56,8 +29,34 @@ function App() {
 					/>
 				</SidenoteList>
 
+				<p className="max-w-xl text-gray-800 lg:float-left lg:!mt-0">
+					I'm{" "}
+					<strong className="font-semibold">Spencer Berenson</strong>,
+					friendly neighborhood programmer and geek from{" "}
+					<span
+						className="underline underline-style-dotted cursor-help"
+						title="The Constitution state!"
+					>
+						Connecticut, USA.
+					</span>{" "}
+					My superpower is learning, whether it's tech, music
+					production, or linguistics—I love the rush of discovery and
+					solving problems.
+				</p>
+
 				<p className="max-w-xl text-gray-800 lg:float-left">
-					Check out some of my projects below! 👇🏻
+					I currently work as a Junior Software Developer at{" "}
+					<Link
+						href="allstarss.com"
+						text="All Star Software Systems"
+					/>
+					, where I design and develop data-oriented web applications
+					with React and OnBase, along with desktop utilities built on
+					the .NET platform.
+				</p>
+
+				<p className="max-w-xl italic text-gray-800 lg:float-left">
+					Check out some personal and volunteer projects below! 👇🏻
 				</p>
 			</section>
 
