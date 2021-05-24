@@ -4,8 +4,10 @@ export default function SidenoteList({
 	children
 }: React.PropsWithChildren<{}>) {
 	return (
-		<aside>
-			<ul className="flex space-x-12">{children}</ul>
+		<aside className="lg:float-right">
+			<ul className="flex space-x-12 lg:flex-col lg:space-x-0 lg:space-y-6">
+				{children}
+			</ul>
 		</aside>
 	);
 }

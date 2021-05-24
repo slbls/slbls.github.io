@@ -10,14 +10,14 @@ import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<div>
+		<div className="max-w-2xl px-4 py-20 mx-auto space-y-20 lg:py-24 lg:max-w-4xl lg:space-y-24">
 			<Header
 				title="Home"
 				subtitle="Front-end developer, technology enthusiast, geek."
 			/>
 
-			<main className="space-y-20">
-				<section className="px-4 space-y-6">
+			<main className="space-y-20 lg:space-y-24">
+				<section className="space-y-6">
 					<SidenoteList>
 						<Sidenote
 							top="Born in"
@@ -31,7 +31,7 @@ function App() {
 						/>
 					</SidenoteList>
 
-					<p className="text-gray-800">
+					<p className="max-w-xl text-gray-800">
 						I'm{" "}
 						<strong className="font-semibold">
 							Spencer Berenson
@@ -48,7 +48,7 @@ function App() {
 						<em>expressive</em> experiences for the web.
 					</p>
 
-					<p className="text-gray-800">
+					<p className="max-w-xl text-gray-800">
 						I just graduated from{" "}
 						<abbr
 							title="Central Connecticut State University"
@@ -65,12 +65,12 @@ function App() {
 						.
 					</p>
 
-					<p className="text-gray-800">
+					<p className="max-w-xl text-gray-800">
 						Check out some of my projects below! 👇🏻
 					</p>
 				</section>
 
-				<section className="bg-gray-900">
+				<section className="bg-gray-900 bg-full">
 					<CardList>
 						<Card
 							title="UHSSE.org"
