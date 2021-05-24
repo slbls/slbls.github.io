@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://berenson.netlify.app/* https://berenson.dev/:splat 301!
