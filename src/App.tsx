@@ -65,7 +65,7 @@ function App() {
 						website="uhsse.org"
 						github="universityhigh/uhsse.org"
 					>
-						Reimagined, open-source website for a high school, in
+						Redesigned, open-source website for a high school, in
 						addition to a custom CMS backend for school staff to
 						update website content — now maintained by other
 						students.
