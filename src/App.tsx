@@ -60,6 +60,14 @@ function App() {
 			<section className="bg-gray-900 bg-full">
 				<CardList>
 					<Card
+						title="Snapfish Shark"
+						emoji="🦈"
+						github="slbls/snapfish-shark"
+					>
+						Command-line utility for bulk download and organization
+						of Snapfish photos.
+					</Card>
+					<Card
 						title="UHSSE.org"
 						emoji="🎒"
 						website="uhsse.org"
@@ -69,14 +77,6 @@ function App() {
 						addition to a custom CMS backend for school staff to
 						update website content — now maintained by other
 						students.
-					</Card>
-					<Card
-						title="Snapfish Shark"
-						emoji="🦈"
-						github="slbls/snapfish-shark"
-					>
-						Command-line utility for bulk download and organization
-						of Snapfish photos.
 					</Card>
 				</CardList>
 			</section>
