@@ -10,8 +10,11 @@ const rootComponent = (
 		</React.StrictMode>
 	),
 	rootElement = document.getElementById("root");
-
-ReactDOM.render(rootComponent, rootElement);
+if (rootElement?.hasChildNodes()) {
+	ReactDOM.hydrate(rootComponent, rootElement);
+} else {
+	ReactDOM.render(rootComponent, rootElement);
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
