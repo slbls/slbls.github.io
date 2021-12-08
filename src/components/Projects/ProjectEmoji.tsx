@@ -6,7 +6,7 @@ type ProjectEmojiProps = {
 };
 
 export const ProjectEmoji = ({ children }: ProjectEmojiProps) => (
-	<Text as="span" float="right" fontSize="xl">
+	<Text as="span" fontSize="6xl" sx={{ filter: "grayscale(0.5)" }}>
 		{children}
 	</Text>
 );

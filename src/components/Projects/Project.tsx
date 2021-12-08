@@ -1,4 +1,4 @@
-import { ListItem, Text, UnorderedList } from "@chakra-ui/react";
+import { Box, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { ProjectLink } from "./ProjectLink";
 
@@ -18,37 +18,40 @@ export const Project = ({
 	github
 }: ProjectProps) => (
 	<ListItem
+		display="flex"
+		justifyContent="space-between"
 		boxShadow="sm"
 		rounded="base"
 		padding={4}
 		backgroundColor="gray.700"
 		color="gray.100"
 	>
-		<Text as="p">
-			{title}
-			{emoji}
-		</Text>
+		<Box>
+			<Text as="p">{title}</Text>
 
-		<Text as="p" maxWidth="2xl" paddingY={4}>
-			{children}
-		</Text>
+			<Text as="p" maxWidth="2xl" paddingY={4}>
+				{children}
+			</Text>
 
-		<UnorderedList
-			display="flex"
-			marginLeft={0}
-			styleType="none"
-			experimental_spaceX={6}
-		>
-			<ListItem>
-				<ProjectLink href={website}>Website</ProjectLink>
-			</ListItem>
-			<ListItem>
-				<ProjectLink
-					href={github ? `//github.com/${github}` : undefined}
-				>
-					GitHub
-				</ProjectLink>
-			</ListItem>
-		</UnorderedList>
+			<UnorderedList
+				display="flex"
+				marginLeft={0}
+				styleType="none"
+				experimental_spaceX={6}
+			>
+				<ListItem>
+					<ProjectLink href={website}>Website</ProjectLink>
+				</ListItem>
+				<ListItem>
+					<ProjectLink
+						href={github ? `//github.com/${github}` : undefined}
+					>
+						GitHub
+					</ProjectLink>
+				</ListItem>
+			</UnorderedList>
+		</Box>
+
+		<Box alignSelf="center">{emoji}</Box>
 	</ListItem>
 );
