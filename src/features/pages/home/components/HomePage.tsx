@@ -1,4 +1,5 @@
 import { AttentionText } from "@/components/AttentionText";
+import { DefaultHead } from "@/components/DefaultHead";
 import { Footer } from "@/components/Footer";
 import { Header, HeaderSubtitle, HeaderTitle } from "@/components/Header";
 import { PageContainer } from "@/components/PageContainer";
@@ -16,17 +17,13 @@ import {
 } from "@/components/Summary";
 import { Link, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
-import Head from "next/head";
 
 export const HomePage: NextPage = () => (
 	<>
-		<Head>
-			<meta
-				content="Spencer Berenson's personal/portfolio website."
-				name="description"
-			/>
-			<title>Spencer Berenson</title>
-		</Head>
+		<DefaultHead
+			page="Home"
+			description="Spencer Berenson's personal/portfolio website"
+		/>
 
 		<PageContainer>
 			<Header>
