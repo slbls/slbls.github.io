@@ -12,18 +12,19 @@ export const Projects = ({ children }: ProjectsProps) => (
 		_before={{
 			content: `""`,
 			position: "absolute",
-			zIndex: -1,
+			left: "50%",
+			right: "50%",
 			display: "inline-block",
 			width: "100vw",
 			height: "full",
-			left: "50%",
-			right: "50%",
 			marginLeft: "-50vw",
 			marginRight: "-50vw",
-			backgroundColor: "gray.900"
+			bgGradient: "linear(to-br, gray.900, gray.700)"
 		}}
 	>
 		<UnorderedList
+			position="relative"
+			zIndex={1}
 			paddingY={{ base: 10, lg: 12 }}
 			marginLeft={0}
 			styleType="none"
