@@ -1,4 +1,4 @@
-import { useAppMetadataContext } from "@/providers/app";
+import { useAppMetadataContext } from "@/providers/app-metadata";
 import Head from "next/head";
 import { ReactNode } from "react";
 
