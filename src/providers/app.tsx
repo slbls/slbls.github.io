@@ -23,12 +23,14 @@ type AppMetadataProviderProps = {
 	readonly children: ReactNode;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-const name = process.env.NEXT_PUBLIC_PACKAGE_NAME!;
-const titleSeparator = " | ";
+const appMetadata: AppMetadata = {
+	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+	name: process.env.NEXT_PUBLIC_PACKAGE_NAME!,
+	titleSeparator: " | "
+};
 
 const AppMetadataProvider = ({ children }: AppMetadataProviderProps) => (
-	<AppMetadataContext.Provider value={{ name, titleSeparator }}>
+	<AppMetadataContext.Provider value={appMetadata}>
 		{children}
 	</AppMetadataContext.Provider>
 );
