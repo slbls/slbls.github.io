@@ -57,7 +57,7 @@ export const HomePage: NextPage = () => (
 
 			<SummaryParagraph>
 				I currently work as a{" "}
-				<AttentionText>Junior Software Developer</AttentionText> at{" "}
+				<AttentionText>Software Developer</AttentionText> at{" "}
 				<Link href="//allstarss.com" isExternal color="purple.800">
 					All Star Software Systems
 				</Link>
