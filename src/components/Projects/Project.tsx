@@ -21,7 +21,7 @@ export const Project = ({
 		boxShadow="sm"
 		rounded="base"
 		padding={4}
-		backgroundColor="gray.800"
+		backgroundColor="gray.700"
 		color="gray.100"
 	>
 		<Text as="p">
