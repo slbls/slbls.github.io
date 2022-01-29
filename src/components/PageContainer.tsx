@@ -7,9 +7,11 @@ type PageContainerProps = {
 
 export const PageContainer = ({ children }: PageContainerProps) => (
 	<Container
-		maxWidth="container.lg"
-		paddingY={{ base: 20, lg: 24 }}
-		experimental_spaceY={{ base: 20, lg: 24 }}
+		display="flex"
+		flexDirection="column"
+		justifyContent="center"
+		maxWidth="container.sm"
+		minHeight="100vh"
 	>
 		{children}
 	</Container>
