@@ -57,15 +57,11 @@ export const HomePage: NextPage = () => (
 
 			<SummaryParagraph>
 				I currently work as a{" "}
-				<AttentionText>Software Developer</AttentionText> at{" "}
-				<Link href="//allstarss.com" isExternal color="purple.800">
-					All Star Software Systems
+				<AttentionText>Software Engineer</AttentionText> at{" "}
+				<Link href="//pluralsight.com" isExternal color="purple.800">
+					Pluralsight
 				</Link>
-				, where I design and develop data-oriented web applications with{" "}
-				<AttentionText>React</AttentionText> and{" "}
-				<AttentionText>OnBase</AttentionText>, along with desktop
-				utilities built on the <AttentionText>.NET</AttentionText>{" "}
-				platform.
+				.
 			</SummaryParagraph>
 
 			<SummaryParagraph>
