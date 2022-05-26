@@ -1,7 +1,6 @@
 [build]
 	command = "npm run build"
 	publish = ".next"
-	environment = { NODE_VERSION = "node" }
 
 [[plugins]]
 	package = "@netlify/plugin-nextjs"
