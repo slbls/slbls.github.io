@@ -5,11 +5,11 @@
 	"description": "Spencer Berenson's personal/portfolio website.",
 	"private": true,
 	"scripts": {
-		"postinstall": "husky install",
 		"dev": "next dev",
 		"build": "next build",
 		"export": "next export",
-		"start": "next start"
+		"start": "next start",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"@chakra-ui/icons": "^2.0.1",
