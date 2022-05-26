@@ -24,11 +24,9 @@ type AppMetadataProviderProps = {
 };
 
 const appMetadata: AppMetadata = {
-	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	name: process.env.NEXT_PUBLIC_PACKAGE_NAME!,
-	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	description: process.env.NEXT_PUBLIC_PACKAGE_DESCRIPTION!,
-	titleSeparator: " | "
+	name: process.env.NEXT_PUBLIC_PACKAGE_NAME,
+	description: process.env.NEXT_PUBLIC_PACKAGE_DESCRIPTION,
+	titleSeparator: " | ",
 };
 
 export const AppMetadataProvider = ({ children }: AppMetadataProviderProps) => (
