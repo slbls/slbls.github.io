@@ -1,8 +1,6 @@
 // @ts-check
 
 /** @type {import('next').NextConfig} */
-const config = {
+module.exports = {
 	reactStrictMode: true,
 };
-
-export default config;
