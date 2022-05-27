@@ -13,14 +13,14 @@ export const DefaultHead = ({
 	page,
 	description,
 	childrenPosition = "before",
-	children
+	children,
 }: DefaultHeadProps) => {
 	const areChildrenBefore = childrenPosition === "before";
 
 	const {
 		name,
 		description: appDescription,
-		titleSeparator
+		titleSeparator,
 	} = useAppMetadataContext();
 
 	return (
