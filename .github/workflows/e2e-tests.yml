@@ -1,9 +1,5 @@
 name: E2E Tests
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [deployment, deployment_status]
 jobs:
   test:
     timeout-minutes: 60
