@@ -9,6 +9,8 @@
 		"build": "next build",
 		"export": "next export",
 		"start": "next start",
+		"lint": "next lint",
+		"lint:fix": "next lint --fix",
 		"test:unit": "vitest",
 		"test:e2e": "playwright test",
 		"test": "npm run test:unit && npm run test:e2e"
@@ -27,6 +29,7 @@
 		"@playwright/test": "^1.22.2",
 		"@testing-library/react": "^13.2.0",
 		"@tsconfig/next": "^1.0.2",
+		"@types/eslint": "^8.4.2",
 		"@types/node": "17.0.35",
 		"@types/react": "18.0.9",
 		"@typescript-eslint/eslint-plugin": "^5.26.0",
