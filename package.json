@@ -1,6 +1,5 @@
 {
 	"name": "berenson.dev",
-	"type": "module",
 	"version": "0.1.0",
 	"description": "Spencer Berenson's personal/portfolio website.",
 	"private": true,
