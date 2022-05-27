@@ -1,9 +1,0 @@
-{
-	"extends": [
-		"eslint:recommended",
-		"next/core-web-vitals",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:playwright/playwright-test",
-		"plugin:prettier/recommended"
-	]
-}
