@@ -12,7 +12,7 @@ import path from "path";
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-	testDir: path.resolve(__dirname, "playwright"),
+	testDir: path.resolve(__dirname, "e2e"),
 	/* Maximum time one test can run for. */
 	timeout: 30 * 1000,
 	expect: {
@@ -67,18 +67,18 @@ const config: PlaywrightTestConfig = {
 		},
 
 		/* Test against mobile viewports. */
-		// {
-		//   name: 'Mobile Chrome',
-		//   use: {
-		//     ...devices['Pixel 5'],
-		//   },
-		// },
-		// {
-		//   name: 'Mobile Safari',
-		//   use: {
-		//     ...devices['iPhone 12'],
-		//   },
-		// },
+		{
+			name: "Mobile Chrome",
+			use: {
+				...devices["Pixel 5"],
+			},
+		},
+		{
+			name: "Mobile Safari",
+			use: {
+				...devices["iPhone 12"],
+			},
+		},
 
 		/* Test against branded browsers. */
 		// {
