@@ -12,7 +12,7 @@ export default defineConfig({
 		},
 	},
 	test: {
-		exclude: [...configDefaults.exclude, "**/playwright/**"],
+		exclude: [...configDefaults.exclude, "**/e2e/**"],
 		environment: "jsdom",
 	},
 });
