@@ -11,7 +11,7 @@ export const PageContainer = ({ children }: PageContainerProps) => (
 		flexDirection="column"
 		justifyContent="center"
 		maxWidth="container.sm"
-		minHeight="100vh"
+		minHeight="calc(100vh - 0px)"
 	>
 		{children}
 	</Container>
