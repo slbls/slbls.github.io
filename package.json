@@ -1,10 +1,9 @@
 {
 	"name": "berenson.dev",
 	"version": "0.1.0",
-	"description": "Spencer Berenson's personal/portfolio website.",
+	"description": "Spencer Berenson's personal website.",
 	"private": true,
 	"scripts": {
-		"prepare": "is-ci || husky install",
 		"dev": "next dev",
 		"build": "next build",
 		"export": "next export",
@@ -21,7 +20,7 @@
 		"@emotion/react": "^11.9.3",
 		"@emotion/styled": "^11.10.4",
 		"framer-motion": "^7.3.5",
-		"next": "^12.1.6",
+		"next": "^12.3.1",
 		"react": "18.1.0",
 		"react-dom": "18.1.0"
 	},
@@ -42,8 +41,6 @@
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-playwright": "^0.9.0",
 		"eslint-plugin-prettier": "^4.2.1",
-		"husky": "^8.0.0",
-		"is-ci": "^3.0.1",
 		"jsdom": "^20.0.0",
 		"prettier": "^2.7.1",
 		"typescript": "4.8.4",
