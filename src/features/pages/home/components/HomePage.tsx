@@ -1,6 +1,7 @@
 import { DefaultHead } from "@/components/DefaultHead";
 import { Header } from "@/components/Header";
 import { SocialLinks } from "@/components/SocialLinks";
+import { EMAIL, GITHUB_USERNAME, LINKEDIN_USERNAME } from "@/config";
 import { NextPage } from "next";
 
 const name = "Home";
@@ -15,9 +16,9 @@ export const HomePage: NextPage = () => (
 		/>
 
 		<SocialLinks
-			email="spencer@berenson.dev"
-			github="slbls"
-			linkedin="spencer-berenson"
+			email={EMAIL}
+			github={GITHUB_USERNAME}
+			linkedin={LINKEDIN_USERNAME}
 		/>
 	</>
 );
