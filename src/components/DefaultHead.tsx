@@ -1,4 +1,4 @@
-import { useAppMetadataContext } from "@/providers/app-metadata";
+import { APP_DESCRIPTION, APP_NAME, TITLE_SEPARATOR } from "@/config";
 import Head from "next/head";
 import { ReactNode } from "react";
 
@@ -17,19 +17,13 @@ export const DefaultHead = ({
 }: DefaultHeadProps) => {
 	const areChildrenBefore = childrenPosition === "before";
 
-	const {
-		name,
-		description: appDescription,
-		titleSeparator,
-	} = useAppMetadataContext();
-
 	return (
 		<Head>
 			{areChildrenBefore && children}
 
-			<meta content={description ?? appDescription} name="description" />
+			<meta content={description ?? APP_DESCRIPTION} name="description" />
 
-			<title>{page ? `${page}${titleSeparator}${name}` : name}</title>
+			<title>{page ? `${page}${TITLE_SEPARATOR}${APP_NAME}` : APP_NAME}</title>
 
 			{!areChildrenBefore && children}
 		</Head>

@@ -1,7 +1,7 @@
 {
 	"name": "berenson.dev",
 	"version": "0.1.0",
-	"description": "Spencer Berenson's personal/portfolio website.",
+	"description": "Spencer Berenson's personal website.",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
