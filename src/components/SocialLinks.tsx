@@ -1,5 +1,4 @@
 import { Box, Link } from "@chakra-ui/react";
-import { Email } from "react-obfuscate-email";
 
 type SocialLinksProps = {
 	readonly email: string;
@@ -16,9 +15,7 @@ export const SocialLinks = ({ email, github, linkedin }: SocialLinksProps) => (
 		fontSize="xs"
 		color="blue.600"
 	>
-		<Link as={Email} email={email}>
-			Email
-		</Link>
+		<Link href={`mailto:${email}`}>Email</Link>
 		<Link href={`//github.com/${github}`} isExternal>
 			GitHub
 		</Link>
