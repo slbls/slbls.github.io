@@ -1,7 +1,6 @@
 {
-	"extends": "@tsconfig/next/tsconfig.json",
+	"extends": "@tsconfig/next-strictest",
 	"compilerOptions": {
-		"target": "es6",
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
