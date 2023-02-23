@@ -1,6 +1,6 @@
 {
 	"name": "berenson.dev",
-	"version": "0.1.0",
+	"version": "0.0.0",
 	"description": "Spencer Berenson's personal website.",
 	"private": true,
 	"scripts": {
@@ -22,8 +22,7 @@
 		"framer-motion": "^9.1.6",
 		"next": "^13.2.0",
 		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"react-obfuscate-email": "^1.1.1"
+		"react-dom": "18.2.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.4.4",
