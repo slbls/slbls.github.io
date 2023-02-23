@@ -2,6 +2,7 @@
 	"name": "berenson.dev",
 	"version": "0.1.0",
 	"description": "Spencer Berenson's personal website.",
+	"author": "Spencer Berenson",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
