@@ -1,6 +1,6 @@
 import { APP_DESCRIPTION, APP_NAME, TITLE_SEPARATOR } from "@/config";
 import Head from "next/head";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type DefaultHeadProps = {
 	readonly page?: string;

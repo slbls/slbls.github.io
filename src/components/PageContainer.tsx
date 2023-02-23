@@ -1,5 +1,5 @@
 import { Container } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type PageContainerProps = {
 	readonly children: ReactNode;

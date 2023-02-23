@@ -2,7 +2,7 @@ import { DefaultHead } from "@/components/DefaultHead";
 import { Header } from "@/components/Header";
 import { SocialLinks } from "@/components/SocialLinks";
 import { EMAIL, GITHUB_USERNAME, LINKEDIN_USERNAME } from "@/config";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 
 const name = "Home";
 
