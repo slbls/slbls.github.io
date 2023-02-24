@@ -1,6 +1,7 @@
-import { theme } from "@/theme";
 import { ChakraProvider } from "@chakra-ui/react";
 import type { ReactNode } from "react";
+
+import { theme } from "@/theme";
 
 type AppProviderProps = {
 	readonly children: ReactNode;

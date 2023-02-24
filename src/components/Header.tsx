@@ -6,12 +6,12 @@ type HeaderProps = {
 };
 
 export const Header = ({ heading, subheading }: HeaderProps) => (
-	<VStack as="header" spacing="1" align="flex-start">
-		<Heading as="h1" size="md" fontWeight="normal">
+	<VStack as="header" align="flex-start" spacing="1">
+		<Heading as="h1" fontWeight="normal" size="md">
 			{heading}
 		</Heading>
 
-		<Heading as="h2" size="sm" fontWeight="light">
+		<Heading as="h2" fontWeight="light" size="sm">
 			{subheading}
 		</Heading>
 	</VStack>
