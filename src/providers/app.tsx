@@ -1,3 +1,4 @@
+import { theme } from "@/theme";
 import { ChakraProvider } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 
@@ -6,5 +7,5 @@ type AppProviderProps = {
 };
 
 export const AppProvider = ({ children }: AppProviderProps) => (
-	<ChakraProvider>{children}</ChakraProvider>
+	<ChakraProvider theme={theme}>{children}</ChakraProvider>
 );
