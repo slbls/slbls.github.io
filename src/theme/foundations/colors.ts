@@ -1,4 +1,4 @@
-import { baseTheme, Colors } from "@chakra-ui/react";
+import { baseTheme, type Colors } from "@chakra-ui/react";
 
 export const colors = {
 	brand: baseTheme.colors.purple,

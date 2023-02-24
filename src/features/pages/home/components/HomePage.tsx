@@ -1,3 +1,6 @@
+import { Divider } from "@chakra-ui/react";
+import type { NextPage } from "next";
+
 import { DefaultHead } from "@/components/DefaultHead";
 import { Header } from "@/components/Header";
 import { SocialLinks } from "@/components/SocialLinks";
@@ -8,8 +11,6 @@ import {
 	GITHUB_USERNAME,
 	LINKEDIN_USERNAME,
 } from "@/config";
-import type { NextPage } from "next";
-import { Divider } from "@chakra-ui/react";
 
 const name = "Home";
 

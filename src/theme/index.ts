@@ -1,8 +1,9 @@
 import {
 	extendTheme,
-	ThemeOverride,
+	type ThemeOverride,
 	withDefaultColorScheme,
 } from "@chakra-ui/react";
+
 import { colors } from "./foundations/colors";
 
 const overrides = {
@@ -16,4 +17,4 @@ const overrides = {
 export const theme = extendTheme(
 	overrides,
 	withDefaultColorScheme({ colorScheme: "brand" })
-);
+) as ThemeOverride & typeof overrides;

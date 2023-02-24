@@ -6,7 +6,7 @@ type PageContainerProps = {
 };
 
 export const PageContainer = ({ children }: PageContainerProps) => (
-	<Box maxWidth="512" paddingY="24" paddingX="12">
+	<Box maxWidth="512" paddingX="12" paddingY="24">
 		{children}
 	</Box>
 );
