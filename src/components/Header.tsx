@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading, VStack } from "@chakra-ui/react";
 
 type HeaderProps = {
 	readonly heading: string;
@@ -6,12 +6,13 @@ type HeaderProps = {
 };
 
 export const Header = ({ heading, subheading }: HeaderProps) => (
-	<header>
+	<VStack as="header" spacing="1" align="flex-start">
 		<Heading as="h1" size="md" fontWeight="normal">
 			{heading}
 		</Heading>
+
 		<Heading as="h2" size="sm" fontWeight="light">
 			{subheading}
 		</Heading>
-	</header>
+	</VStack>
 );

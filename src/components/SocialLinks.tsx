@@ -1,4 +1,4 @@
-import { Box, Link } from "@chakra-ui/react";
+import { VStack, Link, SystemStyleObject } from "@chakra-ui/react";
 
 type SocialLinksProps = {
 	readonly email: string;
@@ -6,21 +6,31 @@ type SocialLinksProps = {
 	readonly linkedin: string;
 };
 
-export const SocialLinks = ({ email, github, linkedin }: SocialLinksProps) => (
-	<Box
-		as="nav"
-		display="flex"
-		gap={4}
-		marginTop={2}
-		fontSize="xs"
-		color="blue.600"
-	>
-		<Link href={`mailto:${email}`}>Email</Link>
-		<Link href={`//github.com/${github}`} isExternal>
-			GitHub
-		</Link>
-		<Link href={`//linkedin.com/in/${linkedin}`} isExternal>
-			LinkedIn
-		</Link>
-	</Box>
-);
+const linkAfter = {
+	content: `" ↗"`,
+} satisfies SystemStyleObject;
+
+export const SocialLinks = ({ email, github, linkedin }: SocialLinksProps) => {
+	const githubText = `github.com/${github}`;
+	const linkedinText = `linkedin.com/in/${linkedin}`;
+
+	return (
+		<VStack
+			as="nav"
+			align="flex-start"
+			spacing={1}
+			fontSize="sm"
+			fontWeight="light"
+		>
+			<Link href={`mailto:${email}`} _after={linkAfter}>
+				{email}
+			</Link>
+			<Link href={`//${githubText}`} isExternal _after={linkAfter}>
+				{githubText}
+			</Link>
+			<Link href={`//${linkedinText}`} isExternal _after={linkAfter}>
+				{linkedinText}
+			</Link>
+		</VStack>
+	);
+};
