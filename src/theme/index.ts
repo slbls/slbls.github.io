@@ -5,6 +5,7 @@ import {
 } from "@chakra-ui/react";
 
 import { colors } from "./foundations/colors";
+import { styles } from "./styles";
 
 const overrides = {
 	config: {
@@ -12,6 +13,7 @@ const overrides = {
 		useSystemColorMode: true,
 	},
 	colors,
+	styles,
 } satisfies ThemeOverride;
 
 export const theme = extendTheme(

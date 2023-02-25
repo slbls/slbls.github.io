@@ -21,10 +21,11 @@ export const HomePage = (() => (
 		<Header heading={AUTHOR_NAME} subheading={AUTHOR_ROLE} />
 
 		<Divider
-			width="5%"
+			maxWidth="50%"
 			marginTop={4}
 			marginBottom={2}
 			borderColor="brand.800"
+			variant="dashed"
 		/>
 
 		<SocialLinks
