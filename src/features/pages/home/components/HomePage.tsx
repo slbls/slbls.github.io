@@ -2,8 +2,12 @@ import { Divider } from "@chakra-ui/react";
 import type { NextPage } from "next";
 
 import { DefaultHead } from "@/components/DefaultHead";
+import {
+	ExternalEmailLink,
+	ExternalLinks,
+	ExternalSocialLink,
+} from "@/components/ExternalLinks";
 import { Header } from "@/components/Header";
-import { SocialLinks } from "@/components/SocialLinks";
 import {
 	AUTHOR_NAME,
 	AUTHOR_ROLE,
@@ -28,10 +32,13 @@ export const HomePage = (() => (
 			variant="dashed"
 		/>
 
-		<SocialLinks
-			email={EMAIL}
-			github={GITHUB_USERNAME}
-			linkedin={LINKEDIN_USERNAME}
-		/>
+		<ExternalLinks>
+			<ExternalEmailLink>{EMAIL}</ExternalEmailLink>
+			<ExternalSocialLink domain="github.com" identifier={GITHUB_USERNAME} />
+			<ExternalSocialLink
+				domain="linkedin.com/in"
+				identifier={LINKEDIN_USERNAME}
+			/>
+		</ExternalLinks>
 	</>
 )) satisfies NextPage;
