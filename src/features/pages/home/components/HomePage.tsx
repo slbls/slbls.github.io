@@ -36,7 +36,7 @@ export const HomePage = (() => (
 			<ExternalEmailLink>{EMAIL}</ExternalEmailLink>
 			<ExternalSocialLink domain="github.com" identifier={GITHUB_USERNAME} />
 			<ExternalSocialLink
-				domain="linkedin.com/in/"
+				domain="linkedin.com/in"
 				identifier={LINKEDIN_USERNAME}
 			/>
 		</ExternalLinks>
