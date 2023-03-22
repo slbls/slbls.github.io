@@ -11,5 +11,5 @@ export const ExternalSocialLink = ({
 }: ExternalSocialLinksProps) => {
 	const text = `${domain}/${identifier}`;
 
-	return <ExternalLink href={`//${domain}${identifier}`}>{text}</ExternalLink>;
+	return <ExternalLink href={`//${text}`}>{text}</ExternalLink>;
 };
