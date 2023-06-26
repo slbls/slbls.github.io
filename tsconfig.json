@@ -1,5 +1,5 @@
 {
-	"extends": "@tsconfig/next-strictest",
+	"extends": "@tsconfig/next",
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
