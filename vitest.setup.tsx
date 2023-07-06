@@ -1,6 +1,8 @@
 import type { TestingLibraryMatchers } from "@testing-library/jest-dom/matchers";
 import matchers from "@testing-library/jest-dom/matchers";
-import { expect } from "vitest";
+import { type ReactNode } from "react";
+import { createPortal } from "react-dom";
+import { expect, vi } from "vitest";
 
 declare module "vitest" {
 	// `any` and `{}` types are required for this fix.
@@ -11,3 +13,9 @@ declare module "vitest" {
 }
 
 expect.extend(matchers);
+
+vi.mock("next/head", () => ({
+	default: ({ children }: { readonly children: ReactNode }) => (
+		<>{createPortal(children, document.head)}</>
+	),
+}));
