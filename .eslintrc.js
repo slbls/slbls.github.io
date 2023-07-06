@@ -1,14 +1,18 @@
+const getExtends = ({ withPlaywright }) => [
+	"eslint:recommended",
+	"next/core-web-vitals",
+	"plugin:@typescript-eslint/recommended",
+	"plugin:@typescript-eslint/recommended-requiring-type-checking",
+	"plugin:sonarjs/recommended",
+	...(withPlaywright ? ["plugin:playwright/playwright-test"] : []),
+	"plugin:prettier/recommended",
+];
+
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-	extends: [
-		"eslint:recommended",
-		"next/core-web-vitals",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:@typescript-eslint/recommended-requiring-type-checking",
-		"plugin:sonarjs/recommended",
-		"plugin:playwright/playwright-test",
-		"plugin:prettier/recommended",
-	],
+	// Playwright rules cause errors when applied to Vitest files, so they are
+	// only applied to Playwright files.
+	extends: getExtends({ withPlaywright: false }),
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
 		tsConfigRootDir: __dirname,
@@ -64,4 +68,12 @@ module.exports = {
 		],
 		"chakra-ui/require-specific-component": "error",
 	},
+	overrides: [
+		{
+			// Playwright rules cause errors when applied to Vitest files, so they are
+			// only applied to Playwright files.
+			files: ["e2e/**/*.spec.ts"],
+			extends: getExtends({ withPlaywright: true }),
+		},
+	],
 };
