@@ -6,10 +6,7 @@ import { APP_DESCRIPTION } from "@/config";
 import { DefaultHead } from "./DefaultHead";
 
 vi.mock("@/config", async () => {
-	// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-	const originalModule = await vi.importActual<typeof import("@/config")>(
-		"@/config"
-	);
+	const originalModule = await import("@/config");
 
 	return {
 		...originalModule,
