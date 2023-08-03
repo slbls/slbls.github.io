@@ -6,6 +6,13 @@
 			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["next-env.d.ts", ".eslintrc.js", "**/*.ts", "**/*.tsx"],
+	"include": [
+		"next-env.d.ts",
+		".eslintrc.js",
+		"next.config.mjs",
+		"commitlint.config.js",
+		"**/*.ts",
+		"**/*.tsx"
+	],
 	"exclude": ["node_modules"]
 }
