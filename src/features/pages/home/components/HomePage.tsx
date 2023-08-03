@@ -29,7 +29,6 @@ export const HomePage = (() => (
 			marginTop={4}
 			marginBottom={2}
 			borderColor="brand.800"
-			variant="dashed"
 		/>
 
 		<ExternalLinks>
