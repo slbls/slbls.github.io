@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { expect, it, vi } from "vitest";
+import { afterEach, expect, it, vi } from "vitest";
 
 import { APP_DESCRIPTION } from "@/config";
 
@@ -17,6 +17,10 @@ vi.mock("@/config", async () => {
 const getTitle = () => document.head.querySelector("title");
 const getDescriptionMeta = (content: string) =>
 	document.head.querySelector(`meta[name="description"][content="${content}"]`);
+
+afterEach(() => {
+	document.head.innerHTML = "";
+});
 
 it("renders the correct title when page prop is provided", () => {
 	const page = "About";
@@ -57,6 +61,7 @@ it("renders the children before the meta tags when childrenPosition prop is 'bef
 		</DefaultHead>,
 	);
 
+	console.log(document.head.innerHTML);
 	expect(document.head.firstChild).toHaveAttribute("charset", "utf-8");
 });
 
