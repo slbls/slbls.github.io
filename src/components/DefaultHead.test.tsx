@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { vi } from "vitest";
+import { afterEach, expect, it, vi } from "vitest";
 
 import { APP_DESCRIPTION } from "@/config";
 
@@ -17,6 +17,10 @@ vi.mock("@/config", async () => {
 const getTitle = () => document.head.querySelector("title");
 const getDescriptionMeta = (content: string) =>
 	document.head.querySelector(`meta[name="description"][content="${content}"]`);
+
+afterEach(() => {
+	document.head.innerHTML = "";
+});
 
 it("renders the correct title when page prop is provided", () => {
 	const page = "About";
@@ -54,9 +58,10 @@ it("renders the children before the meta tags when childrenPosition prop is 'bef
 	render(
 		<DefaultHead childrenPosition="before">
 			<meta charSet="utf-8" />
-		</DefaultHead>
+		</DefaultHead>,
 	);
 
+	console.log(document.head.innerHTML);
 	expect(document.head.firstChild).toHaveAttribute("charset", "utf-8");
 });
 
@@ -64,7 +69,7 @@ it("renders the children after the meta tags when childrenPosition prop is 'afte
 	render(
 		<DefaultHead childrenPosition="after">
 			<meta charSet="utf-8" />
-		</DefaultHead>
+		</DefaultHead>,
 	);
 
 	expect(document.head.firstChild).not.toHaveAttribute("charset", "utf-8");

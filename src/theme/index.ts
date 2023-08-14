@@ -18,5 +18,5 @@ const overrides = {
 
 export const theme = extendTheme(
 	overrides,
-	withDefaultColorScheme({ colorScheme: "brand" })
+	withDefaultColorScheme({ colorScheme: "brand" }),
 ) as ThemeOverride & typeof overrides;
