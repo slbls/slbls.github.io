@@ -7,12 +7,13 @@
 		}
 	},
 	"include": [
-		"next-env.d.ts",
 		".eslintrc.js",
-		"next.config.mjs",
-		"commitlint.config.js",
+		".next/types/**/*.ts",
 		"**/*.ts",
-		"**/*.tsx"
+		"**/*.tsx",
+		"commitlint.config.js",
+		"next.config.mjs",
+		"next-env.d.ts"
 	],
 	"exclude": ["node_modules"]
 }

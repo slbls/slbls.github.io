@@ -1,7 +1,8 @@
+"use client";
+
 import { Divider } from "@chakra-ui/react";
 import type { NextPage } from "next";
 
-import { DefaultHead } from "@/components/DefaultHead";
 import {
 	ExternalEmailLink,
 	ExternalLinks,
@@ -16,12 +17,8 @@ import {
 	LINKEDIN_USERNAME,
 } from "@/config";
 
-const name = "Home";
-
-export const HomePage = (() => (
+const Page = (() => (
 	<>
-		<DefaultHead page={name} />
-
 		<Header heading={AUTHOR_NAME} subheading={AUTHOR_ROLE} />
 
 		<Divider
@@ -41,3 +38,5 @@ export const HomePage = (() => (
 		</ExternalLinks>
 	</>
 )) satisfies NextPage;
+
+export default Page;
