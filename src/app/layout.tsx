@@ -17,7 +17,7 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: RootLayoutProps) => (
 	<html lang="en">
-		<body className="bg-zinc-200 text-zinc-900 ">
+		<body className="bg-zinc-200 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-200">
 			<PageContainer>{children}</PageContainer>
 		</body>
 	</html>
