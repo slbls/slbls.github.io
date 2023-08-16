@@ -55,17 +55,6 @@ module.exports = {
 		// https://github.com/lydell/eslint-plugin-simple-import-sort
 		"simple-import-sort/imports": "error",
 		"simple-import-sort/exports": "error",
-
-		// Chakra UI
-		// https://github.com/yukukotani/eslint-plugin-chakra-ui
-		"chakra-ui/props-order": "error",
-		"chakra-ui/props-shorthand": [
-			"error",
-			{
-				noShorthand: true,
-			},
-		],
-		"chakra-ui/require-specific-component": "error",
 	},
 	overrides: [
 		{
