@@ -1,6 +1,3 @@
-"use client";
-
-import { Divider } from "@chakra-ui/react";
 import type { NextPage } from "next";
 
 import {
@@ -20,13 +17,6 @@ import {
 const Page = (() => (
 	<>
 		<Header heading={AUTHOR_NAME} subheading={AUTHOR_ROLE} />
-
-		<Divider
-			maxWidth="50%"
-			marginTop={4}
-			marginBottom={2}
-			borderColor="brand.800"
-		/>
 
 		<ExternalLinks>
 			<ExternalEmailLink>{EMAIL}</ExternalEmailLink>

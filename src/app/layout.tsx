@@ -1,9 +1,10 @@
+import "@/globals.css";
+
 import { type Metadata } from "next";
 import { type ReactNode } from "react";
 
 import { PageContainer } from "@/components/PageContainer";
 import { APP_DESCRIPTION, APP_NAME } from "@/config";
-import { AppProvider } from "@/providers/app";
 
 export const metadata = {
 	title: APP_NAME,
@@ -16,10 +17,8 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: RootLayoutProps) => (
 	<html lang="en">
-		<body>
-			<AppProvider>
-				<PageContainer>{children}</PageContainer>
-			</AppProvider>
+		<body className="bg-zinc-200 text-zinc-900 ">
+			<PageContainer>{children}</PageContainer>
 		</body>
 	</html>
 );
