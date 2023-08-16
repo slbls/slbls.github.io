@@ -23,7 +23,6 @@ module.exports = {
 		"sonarjs",
 		"prefer-arrow",
 		"simple-import-sort",
-		"chakra-ui",
 	],
 	root: true,
 	rules: {
