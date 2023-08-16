@@ -1,15 +1,17 @@
-import { Link, type LinkProps } from "@chakra-ui/react";
+import { type ReactNode } from "react";
 
-import { EXTERNAL_LINK_CHARACTER } from "@/config";
+type ExternalLinkProps = {
+	readonly href: string;
+	readonly children: ReactNode;
+};
 
-type ExternalLinkProps = Omit<LinkProps, "isExternal" | "_after">;
-
-export const ExternalLink = (props: ExternalLinkProps) => (
-	<Link
-		_after={{
-			content: `" ${EXTERNAL_LINK_CHARACTER}"`,
-		}}
-		isExternal
-		{...props}
-	/>
+export const ExternalLink = ({ href, children }: ExternalLinkProps) => (
+	<a
+		className="after:content-['_↗'] hover:underline"
+		href={href}
+		target="_blank"
+		rel="noreferrer"
+	>
+		{children}
+	</a>
 );

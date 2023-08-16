@@ -1,4 +1,3 @@
-import { VStack } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 
 type ExternalLinksProps = {
@@ -6,13 +5,5 @@ type ExternalLinksProps = {
 };
 
 export const ExternalLinks = ({ children }: ExternalLinksProps) => (
-	<VStack
-		as="nav"
-		align="flex-start"
-		fontSize="sm"
-		fontWeight="light"
-		spacing={1}
-	>
-		{children}
-	</VStack>
+	<nav className="align-start mt-4 flex flex-col gap-1 text-sm">{children}</nav>
 );
