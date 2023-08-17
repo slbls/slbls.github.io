@@ -13,7 +13,7 @@ import {
 } from "@/config";
 
 const Page = (() => (
-	<main className="space-y-4">
+	<main className="space-y-6">
 		<Header heading={AUTHOR_NAME} subheading={AUTHOR_ROLE} />
 
 		<Links>
