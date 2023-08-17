@@ -5,7 +5,8 @@ type LinksProps = {
 };
 
 export const Links = ({ children }: LinksProps) => (
-	<nav className="align-start flex max-w-min flex-col items-start gap-2 border-t border-zinc-800 pt-2 text-sm">
+	<nav className="align-start flex max-w-min flex-col items-start gap-2 text-sm">
+		<hr className="w-full border-zinc-800" />
 		{children}
 	</nav>
 );
