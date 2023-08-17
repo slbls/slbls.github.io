@@ -6,6 +6,6 @@ type HeaderProps = {
 export const Header = ({ heading, subheading }: HeaderProps) => (
 	<header>
 		<h1 className="font-bold">{heading}</h1>
-		<h2 className="text-sm">{subheading}</h2>
+		<h2 className="text-sm italic">{subheading}</h2>
 	</header>
 );
