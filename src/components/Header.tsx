@@ -4,8 +4,8 @@ type HeaderProps = {
 };
 
 export const Header = ({ heading, subheading }: HeaderProps) => (
-	<header>
-		<h1 className="font-bold">{heading}</h1>
-		<h2 className="text-sm italic">{subheading}</h2>
+	<header className="leading-4">
+		<h1 className="text-lg font-bold">{heading}</h1>
+		<h2>{subheading}</h2>
 	</header>
 );
