@@ -38,7 +38,7 @@
 		"autoprefixer": "^10.4.15",
 		"cssnano": "^6.0.1",
 		"eslint": "8.47.0",
-		"eslint-config-next": "13.4.15",
+		"eslint-config-next": "13.4.19",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-playwright": "^0.15.3",
 		"eslint-plugin-prefer-arrow": "^1.2.3",
