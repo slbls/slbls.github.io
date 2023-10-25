@@ -23,7 +23,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^17.7.1",
 		"@commitlint/config-conventional": "^17.7.0",
-		"@commitlint/types": "^17.4.4",
+		"@commitlint/types": "^18.0.0",
 		"@playwright/test": "^1.37.0",
 		"@testing-library/jest-dom": "^6.1.2",
 		"@testing-library/react": "^14.0.0",
