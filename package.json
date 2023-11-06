@@ -21,7 +21,7 @@
 		"react-dom": "18.2.0"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^17.7.1",
+		"@commitlint/cli": "^18.2.0",
 		"@commitlint/config-conventional": "^18.1.0",
 		"@commitlint/types": "^18.0.0",
 		"@playwright/test": "^1.37.0",
