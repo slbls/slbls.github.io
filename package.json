@@ -39,7 +39,7 @@
 		"bun-types": "^1.0.1",
 		"cssnano": "^6.0.1",
 		"eslint": "8.52.0",
-		"eslint-config-next": "14.0.1",
+		"eslint-config-next": "14.0.3",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-playwright": "^0.18.0",
 		"eslint-plugin-prefer-arrow": "^1.2.3",
