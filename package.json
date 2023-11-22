@@ -48,6 +48,8 @@
 		"eslint-plugin-sonarjs": "^0.23.0",
 		"jsdom": "^22.1.0",
 		"postcss": "^8.4.31",
+		"postcss-flexbugs-fixes": "^5.0.2",
+		"postcss-preset-env": "^9.3.0",
 		"prettier": "^3.1.0",
 		"prettier-plugin-tailwindcss": "^0.5.7",
 		"tailwindcss": "^3.3.5",
