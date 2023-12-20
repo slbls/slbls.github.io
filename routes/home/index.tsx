@@ -12,7 +12,7 @@ const Home = ({}: PageProps) => (
       {" "}
       <ExternalLink href="//desmos.com">Desmos Studio.</ExternalLink>{" "}
       Check me out on{" "}
-      <ExternalLink href="//linkedin.com/spencer-berenson">
+      <ExternalLink href="//linkedin.com/in/spencer-berenson">
         LinkedIn
       </ExternalLink>{" "}
       and{" "}
