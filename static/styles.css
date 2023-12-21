@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-	html, body {
+	html {
 		@apply h-full;
 	}
 
 	body {
-		@apply p-6;
+		@apply min-h-full;
 	}
 }

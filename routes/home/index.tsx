@@ -1,11 +1,12 @@
 import { type PageProps } from "$fresh/server.ts";
-
 import { EmailLink } from "../../components/EmailLink.tsx";
 import { ExternalLink } from "../../components/ExternalLink.tsx";
 
 const Home = ({}: PageProps) => (
-  <>
-    <h1>Hello, I'm Spencer Berenson.</h1>
+  <main class="flex flex-col space-y-4">
+    <h1>
+      Hello, I'm Spencer Berenson.
+    </h1>
 
     <p class="max-w-lg font-extralight">
       I live in Connecticut with my cat, Nym, and work as a software engineer at
@@ -23,7 +24,7 @@ const Home = ({}: PageProps) => (
     <p class="font-extralight">
       Thanks for visiting!
     </p>
-  </>
+  </main>
 );
 
 export default Home;
