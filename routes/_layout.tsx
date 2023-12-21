@@ -1,21 +1,23 @@
 import { type PageProps } from "$fresh/server.ts";
+import { Navbar } from "../components/Navbar.tsx";
+import { NavbarBranding } from "../components/NavbarBranding.tsx";
+import { NavbarLink } from "../components/NavbarLink.tsx";
+import { NavbarLinks } from "../components/NavbarLinks.tsx";
+import { Shell } from "../components/Shell.tsx";
 
-const Layout = ({ Component, route }: PageProps) => (
-  <>
-    <nav class="transition-transform fixed top-4 right-4 hover:scale-105 focus:scale-105 hover:-rotate-2 focus:-rotate-2">
-      <a
-        href="/"
-        title="Spencer Berenson"
-        class="inline-block rounded-sm p-1.5 bg-slate-900 text-sm font-bold text-white"
-      >
-        SB
-      </a>
-    </nav>
-
-    <div class="flex flex-col space-y-4">
-      <Component />
-    </div>
-  </>
+const Layout = ({ Component }: PageProps) => (
+  <Shell
+    navbar={
+      <Navbar>
+        <NavbarBranding name="Spencer Berenson" initials="SB" />
+        <NavbarLinks>
+          <NavbarLink href="/">Home</NavbarLink>
+        </NavbarLinks>
+      </Navbar>
+    }
+  >
+    <Component />
+  </Shell>
 );
 
 export default Layout;
