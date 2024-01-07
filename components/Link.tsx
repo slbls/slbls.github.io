@@ -7,7 +7,7 @@ type LinkProps = JSX.IntrinsicElements["a"] & {
 
 export const Link = ({ children, ...props }: LinkProps) => (
   <a
-    class="transition-transform inline-block text-sky-500 hover:underline hover:text-sky-600 hover:scale-105 hover:-rotate-2 visited:text-indigo-500 visited:hover:text-indigo-600"
+    class="transition-transform inline-block text-sky-700 hover:underline hover:text-sky-800 hover:scale-105 hover:-rotate-2 visited:text-indigo-700 visited:hover:text-indigo-800"
     {...props}
   >
     {children}
