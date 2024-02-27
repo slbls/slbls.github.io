@@ -1,0 +1,13 @@
+---
+import Link from "./Link.astro";
+
+interface Props {
+	readonly href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<Link href={href} rel="noreferrer noopener" target="_blank">
+	<slot />
+</Link>

@@ -1,0 +1,10 @@
+---
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+---
+
+<a
+	class="transition-transform inline-block text-sky-700 hover:underline hover:text-sky-800 hover:scale-105 hover:-rotate-2 visited:text-indigo-700 visited:hover:text-indigo-800"
+	{...Astro.props}
+>
+	<slot />
+</a>
