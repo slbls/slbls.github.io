@@ -5,5 +5,9 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://berenson.dev",
-	integrations: [tailwind()],
+	integrations: [
+		tailwind({
+			applyBaseStyles: false,
+		}),
+	],
 });

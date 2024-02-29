@@ -1,0 +1,162 @@
+---
+import Html from "../layouts/Html.astro";
+---
+
+<style>
+	:root {
+		font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	}
+
+	html {
+		box-sizing: border-box;
+	}
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		max-width: 640px;
+		min-height: 100dvh;
+		margin: 0;
+
+		background: linear-gradient(135deg, #07285b, #052340);
+	}
+
+	main {
+		max-width: min-content;
+		box-shadow: inset 0px 0px 64px black;
+		border-radius: 16px;
+		padding: 32px 64px 32px 32px;
+		background-color: rgba(5, 35, 64, 0.8);
+
+		white-space: nowrap;
+	}
+
+	h1 {
+		display: flex;
+		flex-direction: column;
+
+		text-shadow: #fde68a 0 0 4px;
+		color: #fde68a;
+	}
+
+	span {
+		margin-left: 4ch;
+	}
+
+	p {
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: 2ch;
+
+		line-height: 2rem;
+		font-size: 1.35rem;
+		text-shadow: #fef3c7 0 0 4px;
+		color: #fef3c7;
+	}
+
+	footer {
+		position: fixed;
+		right: 8px;
+		bottom: 8px;
+
+		font-size: 0.6rem;
+		font-weight: 600;
+		letter-spacing: 0.1ch;
+		text-transform: uppercase;
+		color: #fde68a;
+	}
+
+	@media (max-width: 640px) {
+		main {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			max-width: 100%;
+			min-height: 100vh;
+			border: 0;
+			border-radius: 0;
+		}
+	}
+</style>
+
+<Html page="Snowflakes">
+	<main>
+		<h1>
+			<b>Snowflakes</b>
+			<span>in the wind</span>
+		</h1>
+
+		<p>
+			Silent and stark,
+			<br />
+			Winter's quiet giants cradle the city.
+			<br />
+			Streets glow softly, untouched, still.
+			<br />
+			Unique, each flake tells its story,
+			<br />
+			A fleeting beauty in the calm.
+			<br />
+			One touches me, a brief chill,
+			<br />
+			A simple moment, unspoken,
+			<br />
+			Reveals depth in your nearness.
+			<br />
+			Fortune whispers in this embrace.
+		</p>
+	</main>
+
+	<footer>Spencer ❤️ Izze</footer>
+
+	<script>
+		import confetti from "canvas-confetti";
+
+		const duration = Number.MAX_SAFE_INTEGER;
+		const animationEnd = Date.now() + duration;
+
+		const random = (min: number, max: number) =>
+			Math.random() * (max - min) + min;
+
+		let skew = 1;
+
+		(function frame() {
+			const timeLeft = animationEnd - Date.now();
+			const ticks = Math.max(200, 500 * (timeLeft / duration));
+			skew = Math.max(0.8, skew - 0.001);
+
+			confetti({
+				particleCount: 1,
+				startVelocity: 0,
+				ticks,
+				origin: {
+					x: Math.random(),
+					y: Math.random() * skew - 0.2,
+				},
+				colors: ["#ededed"],
+				shapes: ["circle"],
+				// `flat` is missing from the type definitions.
+				// @ts-expect-error ts(2353)
+				flat: true,
+				gravity: random(0.4, 0.6),
+				scalar: random(0.2, 0.6),
+				drift: random(-0.4, 0.4),
+				zIndex: -1,
+			});
+
+			if (timeLeft > 0) {
+				requestAnimationFrame(frame);
+			}
+		})();
+	</script>
+</Html>
