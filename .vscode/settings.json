@@ -1,5 +1,12 @@
 {
 	"eslint.experimental.useFlatConfig": true,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"astro"
+	],
 	"files.associations": {
 		"*.css": "tailwindcss"
 	}
