@@ -9,11 +9,11 @@ const isCurrent = href === Astro.url.pathname;
 
 <style>
 	.current {
-		@apply scale-105 -rotate-2 font-semibold;
+		@apply -rotate-2 scale-105 font-semibold;
 	}
 
 	a:not(.current) {
-		@apply hover:scale-105 hover:-rotate-2 hover:text-black hover:underline;
+		@apply hover:-rotate-2 hover:scale-105 hover:text-black hover:underline;
 	}
 </style>
 
