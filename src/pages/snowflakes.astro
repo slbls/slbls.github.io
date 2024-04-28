@@ -145,8 +145,7 @@ import Html from "../layouts/Html.astro";
 				},
 				colors: ["#ededed"],
 				shapes: ["circle"],
-				// `flat` is missing from the type definitions.
-				// @ts-expect-error ts(2353)
+				// @ts-expect-error `flat` is missing from the type definition.
 				flat: true,
 				gravity: random(0.4, 0.6),
 				scalar: random(0.2, 0.6),
