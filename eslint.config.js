@@ -6,7 +6,10 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
 	eslint.configs.recommended,
-	...tseslint.configs.strictTypeChecked,
+	// Ideally, `strictTypeChecked` could be used, but `eslint-plugin-astro`
+	// doesn't support it. See:
+	// https://github.com/ota-meshi/eslint-plugin-astro/issues/240
+	...tseslint.configs.strict,
 	eslintPluginPrettierRecommended,
 	{
 		languageOptions: {
@@ -23,10 +26,6 @@ export default tseslint.config(
 			"simple-import-sort/exports": "error",
 		},
 	},
-	{
-		files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
-		extends: [tseslint.configs.disableTypeChecked],
-	},
 	...eslintPluginAstro.configs["flat/recommended"],
-	...eslintPluginAstro.configs["flat/jsx-a11y-recommended"],
+	...eslintPluginAstro.configs["flat/jsx-a11y-strict"],
 );
