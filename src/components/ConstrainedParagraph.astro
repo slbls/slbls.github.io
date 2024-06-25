@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"p"> {}
+---
+
+<p
+	class="max-w-[412px] text-lg leading-relaxed tracking-tight"
+	{...Astro.props}
+>
+	<slot />
+</p>
