@@ -4,9 +4,6 @@ import type { HTMLAttributes } from "astro/types";
 interface Props extends HTMLAttributes<"a"> {}
 ---
 
-<a
-	class="inline-block text-sky-700 transition-transform visited:text-indigo-700 hover:-rotate-2 hover:scale-105 hover:text-sky-800 hover:underline visited:hover:text-indigo-800"
-	{...Astro.props}
+<a class="text-blue-600 hover:underline focus:underline" {...Astro.props}
+	><slot /></a
 >
-	<slot />
-</a>

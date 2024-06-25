@@ -1,44 +1,34 @@
 ---
 import "../styles/tailwind.css";
 
+import ConstrainedParagraph from "../components/ConstrainedParagraph.astro";
 import EmailLink from "../components/EmailLink.astro";
 import ExternalLink from "../components/ExternalLink.astro";
-import Navbar from "../components/Navbar.astro";
-import NavbarBranding from "../components/NavbarBranding.astro";
-import NavbarLink from "../components/NavbarLink.astro";
-import NavbarLinks from "../components/NavbarLinks.astro";
 import Html from "../layouts/Html.astro";
 ---
 
 <Html page="Home">
-	<Navbar>
-		<NavbarBranding name="Spencer Berenson" initials="SB" />
-		<NavbarLinks>
-			<NavbarLink href="/">Home</NavbarLink>
-		</NavbarLinks>
-	</Navbar>
+	<div class="px-6 py-12">
+		<h1 class="mb-12 text-4xl tracking-tighter">
+			Hello, I'm Spencer Berenson.
+		</h1>
 
-	<div class="p-6">
-		<main class="flex flex-col space-y-4">
-			<h1>Hello, I'm Spencer Berenson.</h1>
-
-			<p class="max-w-lg font-extralight">
+		<main class="space-y-4">
+			<ConstrainedParagraph>
 				I live in Connecticut with my cat, Nym, and work as a software engineer
 				at
-				{" "}
-				<ExternalLink href="//desmos.com">Desmos Studio.</ExternalLink>{" "}
-				Check me out on{" "}
-				<ExternalLink href="//linkedin.com/in/spencer-berenson">
-					LinkedIn
-				</ExternalLink>{" "}
-				and{" "}
-				<ExternalLink href="//github.com/slbls">GitHub</ExternalLink>, or get in
-				touch with me at <EmailLink email="spencer@berenson.dev"
-					>spencer@berenson.dev</EmailLink
-				>
-			</p>
+				<ExternalLink href="//desmos.com">Desmos</ExternalLink>.
+			</ConstrainedParagraph>
 
-			<p class="font-extralight">Thanks for visiting!</p>
+			<ConstrainedParagraph>
+				Check me out on
+				<ExternalLink href="//linkedin.com/in/spencer-berenson"
+					>LinkedIn</ExternalLink
+				> or <ExternalLink href="//github.com/slbls">GitHub</ExternalLink>, or
+				get in touch at <EmailLink email="spencer@berenson.dev"
+					>spencer@berenson.dev</EmailLink
+				>.
+			</ConstrainedParagraph>
 		</main>
 	</div>
 </Html>
