@@ -2,13 +2,25 @@
 interface Props {
 	readonly page: string;
 	readonly description?: string;
+	readonly withDarkMode?: boolean;
 }
 
-const { page, description = "Spencer Berenson's personal website." } =
-	Astro.props;
+const {
+	page,
+	description = "Spencer Berenson's personal website.",
+	withDarkMode = true,
+} = Astro.props;
 ---
 
-<html lang="en">
+<html
+	lang="en"
+	class:list={[
+		"text-gray-900",
+		// `/snowflakes` uses this layout but doesn't use the same styling
+		// system as the homepage, so dark mode has to be toggleable.
+		{ "dark:bg-black dark:text-gray-100": withDarkMode },
+	]}
+>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
