@@ -3,16 +3,84 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Home | berenson.dev</title>
-
 		<meta property="og:title" content="Home | berenson.dev" />
 		<meta
 			property="og:description"
 			content="Spencer Berenson's personal site."
 		/>
+		<title>Home | berenson.dev</title>
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="stylesheet" href="index.css" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/modern-normalize@3.0.1/modern-normalize.css"
+		/>
+		<style>
+			:root {
+				--background-color: #fff;
+				--text-color: #000;
+				--content-font-weight: 400;
+			}
+
+			html {
+				position: relative;
+				min-width: 100dvw;
+				min-height: 100dvh;
+			}
+
+			body {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				align-items: center;
+				transform: translate(-50%, -50%);
+				width: 236px;
+				white-space: nowrap;
+				font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+				letter-spacing: -1px;
+				color: var(--text-color);
+				background-color: var(--background-color);
+			}
+
+			h1 {
+				grid-column: 1 / -1;
+				margin: 0 0 8px;
+			}
+
+			h2 {
+				grid-column: 1 / -1;
+				margin: 0;
+				font-size: 1.2rem;
+				font-weight: var(--content-font-weight);
+			}
+
+			h3 {
+				grid-column: 1 / -1;
+				margin: 0 0 16px;
+				font-size: 1rem;
+				font-weight: var(--content-font-weight);
+			}
+
+			a {
+				font-size: 0.8rem;
+				color: var(--text-color);
+				text-underline-offset: 4px;
+			}
+
+			a:hover,
+			a:focus-visible {
+				text-decoration-thickness: 2px;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--text-color: #fff;
+					--background-color: #000;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<h1>Spencer Berenson</h1>
