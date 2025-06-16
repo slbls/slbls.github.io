@@ -3,8 +3,6 @@
 :root {
 	--background-color: #fff;
 	--text-color: #000;
-	--link-color: rgb(0, 122, 255);
-	--content-font-size: 0.8rem;
 	--content-font-weight: 400;
 }
 
@@ -19,10 +17,10 @@ body {
 	top: 50%;
 	left: 50%;
 	display: grid;
-	grid-template-columns: repeat(2, auto);
+	grid-template-columns: repeat(3, 1fr);
 	align-items: center;
 	transform: translate(-50%, -50%);
-	width: min-content;
+	width: 236px;
 	white-space: nowrap;
 	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 	letter-spacing: -1px;
@@ -31,44 +29,38 @@ body {
 }
 
 h1 {
-	grid-row: 1;
 	grid-column: 1 / -1;
-	margin: 0 0 8px 0;
+	margin: 0 0 8px;
 }
 
 h2 {
-	grid-row: 2;
-	grid-column: 1;
+	grid-column: 1 / -1;
 	margin: 0;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: var(--content-font-weight);
 }
 
 h3 {
-	grid-row: 3;
-	grid-column: 1;
-	margin: 0;
-	font-size: var(--content-font-size);
+	grid-column: 1 / -1;
+	margin: 0 0 16px;
+	font-size: 1rem;
 	font-weight: var(--content-font-weight);
 }
 
 a {
-	grid-column: 2;
-	text-align: right;
-	font-size: var(--content-font-size);
-	color: var(--link-color);
-	text-decoration: none;
+	font-size: 0.8rem;
+	color: #fff;
+	text-underline-offset: 4px;
 }
 
 a:hover,
 a:focus-visible {
-	text-decoration: underline;
+	text-decoration-thickness: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--text-color: #fff;
 		--background-color: #000;
-		--link-color: rgb(10, 132, 255);
 	}
 }
