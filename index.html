@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -19,66 +19,34 @@
 			:root {
 				--background-color: #fff;
 				--text-color: #000;
-				--content-font-weight: 400;
-			}
-
-			html {
-				position: relative;
-				min-width: 100dvw;
-				min-height: 100dvh;
 			}
 
 			body {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				align-items: center;
-				transform: translate(-50%, -50%);
-				width: 236px;
-				white-space: nowrap;
-				font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-				letter-spacing: -1px;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+
+				font-family: monospace;
 				color: var(--text-color);
 				background-color: var(--background-color);
 			}
 
-			h1 {
-				grid-column: 1 / -1;
-				margin: 0 0 8px;
-			}
-
+			h1,
 			h2 {
-				grid-column: 1 / -1;
-				margin: 0;
-				font-size: 1.2rem;
-				font-weight: var(--content-font-weight);
+				font-size: inherit;
+				font-weight: inherit;
 			}
 
-			h3 {
-				grid-column: 1 / -1;
-				margin: 0 0 16px;
-				font-size: 1rem;
-				font-weight: var(--content-font-weight);
-			}
-
-			a {
-				font-size: 0.8rem;
+			.link {
 				color: var(--text-color);
-				text-underline-offset: 4px;
 			}
 
-			a:nth-of-type(2) {
-				text-align: center;
+			.link--heading {
+				text-decoration-style: dashed;
 			}
 
-			a:last-of-type {
-				text-align: right;
-			}
-
-			a:hover,
-			a:focus-visible {
+			.link:not(.link--heading):hover,
+			.link:not(.link--heading):focus-visible {
 				text-decoration-thickness: 2px;
 			}
 
@@ -92,18 +60,31 @@
 	</head>
 	<body>
 		<h1>Spencer Berenson</h1>
-		<h2>Software Engineer</h2>
-		<h3>Desmos Studio PBC</h3>
+		<h2>
+			Software Engineer,
+			<a
+				class="link link--heading"
+				href="//desmos.com"
+				target="_blank"
+				rel="noreferrer noopener"
+				>Desmos Studio PBC</a
+			>
+		</h2>
 
-		<a href="//github.com/slbls" target="_blank" rel="noreferrer noopener"
+		<a
+			class="link"
+			href="//github.com/slbls"
+			target="_blank"
+			rel="noreferrer noopener"
 			>GitHub</a
 		>
 		<a
+			class="link"
 			href="//linkedin.com/in/spencer-berenson"
 			target="_blank"
 			rel="noreferrer noopener"
 			>LinkedIn</a
 		>
-		<a href="mailto:spencer@berenson.dev">Email</a>
+		<a class="link" href="mailto:spencer@berenson.dev">Email</a>
 	</body>
 </html>
